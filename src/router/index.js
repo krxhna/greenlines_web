@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import results from '../views/results.vue'
 
 Vue.use(VueRouter)
 
@@ -10,6 +11,14 @@ const routes = [
     name: 'Home',
     component: Home
   },
+  {
+    path: '/results/:ticker',
+    name: 'results',
+    component: results,
+    props: true,
+  
+  },
+
   {
     path: '/about',
     name: 'About',
