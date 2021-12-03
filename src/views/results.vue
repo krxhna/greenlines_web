@@ -13,11 +13,13 @@
         
        <VueTradingView style="grid-area: middle" class="view"
        :options="{
+           theme: 'Dark',
            symbol: ticker,
            interval: 'D',
            showdetails: true,
            range:'60M' ,
-           
+               
+        
         }"
           />
         
@@ -35,10 +37,10 @@
             
         </div>
         <h1 style="grid-area: right" class="three">
-            <button class="r_button" @click=annual(ticker)>annual statement</button>
-            <h1>2</h1>
-            <h1>2</h1>
-            <h1>2</h1>
+            <button class="r_button" @click=annual(ticker)>AngelNumber</button>
+            <h1>7</h1>
+            <h1>7</h1>
+            <h1>7</h1>
         </h1>
     </div>
   
@@ -57,6 +59,7 @@ export default{
     components: {
         VueTradingView
     },
+   
 
     methods: {
       return_id: function(id){
@@ -115,9 +118,17 @@ export default{
     --second-color: #00ff37;
 }
 
-/* .h1{
+
+.h1{border-radius: 0px 15px 0px 15px;
+    margin-left: 35%;
+    border: 1px solid rgb(168, 168, 168);
+    margin-top: 2%;
+    text-align: center;
+    height: 70px;
+    width: 200px;
+    /* background-color: rgb(83, 255, 83); */
     color: black;
-} */
+    font-size: 2.5rem;}
 
 
 

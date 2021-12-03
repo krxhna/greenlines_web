@@ -2,10 +2,11 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <h1 style="color:black">GreenLines</h1>
+    <h1 style="color:black margin-top:40%">Holy Guacamole</h1>
+   
     <div class="grid">
           <div class="searchbox" style="grid-area: middle">
-        <input type="text" class="search-bar" placeholder="Enter Ticker (eg., MSFT )" v-model="message">
+        <input type="text" class="search-bar" placeholder="Enter Ticker (eg., MSFT )"  @keyup.enter="handleClick(message.toUpperCase())" v-model="message">
         <button class="button" @click=handleClick(message.toUpperCase())>
           GO 
         </button>
@@ -31,7 +32,21 @@ export default {
         path: 'results/'+ticker,
       })
     }
-  }
+  },
+
+
+//  mounted() {
+//     window.addEventListener("keypress", function(enter) {
+//       console.log(String.fromCharCode(enter.keyCode));
+//       alert(String.fromCharCode(enter.keyCode));
+//       // handleClick(message.toUpperCase());
+//     }.bind(this));
+//   }
+
+
+
+
+
 }
 </script>
 
