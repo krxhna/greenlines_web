@@ -18,6 +18,9 @@
            interval: 'D',
            showdetails: true,
            range:'60M' ,
+           width: '100%',
+            height: '100%',
+           
                
         
         }"
@@ -36,11 +39,20 @@
             
             
         </div>
+        <!-- <h1>{{data}}</h1> -->
         <h1 style="grid-area: right" class="three">
-            <button class="r_button" @click=annual(ticker)>AngelNumber</button>
-            <h1>7</h1>
-            <h1>7</h1>
-            <h1>7</h1>
+        
+            <!-- <select class="r_button" v-model="selected"> -->
+
+
+                <!-- <option value="industry averages coming soon">industry averages coming soon🏗️🚧👷 </option> -->
+  <!-- <option value="saab">Saab</option> -->
+  <!-- <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option> -->
+            <!-- </select> -->
+            <!-- <span>Selected: {{ selected }}</span> -->
+            <h1></h1>
+            <h1></h1>
         </h1>
     </div>
   
@@ -59,6 +71,25 @@ export default{
     components: {
         VueTradingView
     },
+
+    data(){
+      return {
+data: [
+{
+    id: 2,
+    name: "Orval McLaughlin",
+    email: "okoch@example.org",
+    contacts: "09083692343",
+    created_at: "2018-09-05 15:08:54",
+    updated_at: "2018-09-05 15:08:54",
+    deleted_at: null
+}
+],
+
+        
+        selected: '',
+        
+    }},
    
 
     methods: {
@@ -119,6 +150,7 @@ export default{
 }
 
 
+
 .h1{border-radius: 0px 15px 0px 15px;
     margin-left: 35%;
     border: 1px solid rgb(168, 168, 168);
@@ -141,10 +173,10 @@ export default{
 .box1{
     /* background-color: #00a000; */
     /* color: white; */
-    padding: 30 px;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    padding: 1%;
+    margin-top: 10%;
+    margin-bottom: 1%;
+    border-radius: 1%;
     text-align: center;
 }
 
@@ -154,16 +186,21 @@ export default{
         "header1 header header2"
         "left   middle right"
         "footer footer footer";
+
+    grid-template-columns: 1fr 2.5fr 1fr;
     
 }
 
 .view{
     /* box-shadow: 0 4px 14px 0 rgb(0 255 55 / 19%); */
+
     grid-area: middle;
     margin-top: 1.3%;
     height: 100%;
     width: 100%;
     border: 0.1px solid black;
+    
+    
 }
 
 
@@ -183,14 +220,14 @@ export default{
 
 .r_button {
 
-                    /* font-size: 14px; */
+                    /* font-size: 14px;160/48 */
                     line-height: 1;
                     border-radius: 0px 5px 0px 5px;
                     transition-property: background-color,border-color,color,box-shadow,filter;
                     transition-duration: .3s;
                     border: 1px solid transparent;
                     letter-spacing: 2px;
-                    min-width: 160px;
+                    min-width: 100%;
                     /* text-transform: uppercase; */
                     white-space: normal;
                     font-weight: 700;
@@ -199,7 +236,7 @@ export default{
                     color: black;
                     border: 1px solid black;
                     background-color:rgb(255, 255, 255);
-                    height: 48px;
+                    height: 85%;
                     
                 /* 
                  */
@@ -215,7 +252,7 @@ export default{
                     transition-duration: .3s;
                     border: 1px solid transparent;
                     letter-spacing: 2px;
-                    min-width: 160px;
+                    min-width: 100%;
                     /* text-transform: uppercase; */
                     white-space: normal;
                     font-weight: 700;
@@ -224,7 +261,7 @@ export default{
                     color: black;
                     
                     background-color:rgb(83, 255, 83);
-                    height: 48px;
+                    height: 85%;
                     
                 /* 
                  */

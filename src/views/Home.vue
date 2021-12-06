@@ -2,9 +2,10 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <h1 style="color:black margin-top:40%">Holy Guacamole</h1>
+    
    
     <div class="grid">
+      <h1 style="grid-area: header">Green lines</h1>
           <div class="searchbox" style="grid-area: middle">
         <input type="text" class="search-bar" placeholder="Enter Ticker (eg., MSFT )"  @keyup.enter="handleClick(message.toUpperCase())" v-model="message">
         <button class="button" @click=handleClick(message.toUpperCase())>
@@ -71,6 +72,10 @@ export default {
 
 }
 
+.h1{
+  margin-top: 50%;
+}
+
 
 .searchbox .search-bar:focus{
   display: block;
@@ -94,6 +99,7 @@ export default {
         "left   middle right"
         "footer footer footer";
     grid-template-columns: 1fr 4fr 1fr;
+    /* grid-template-rows: 4fr 1fr 1fr; */
     
 }
 

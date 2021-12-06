@@ -1,7 +1,10 @@
 <template>
   
   <div>
-    <h1>About</h1>
-    fdsa
+    <h1>{{firebaseData}}</h1>
+    what is this?
   </div>
 </template>
+
+
+
