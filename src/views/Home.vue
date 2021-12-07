@@ -27,11 +27,18 @@ export default {
   components: {
     // HelloWorld
   },
+
+  
   methods: {
     handleClick(ticker) {
       this.$router.push({
         path: 'results/'+ticker,
       })
+    
+    },
+
+    login() {
+      this.$gtag.event('login', { method: 'Google' })
     }
   },
 

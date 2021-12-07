@@ -2,6 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import VueAnalytics from 'vue-analytics';
+import VueGtag from "vue-gtag";
+
+Vue.use(VueGtag, {
+  config: { id: "UA-208188193-1" }
+});
 // import firebase from 'firebase';
 // import { firestorePlugin } from 'vuefire'
 
