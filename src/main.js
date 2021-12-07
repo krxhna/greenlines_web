@@ -11,6 +11,11 @@ Vue.use(VueAnalytics, {
   id: 'UA-208188193-1'
 });
 
+import { firestorePlugin } from 'vuefire'
+
+Vue.use(firestorePlugin)
+
+
 
 
 
