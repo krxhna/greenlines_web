@@ -5,7 +5,7 @@
     
    
     <div class="grid">
-      <h1 style="grid-area: header">Green lines</h1>
+      <h1 style="grid-area: header">Greenlines.club</h1>
           <div class="searchbox" style="grid-area: middle">
         <input type="text" class="search-bar" placeholder="Enter Ticker (eg., MSFT )"  @keyup.enter="handleClick(message.toUpperCase())" v-model="message">
         <button class="button" @click=handleClick(message.toUpperCase())>
@@ -33,12 +33,16 @@ export default {
     handleClick(ticker) {
       this.$router.push({
         path: 'results/'+ticker,
-      })
+      }),
+      this.clicked()
     
     },
 
     login() {
       this.$gtag.event('login', { method: 'Google' })
+    },
+    clicked() {
+      this.$gtag.event('clicked search', { method: 'Google' })
     }
   },
 
@@ -80,7 +84,8 @@ export default {
 }
 
 .h1{
-  margin-top: 50%;
+  margin-top: 60%;
+ 
 }
 
 

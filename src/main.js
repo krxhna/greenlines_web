@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import VueAnalytics from 'vue-analytics';
 import VueGtag from "vue-gtag";
+import { StripeCheckout } from '@vue-stripe/vue-stripe';
+
+Vue.use(StripeCheckout);
 
 Vue.use(VueGtag, {
   config: { id: "UA-208188193-1" }
@@ -13,7 +16,8 @@ Vue.use(VueGtag, {
 // Vue.use(firestorePlugin)
 
 Vue.use(VueAnalytics, {
-  id: 'UA-208188193-1'
+  id: 'UA-208188193-1',
+  router
 });
 
 import { firestorePlugin } from 'vuefire'

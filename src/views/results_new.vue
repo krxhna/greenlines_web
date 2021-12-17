@@ -4,6 +4,7 @@
     <div class="grid">
         
         <h1  style="grid-area: header" class="h1">{{'$'+ticker.toUpperCase()}}</h1>
+        <button :class="{probanner:!pro}" @click=annual(ticker)>{{showthingy()}}</button>
         <div class="box1">
         <router-link class="home link"  style="grid-area: header1; text-decoration: none; color: inherit;" to="/">🡰 Back</router-link> 
         <i class="fas fa-cloud"></i>
@@ -41,16 +42,58 @@
         </div>
         <!-- <h1>{{data}}</h1> -->
         <h1 style="grid-area: right" class="three">
-        <!-- <select></select>
+        <select></select>
         
            
 
 
               
             <h1></h1>
-            <h1></h1> -->
+            <h1></h1>
         </h1>
+        
+
+
     </div>
+    <h2>UnitedStates industry averages</h2>
+    <div class="pro">
+      <div class="contain">
+          <h2>Effective tax rate</h2>
+          <h3>45%</h3>
+      </div>
+            <div class="contain">
+          <h2>after tax ROC</h2>
+          <h3>45%</h3>
+      </div>
+            <div class="contain">
+          <h2>Unlevered beta</h2>
+          <h3>45%</h3>
+      </div>
+            <div class="contain">
+          <h2>Equity (Levered) Beta
+</h2>
+          <h3>45%</h3>
+      </div>
+            <div class="contain">
+          <h2>Cost of equity
+</h2>
+          <h3>45%</h3>
+      </div>
+            <div class="contain">
+          <h2>Std deviation in stock prices
+</h2>
+          <h3>45%</h3>
+      </div>
+            <div class="contain">
+          <h2>Pre-tax cost of debt
+</h2>
+          <h3>45%</h3>
+      </div>
+
+      
+
+    </div>
+    
   
      
   
@@ -60,6 +103,7 @@
 <script>
 
 import VueTradingView from 'vue-trading-view/src/vue-trading-view';
+import {db} from '../firebase';
 
  
 
@@ -71,20 +115,10 @@ export default{
 
     data(){
       return {
-data: [
-{
-    id: 2,
-    name: "Orval McLaughlin",
-    email: "okoch@example.org",
-    contacts: "09083692343",
-    created_at: "2018-09-05 15:08:54",
-    updated_at: "2018-09-05 15:08:54",
-    deleted_at: null
-}
-],
 
-        
+        pro:false,        
         selected: '',
+        data:null
         
     }},
    
@@ -114,6 +148,8 @@ data: [
         funds:function(ticker) {
           window.open('https://whalewisdom.com/stock/' +
                   ticker+'#frm_filings' )}, 
+
+        
         
         all : function(ticker){
             window.open('https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=' +
@@ -124,12 +160,29 @@ data: [
         
 
         }
+        ,
+        showthingy: function(){
+          if(this.pro == true){
+             return "CONGRATS";
+          }
+          else{
+            return "🔒 Become a pro member to see more";
+          }
+
+        }
 
 
                   
     },
 
     props: ['ticker'],
+
+
+    firestore(){
+      return {
+        data: db.collection('users')
+      }
+    },
 }
 
 
@@ -160,6 +213,21 @@ data: [
     font-size: 2.5rem;}
 
 
+.probanner{
+  border-radius: 0px 15px 0px 15px;
+    /* margin-left: 35%; */
+    /* border: 1px solid rgb(168, 168, 168);
+    margin-top: 2%;
+    text-align: center; */
+  font-weight: 600;
+  font-size: 100%;
+  border: none;
+  font-family: poppins;
+  /* font-style: italic; */
+  background-color: rgb(83, 255, 83);
+}
+
+
 
 .homelink{ 
     margin-top: 100px;
@@ -178,6 +246,7 @@ data: [
 }
 
 .grid{
+    
     display: grid;
     grid-template-areas: 
         "header1 header header2"
@@ -201,7 +270,25 @@ data: [
     
 }
 
+.pro {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}   
 
+/* .contain{
+    
+    
+} */
+
+::-moz-selection { /* Code for Firefox */
+  color: red;
+  background: yellow;
+}
+
+::selection {
+  color:black;
+  background: rgb(83, 255, 83);
+}
 
 .three{
     margin: 10px;

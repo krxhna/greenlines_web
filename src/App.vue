@@ -20,6 +20,10 @@
   text-align: center;
   color: #2c3e50;
 }
+@font-face {
+    font-family: 'sackers'; /*a name to be used later*/
+    src: URL(fonts/sackers.otf); /*URL to font*/
+}
 
 #nav {
   padding: 30px;
