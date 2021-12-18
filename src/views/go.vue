@@ -32,6 +32,7 @@
             <button class="r_button" @click=insider(ticker)>Insider Buying</button>
             <button class="r_button" @click=twitter(ticker)>Twitter</button>
             <button class="r_button" @click=seekingalpha(ticker)>Seeking Alpha Analysis</button>
+             <button class="r_button" @click=kofi>Support💚</button>
             <!-- <button class="r_button" @click=all(ticker)>All</button> -->
             
             
@@ -108,6 +109,9 @@ data: [
         funds:function(ticker) {
           window.open('https://whalewisdom.com/stock/' +
                   ticker+'#frm_filings' )}, 
+
+         kofi:function() {
+          window.open('https://ko-fi.com/A0A47IK54' )}, 
         
         all : function(ticker){
             window.open('https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=' +

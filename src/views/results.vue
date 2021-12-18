@@ -5,6 +5,7 @@
         
         <h1  style="grid-area: header" class="h1">{{'$'+ticker.toUpperCase()}}</h1>
         
+        
         <div class="box1">
         <router-link class="home link"  style="grid-area: header1; text-decoration: none; color: inherit;" to="/">🡰 Back</router-link> 
         <i class="fas fa-cloud"></i>
@@ -36,6 +37,7 @@
             <button class="r_button" @click=insider(ticker)>Insider Buying</button>
             <button class="r_button" @click=twitter(ticker)>Twitter</button>
             <button class="r_button" @click=seekingalpha(ticker)>Seeking Alpha Analysis</button>
+            <button class="r_button" @click=kofi>Support💚</button>
             <!-- <button class="r_button" @click=all(ticker)>All</button> -->
             
             
@@ -60,6 +62,7 @@
 </template>
 
 <script>
+
 
 import VueTradingView from 'vue-trading-view/src/vue-trading-view';
 
@@ -116,6 +119,12 @@ data: [
         funds:function(ticker) {
           window.open('https://whalewisdom.com/stock/' +
                   ticker+'#frm_filings' )}, 
+        kofi:function() {
+          window.open('https://ko-fi.com/A0A47IK54' )}, 
+
+
+
+        
         
         all : function(ticker){
             window.open('https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=' +
@@ -279,6 +288,43 @@ data: [
                 /* 
                  */
 }
+
+
+.donate{
+  
+                    display: inline-block;
+                    /* outline: none; */
+                    cursor: pointer;
+                    font-weight: 600;
+                    border-radius: 3px;
+                    padding: 12px 24px;
+                    margin-left: 30%;
+                    margin-top: 5%;
+                    border: 0;
+                    color: #000021;
+                    height: 50px;
+                    width: 100px;
+                    background: #1de95a;
+                    line-height: 1.15;
+                    border: black;
+                    font-size: 16px;
+                    /* :hover {
+                        transition: all .1s ease;
+                        box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+                    }
+                 */
+}
+
+.donate:hover{
+  
+                  
+                        transition: all .1s ease;
+                        box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+                  
+                
+}
+
+
 
 @keyframes slideIn {
   0% {

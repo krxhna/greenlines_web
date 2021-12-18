@@ -75,6 +75,9 @@ export default {
     },
     clicked() {
       this.$gtag.event('clicked search', { method: 'Google' })
+    },
+       clickedback() {
+      this.$gtag.event('clicked back', { method: 'Google' })
     }
   },
 
