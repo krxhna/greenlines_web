@@ -4,7 +4,7 @@
     <div class="grid">
         
         <h1  style="grid-area: header" class="h1">{{'$'+ticker.toUpperCase()}}</h1>
-        <h1  style="grid-area: footer" class="h2">signup free for unlimited searches</h1>
+        
         <div class="box1">
         <router-link class="home link"  style="grid-area: header1; text-decoration: none; color: inherit;" to="/">🡰 Back</router-link> 
         <i class="fas fa-cloud"></i>
