@@ -5,18 +5,25 @@
     
    
     <div class="grid">
+     
       <div class="heading" style="grid-area: header">
+
         <h1 >Greenlines.club</h1>
-      <h5>View on desktop/laptop for best experience</h5>
+      <h5> why spend 30 minutes when you can do in 30 seconds with greenlines</h5>
+      
       </div>
           <div class="searchbox" style="grid-area: middle">
         <input type="text" class="search-bar" placeholder="Enter Ticker (eg., MSFT )"  @keyup.enter="handleClick(message.toUpperCase())" v-model="message">
         <button class="button" @click=handleClick(message.toUpperCase())>
           GO 
         </button>
+        
       </div>
+
         
         </div>
+        
+        
       </div>
       
 </template>
@@ -34,12 +41,34 @@ export default {
   
   methods: {
     handleClick(ticker) {
-      this.$router.push({
+
+
+       if (this.isMobile()) {
+                 this.$router.push({
+        path: 'go/'+ticker,
+      }),
+      this.clicked()
+    
+            }
+            else {
+              this.$router.push({
         path: 'results/'+ticker,
       }),
       this.clicked()
     
+                
+            }
+     
     },
+    isMobile() {
+                if( screen.width <= 760 ) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        ,
 
     login() {
       this.$gtag.event('login', { method: 'Google' })
@@ -118,7 +147,7 @@ export default {
         "left   middle right"
         "footer footer footer";
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
     /* grid-template-rows: 4fr 1fr 1fr; */
     
 }

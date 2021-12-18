@@ -4,6 +4,10 @@ import router from './router'
 import VueAnalytics from 'vue-analytics';
 import VueGtag from "vue-gtag";
 import { StripeCheckout } from '@vue-stripe/vue-stripe';
+import Embed from 'v-video-embed'
+
+// global register
+Vue.use(Embed);
 
 Vue.use(StripeCheckout);
 

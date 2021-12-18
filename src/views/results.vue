@@ -4,6 +4,7 @@
     <div class="grid">
         
         <h1  style="grid-area: header" class="h1">{{'$'+ticker.toUpperCase()}}</h1>
+        <h1  style="grid-area: footer" class="h2">signup free for unlimited searches</h1>
         <div class="box1">
         <router-link class="home link"  style="grid-area: header1; text-decoration: none; color: inherit;" to="/">🡰 Back</router-link> 
         <i class="fas fa-cloud"></i>
@@ -55,6 +56,7 @@
      
   
   </div>
+  
 </template>
 
 <script>
@@ -146,6 +148,19 @@ data: [
     --second-color: #00ff37;
 }
 
+.h2{
+  border-radius: 0px 15px 0px 15px;
+    /* margin-left: 35%; */
+    border: 1px solid rgb(168, 168, 168);
+    margin-top: 2%;
+    text-align: center;
+    /* height: 70px; */
+    /* width: 200px; */
+    /* background-color: rgb(83, 255, 83); */
+    color: rgb(0, 0, 0);
+    font-size: 2.5rem;
+
+}
 
 
 .h1{border-radius: 0px 15px 0px 15px;

@@ -11,6 +11,7 @@
     "@vue-stripe/vue-stripe": "^4.2.9",
     "core-js": "^3.6.5",
     "firebase": "^9.6.0",
+    "v-video-embed": "^1.0.8",
     "vue": "^2.6.11",
     "vue-analytics": "^5.22.1",
     "vue-gtag": "^1.16.1",

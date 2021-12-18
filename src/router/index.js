@@ -45,9 +45,10 @@ const routes = [
   
   },
   {
-    path: '/go',
+    path: '/go/:ticker',
     name: 'go',
     component: go,
+    props: true,
     // props: true,
   
   },
