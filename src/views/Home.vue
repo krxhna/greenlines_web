@@ -5,7 +5,10 @@
     
    
     <div class="grid">
-      <h1 style="grid-area: header">Greenlines.club</h1>
+      <div class="heading" style="grid-area: header">
+        <h1 >Greenlines.club</h1>
+      <h5>View on desktop/laptop for best experience</h5>
+      </div>
           <div class="searchbox" style="grid-area: middle">
         <input type="text" class="search-bar" placeholder="Enter Ticker (eg., MSFT )"  @keyup.enter="handleClick(message.toUpperCase())" v-model="message">
         <button class="button" @click=handleClick(message.toUpperCase())>
@@ -70,7 +73,7 @@ export default {
 }
 
 .searchbox .search-bar{
-  margin-top: 20%;
+  margin-top: 15%;
   display: block;
   width: 90%;
   
@@ -81,6 +84,10 @@ export default {
 
   font-size: 20px;
 
+}
+
+.h5{
+  color: aqua;
 }
 
 .h1{
