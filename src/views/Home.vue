@@ -9,7 +9,7 @@
       <div class="heading" style="grid-area: header">
 
         <h1 >Greenlines.club</h1>
-      <h5> why spend 30 minutes when you can do in 30 seconds with greenlines</h5>
+      <h5> 30 minute valuation work takes 30 seconds with greenlines</h5>
       
       </div>
           <div class="searchbox" style="grid-area: middle">
@@ -17,7 +17,7 @@
         <button class="button" @click=handleClick(message.toUpperCase())>
           GO 
         </button>
-        
+
       </div>
 
         
@@ -155,7 +155,7 @@ export default {
 
 .button {
 
-  margin-top: 3%;
+  margin-top: 5%;
                     display: inline-block;
                     outline: none;
                     cursor: pointer;
