@@ -4,10 +4,23 @@ import router from './router'
 import VueAnalytics from 'vue-analytics';
 import VueGtag from "vue-gtag";
 import { StripeCheckout } from '@vue-stripe/vue-stripe';
-import Embed from 'v-video-embed'
+import Embed from 'v-video-embed';
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
+// Import Bootstrap an BootstrapVue CSS files (order is important)
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+// import firebase from "firebase/compat/app";
+// import "firebase/compat/firestore";
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
+// import firebase from "firebase";
 
 // global register
 Vue.use(Embed);
+// Vue.use(firebase);
 
 Vue.use(StripeCheckout);
 

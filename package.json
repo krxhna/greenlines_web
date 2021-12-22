@@ -9,8 +9,9 @@
   },
   "dependencies": {
     "@vue-stripe/vue-stripe": "^4.2.9",
+    "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
-    "firebase": "^9.6.0",
+    "firebase": "^9.6.1",
     "v-video-embed": "^1.0.8",
     "vue": "^2.6.11",
     "vue-analytics": "^5.22.1",

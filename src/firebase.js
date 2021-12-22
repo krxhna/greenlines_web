@@ -5,7 +5,6 @@ import "firebase/compat/analytics";
 import "firebase/compat/remote-config";
 
 
-
 const firebaseApp = firebase.initializeApp({
     apiKey: "AIzaSyBHfHqofD-08feKLT-0SJW3hftXlwsGk_g",
     authDomain: "greenlines-69a5c.firebaseapp.com",
@@ -22,3 +21,4 @@ const analytics = firebaseApp.analytics();
 
 export { db, auth, analytics };
   
+

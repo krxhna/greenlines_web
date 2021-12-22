@@ -12,10 +12,8 @@
           to="/"
           >🡰 Back</router-link
         >
-
         <i class="fas fa-cloud"></i>
       </div>
-      <b-button @click="googlesignin">sigin</b-button>
 
       <VueTradingView
         style="grid-area: middle"
@@ -31,7 +29,7 @@
         }"
       />
 
-      <div style="grid-area: left" class="three">
+      <div style="grid-area: right" class="three">
         <button class="r_button" @click="annual(ticker)">
           Annual Statement
         </button>
@@ -52,18 +50,14 @@
         <!-- <button class="r_button" @click=all(ticker)>All</button> -->
       </div>
       <!-- <h1>{{data}}</h1> -->
-      <h1 style="grid-area: right" class="three">
-        <select v-model="selected">
-          <option value="jeff">jeff</option>
-          <option value="jane">jane</option>
-          <option value="boob">bob</option>
-          <option value="Y">Year</option>
-        </select>
-        <span>Selected: {{ selected }}</span>
-        <span>Selected: {{ documents }}</span>
+      <h1 style="grid-area: left background-color:blue" class="three">
+        
+           
 
-        <h1></h1>
-        <h1></h1>
+
+              
+            <h1>fsadfa</h1>
+            <h1>fasdfa</h1>
       </h1>
     </div>
   </div>
@@ -71,9 +65,6 @@
 
 <script>
 import VueTradingView from "vue-trading-view/src/vue-trading-view";
-import { db } from "../firebase";
-
-import firebase from "firebase/compat/app";
 
 export default {
   components: {
@@ -82,10 +73,19 @@ export default {
 
   data() {
     return {
-      documents: "",
-      selected: "",
+      data: [
+        {
+          id: 2,
+          name: "Orval McLaughlin",
+          email: "okoch@example.org",
+          contacts: "09083692343",
+          created_at: "2018-09-05 15:08:54",
+          updated_at: "2018-09-05 15:08:54",
+          deleted_at: null,
+        },
+      ],
 
-      data: [],
+      selected: "",
     };
   },
 
@@ -138,35 +138,6 @@ export default {
           "https://www.google.com/search?q=" + ticker + " ir" + " relations"
         );
     },
-    googlesigin: function () {
-      const provider = new firebase.auth.GoogleAuthProvider();
-      firebase
-        .auth()
-        .signInWithPopup(provider)
-        .then(() => {
-          alert("signin");
-          this.$router.push({
-            path: "results/" + this.user.uid,
-          });
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-      // This gives you a Google Access Token. You can use it to access the Google API.
-    },
-
-    // ,returnjeff:function(){
-    //   return db.collection('users').doc('jeff')
-    // }
-    onChange: function () {
-      this.$router.push(this.selected);
-    },
-  },
-
-  firestore() {
-    return {
-      documents: db.collection("users").doc(this.ticker),
-    };
   },
 
   props: ["ticker"],
@@ -177,15 +148,6 @@ export default {
 :root {
   --main-color: #00a000;
   --second-color: #00ff37;
-}
-
-.signin {
-  border-radius: 10px;
-  width: 50%;
-  border: none;
-  margin: 10%;
-  margin-left: 30%;
-  background-color: rgb(83, 255, 83);
 }
 
 .h2 {
@@ -202,10 +164,9 @@ export default {
 }
 
 .h1 {
-  border: none;
   border-radius: 0px 15px 0px 15px;
   margin-left: 35%;
-  /* border: 1px solid rgb(168, 168, 168); */
+  border: 1px solid rgb(168, 168, 168);
   margin-top: 2%;
   text-align: center;
   height: 70px;

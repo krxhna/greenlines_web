@@ -8,7 +8,7 @@
      
       <div class="heading" style="grid-area: header">
 
-        <h1 >Greenlines.club</h1>
+        <h1 style="font-family: poppins; font-weight:700; color:black;" >Greenlines.club</h1>
       <h5> 30 minute valuation work takes 30 seconds with greenlines</h5>
       
       </div>
@@ -100,9 +100,11 @@ export default {
 <style scoped>
 
 :root{
+ 
   --primary-color: #ffc107;
   --secondary-color: #ffc107;
 }
+
 
 .searchbox .search-bar{
   margin-top: 15%;

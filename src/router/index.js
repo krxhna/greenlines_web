@@ -6,6 +6,7 @@ import results_new from '../views/results_new.vue'
 import checkout from '../views/checkout.vue'
 import test from '../views/test.vue'
 import go from '../views/go.vue'
+import book from '../views/book.vue'
 // import { StripeCheckout } from '@vue-stripe/vue-stripe'
 
 Vue.use(VueRouter)
@@ -38,10 +39,10 @@ const routes = [
   
   },
   {
-    path: '/test',
+    path: '/test/:ticker',
     name: 'test',
     component: test,
-    // props: true,
+    props: true,
   
   },
   {
@@ -50,6 +51,14 @@ const routes = [
     component: go,
     props: true,
     // props: true,
+  
+  },
+  {
+    path: '/book/:ticker',
+    name: 'book',
+    component: book,
+  
+    props: true,
   
   },
 
