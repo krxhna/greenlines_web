@@ -1,0 +1,226 @@
+:root {
+    font-size: 16px;
+    /* background-color: #121212; */
+    --main-color: rgb(15, 221, 15);
+    --text-color: #707070;
+}
+
+.dash {
+    display: flex;
+    background-color: black;
+}
+
+
+.navbar {
+
+
+    background-color: #0f0f0f;
+    width: 20vw;
+    height: 100vh;
+}
+
+.navbar1 {
+
+
+    background-color: #0f0f0f;
+    width: 20vw;
+    height: 220vh;
+}
+
+.navbarnav {
+    height: 100vh;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    /* align-items: center; */
+    list-style: none;
+    /* justify-content: space-around; */
+}
+
+.thing {
+    background-color: #121212;
+    color: #CDCDCD;
+    padding: 10px;
+    font-family: Segoe UI;
+
+
+}
+
+.rectangle {
+    height: 0.5vh;
+    width: 5rem;
+    margin-top: 20vh;
+
+}
+
+.current {
+    background-color: #121212;
+    color: #CDCDCD;
+    font-weight: bold;
+    padding: 10px;
+    text-decoration: underline;
+    text-decoration-color: var(--main-color);
+
+}
+
+.current:hover {
+    background-color: #121212;
+    color: #CDCDCD;
+    font-weight: bold;
+    padding: 10px;
+    text-decoration: underline;
+    text-decoration-color: var(--main-color);
+
+}
+
+.thing:hover {
+    background-color: #121212;
+    color: var(--main-color);
+    padding: 10px;
+
+}
+.r_button{
+    align-items: center;
+    margin-left: 2%;
+    font-family: Segoe UI;
+    /* font-style: italic; */
+    line-height: 1;
+  border-radius: 0px 5px 0px 5px;
+  transition-property: background-color, border-color, color, box-shadow, filter;
+  transition-duration: 0.3s;
+  border: 1px solid transparent;
+  letter-spacing: 2px;
+  min-width: 100%;
+  /* text-transform: uppercase; */
+  white-space: normal;
+  font-weight: 700;
+  text-align: center;
+  padding: 17px 48px;
+  color: #ebebeb;
+  /* border: 0.2px solid rgb(1, 26, 12); */
+  background-color: #121212;
+  height: 85%;
+}
+
+.r_button:hover{
+
+    background-color: var(--main-color);
+    color: black;
+
+}
+
+
+.options {
+    background-color: #000000;
+    width: 20vw;
+    height: 100vh;
+}
+
+
+
+.chart {
+    background-color: #13582e;
+    display: grid;
+    margin: auto;
+
+    width: 55vw;
+
+    height: 70vh;
+}
+
+/* list 2 in the thing */
+.view1{
+    
+ 
+    height: 50vh;
+    width: 100%;
+
+    border: 0.1px solid black;
+}
+
+.view {
+    background-color: #000000;
+
+
+
+    height: 220vh;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.area {
+    /* margin-left: ; */
+    background-color: #000000;
+    width: 80vw;
+    height: 20vh;
+
+
+}
+
+.cards {
+    display: grid;
+    /* margin-left: ; */
+    background-color: #000000;
+    width: 80vw;
+    height: 80vh;
+    grid-template-columns: repeat(2, 2fr);
+
+
+}
+
+.infocards {
+    border-radius: 10px;
+    font-family: Segoe UI;
+    align-items: center;
+    text-align: left;
+    margin: 2%;
+
+    height: 10vh;
+
+    width: vw;
+    color: #DADADA;
+    background-color: #1E1E1E;
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.per{
+    color: #707070;
+}
+
+::-webkit-scrollbar {
+width: 0.3vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(9, 129, 59);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+.select{
+    width: 500px;
+    color: white;
+    background-color: gray;
+}
+
+.select:hover{
+    width: 500px;
+    color: black;
+    background-color: rgb(17, 151, 17);
+}
+

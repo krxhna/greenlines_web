@@ -52,7 +52,7 @@ export default {
             }
             else {
               this.$router.push({
-        path: 'results/'+ticker,
+        path: 'dashboard/'+ticker,
       }),
       this.clicked()
     
@@ -100,10 +100,12 @@ export default {
 <style scoped>
 
 :root{
+  
  
   --primary-color: #ffc107;
   --secondary-color: #ffc107;
 }
+
 
 
 .searchbox .search-bar{
@@ -131,6 +133,7 @@ export default {
 
 
 .searchbox .search-bar:focus{
+  
   display: block;
   width: 90%;
   
@@ -191,38 +194,6 @@ export default {
                 
 }
 
-.button:hover{
-
-  margin-top: 3%;
-                    display: inline-block;
-                    outline: none;
-                    cursor: pointer;
-                    font-size: 18px;
-                    line-height: 1;
-                    border-radius: 0px 0px 0px 0px;
-                    transition-property: background-color,border-color,color,box-shadow,filter;
-                    transition-duration: .3s;
-                    border: 1px solid transparent;
-                    letter-spacing: 2px;
-                    min-width: 160px;
-                    text-transform: uppercase;
-                    white-space: normal;
-                    font-weight: 700;
-                    text-align: center;
-                    padding: 17px 48px;
-                    color: black;
-                    background-color: rgb(83, 255, 83);
-                    height: 48px;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    /* :hover{
-                        transform: scale(1.04);
-                        background-color: #21e065;
-                    } */
-                
-}
 
 
 

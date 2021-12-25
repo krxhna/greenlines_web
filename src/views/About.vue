@@ -1,15 +1,22 @@
 <template>
   <div class="login">
+    <nav class="navbar navbar-dark bg-dark" style="height: 7vh">
+      <li>
+        <h1 v-if="user == null">
+          <b-button @click="googlesigin">Login</b-button>
+        </h1>
+        
+        <h1 v-else>
+          <b-button @click="logout">logout</b-button>
+        </h1>
+      </li>
+      <!-- Navbar content -->
+    </nav>
     {{ user }}
 
     <br />
     <div class="log"></div>
-    <h1 v-if="user == null">
-      <b-button @click="googlesigin">Login</b-button>
-    </h1>
-    <h1 v-else>
-      <b-button @click="logout">logout</b-button>
-    </h1>
+
     <h1 v-if="user == null">
       <select v-model="selected">
         <option disabled value="">login to get datas</option>
@@ -462,6 +469,24 @@ export default {
 </script>
 
 <style>
+::-webkit-scrollbar {
+  width: 0.5vh;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(107, 107, 107);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 255, 76);
+}
 .log {
   color: brown;
   width: 10%;

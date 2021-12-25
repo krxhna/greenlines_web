@@ -7,6 +7,9 @@ import checkout from '../views/checkout.vue'
 import test from '../views/test.vue'
 import go from '../views/go.vue'
 import book from '../views/book.vue'
+import dashboard from '../views/dashboard.vue'
+import industry from '../views/industry.vue'
+
 // import { StripeCheckout } from '@vue-stripe/vue-stripe'
 
 Vue.use(VueRouter)
@@ -57,6 +60,22 @@ const routes = [
     path: '/book/:ticker',
     name: 'book',
     component: book,
+  
+    props: true,
+  
+  },
+  {
+    path: '/dashboard/:ticker',
+    name: 'dashboard',
+    component: dashboard,
+  
+    props: true,
+  
+  },
+  {
+    path: '/industry/:ticker',
+    name: 'insdustry',
+    component: industry,
   
     props: true,
   
