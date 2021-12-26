@@ -45,7 +45,8 @@
     <div class="view">
       <div class="area">
         <div class="thentext" style="color:green">
-          {{return_items1(selected,"Unlevered Beta",map1)}}
+          Select industry
+          <!-- {{return_items1(selected,"Unlevered Beta",map1)}} -->
         </div>
         <h1 v-if="user == null">
           <select v-model="selected">
@@ -154,35 +155,33 @@
         </h1>
       </div>
       <div class="cards">
-
-<div class="infocards"><h1>Industry Name : {{ return_items1(selected,'Industry Name' ,map1) }}</h1></div>
-<div class="infocards"><h1>Number of firms : {{ return_items1(selected,'Number of firms' ,map1) }}</h1></div>
-<div class="infocards"><h1>Annual Average Revenue growth - Last 5 years : {{ return_items1(selected,'Annual Average Revenue growth - Last 5 years' ,map1) }}</h1></div>
-<div class="infocards"><h1>Pre-tax Operating Margin (Unadjusted) : {{ return_items1(selected,'Pre-tax Operating Margin (Unadjusted)' ,map1) }}</h1></div>
-<div class="infocards"><h1>After-tax ROC : {{ return_items1(selected,'After-tax ROC' ,map1) }}</h1></div>
-<div class="infocards"><h1>Average effective tax rate : {{ return_items1(selected,'Average effective tax rate' ,map1) }}</h1></div>
-<div class="infocards"><h1>Unlevered Beta : {{ return_items1(selected,'Unlevered Beta' ,map1) }}</h1></div>
-<div class="infocards"><h1>Equity (Levered) Beta : {{ return_items1(selected,'Equity (Levered) Beta' ,map1) }}</h1></div>
-<div class="infocards"><h1>Cost of equity : {{ return_items1(selected,'Cost of equity' ,map1) }}</h1></div>
-<div class="infocards"><h1>Std deviation in stock prices : {{ return_items1(selected,'Std deviation in stock prices' ,map1) }}</h1></div> 
-<div class="infocards"><h1>Pre-tax cost of debt : {{ return_items1(selected,'Pre-tax cost of debt' ,map1) }}</h1></div>
-<div class="infocards"><h1>Market Debt/Capital : {{ return_items1(selected,'Market Debt/Capital' ,map1) }}</h1></div>
-<div class="infocards"><h1>Cost of capital : {{ return_items1(selected,'Cost of capital' ,map1) }}</h1></div>
-<div class="infocards"><h1>Sales/Capital : {{ return_items1(selected,'Sales/Capital' ,map1) }}</h1></div>
-<div class="infocards"><h1>EV/Sales : {{ return_items1(selected,'EV/Sales' ,map1) }}</h1></div>
-<div class="infocards"><h1>EV/EBITDA : {{ return_items1(selected,'EV/EBITDA' ,map1) }}</h1></div>
-<div class="infocards"><h1>EV/EBIT : {{ return_items1(selected,'EV/EBIT' ,map1) }}</h1></div>
-<div class="infocards"><h1>Price/Book : {{ return_items1(selected,'Price/Book' ,map1) }}</h1></div>
-<div class="infocards"><h1>Trailing PE : {{ return_items1(selected,'Trailing PE' ,map1) }}</h1></div>
-<div class="infocards"><h1>Non-cash WC as % of Revenues : {{ return_items1(selected,'Non-cash WC as % of Revenues' ,map1) }}</h1></div>
-<div class="infocards"><h1>Cap Ex as % of Revenues : {{ return_items1(selected,'Cap Ex as % of Revenues' ,map1) }}</h1></div>
-<div class="infocards"><h1>Net Cap Ex as % of Revenues : {{ return_items1(selected,'Net Cap Ex as % of Revenues' ,map1) }}</h1></div>
-<div class="infocards"><h1>Reinvestment Rate : {{ return_items1(selected,'Reinvestment Rate' ,map1) }}</h1></div>
-<div class="infocards"><h1>ROE : {{ return_items1(selected,'ROE' ,map1) }}</h1></div>
-<div class="infocards"><h1>Dividend Payout Ratio : {{ return_items1(selected,'Dividend Payout Ratio' ,map1) }}</h1></div>
-<div class="infocards"><h1>Equity Reinvestment Rate : {{ return_items1(selected,'Equity Reinvestment Rate' ,map1) }}</h1></div>
-<div class="infocards"><h1>Pre-tax Operating Margin (Lease & R&D adjusted) : {{ return_items1(selected,'Pre-tax Operating Margin (Lease & R&D adjusted)' ,map1) }}</h1></div>
-
+<div class="infocards"><h4>Industry Name</h4> <h1 class="per"> {{ return_items1( selected,'Industry Name',map1)}}</h1></div>
+<div class="infocards"><h4>Number of firms</h4> <h1 class="per"> {{ return_items1( selected,'Number of firms',map1)}}</h1></div>
+<div class="infocards"><h4>Annual Average Revenue growth - Last 5 years</h4> <h1 class="per"> {{ return_items1( selected,'Annual Average Revenue growth - Last 5 years',map1)}}</h1></div>
+<div class="infocards"><h4>Pre-tax Operating Margin (Unadjusted)</h4> <h1 class="per"> {{ return_items1( selected,'Pre-tax Operating Margin (Unadjusted)',map1)}}</h1></div>
+<div class="infocards"><h4>After-tax ROC</h4> <h1 class="per"> {{ return_items1( selected,'After-tax ROC',map1)}}</h1></div>
+<div class="infocards"><h4>Average effective tax rate</h4> <h1 class="per"> {{ return_items1( selected,'Average effective tax rate',map1)}}</h1></div>
+<div class="infocards"><h4>Unlevered Beta</h4> <h1 class="per"> {{ return_items1( selected,'Unlevered Beta',map1)}}</h1></div>
+<div class="infocards"><h4>Equity (Levered) Beta</h4> <h1 class="per"> {{ return_items1( selected,'Equity (Levered) Beta',map1)}}</h1></div>
+<div class="infocards"><h4>Cost of equity</h4> <h1 class="per"> {{ return_items1( selected,'Cost of equity',map1)}}</h1></div>
+<div class="infocards"><h4>Std deviation in stock prices</h4> <h1 class="per"> {{ return_items1( selected,'Std deviation in stock prices',map1)}}</h1></div>
+<div class="infocards"><h4>Pre-tax cost of debt</h4> <h1 class="per"> {{ return_items1( selected,'Pre-tax cost of debt',map1)}}</h1></div>
+<div class="infocards"><h4>Market Debt/Capital</h4> <h1 class="per"> {{ return_items1( selected,'Market Debt/Capital',map1)}}</h1></div>
+<div class="infocards"><h4>Cost of capital</h4> <h1 class="per"> {{ return_items1( selected,'Cost of capital',map1)}}</h1></div>
+<div class="infocards"><h4>Sales/Capital</h4> <h1 class="per"> {{ return_items1( selected,'Sales/Capital',map1)}}</h1></div>
+<div class="infocards"><h4>EV/Sales</h4> <h1 class="per"> {{ return_items1( selected,'EV/Sales',map1)}}</h1></div>
+<div class="infocards"><h4>EV/EBITDA</h4> <h1 class="per"> {{ return_items1( selected,'EV/EBITDA',map1)}}</h1></div>
+<div class="infocards"><h4>EV/EBIT</h4> <h1 class="per"> {{ return_items1( selected,'EV/EBIT',map1)}}</h1></div>
+<div class="infocards"><h4>Price/Book</h4> <h1 class="per"> {{ return_items1( selected,'Price/Book',map1)}}</h1></div>
+<div class="infocards"><h4>Trailing PE</h4> <h1 class="per"> {{ return_items1( selected,'Trailing PE',map1)}}</h1></div>
+<div class="infocards"><h4>Non-cash WC as % of Revenues</h4> <h1 class="per"> {{ return_items1( selected,'Non-cash WC as % of Revenues',map1)}}</h1></div>
+<div class="infocards"><h4>Cap Ex as % of Revenues</h4> <h1 class="per"> {{ return_items1( selected,'Cap Ex as % of Revenues',map1)}}</h1></div>
+<div class="infocards"><h4>Net Cap Ex as % of Revenues</h4> <h1 class="per"> {{ return_items1( selected,'Net Cap Ex as % of Revenues',map1)}}</h1></div>
+<div class="infocards"><h4>Reinvestment Rate</h4> <h1 class="per"> {{ return_items1( selected,'Reinvestment Rate',map1)}}</h1></div>
+<div class="infocards"><h4>ROE</h4> <h1 class="per"> {{ return_items1( selected,'ROE',map1)}}</h1></div>
+<div class="infocards"><h4>Dividend Payout Ratio</h4> <h1 class="per"> {{ return_items1( selected,'Dividend Payout Ratio',map1)}}</h1></div>
+<div class="infocards"><h4>Equity Reinvestment Rate</h4> <h1 class="per"> {{ return_items1( selected,'Equity Reinvestment Rate',map1)}}</h1></div>
+<div class="infocards"><h4>Pre-tax Operating Margin (Lease & R&D adjusted)</h4> <h1 class="per"> {{ return_items1( selected,'Pre-tax Operating Margin (Lease & R&D adjusted)',map1)}}</h1></div>
       </div>
     </div>
   </div>
