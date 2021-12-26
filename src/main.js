@@ -38,6 +38,7 @@ Vue.use(VueAnalytics, {
 });
 
 import { firestorePlugin } from 'vuefire'
+import "@/assets/styles/main.css";
 
 Vue.use(firestorePlugin)
 

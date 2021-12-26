@@ -81,6 +81,8 @@ export default {
     }
   },
 
+  
+
 
 //  mounted() {
 //     window.addEventListener("keypress", function(enter) {
