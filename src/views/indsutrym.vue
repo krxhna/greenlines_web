@@ -29,7 +29,8 @@
         <b-button
           @click="googlesigin"
           class="btn"
-          style="color: black; background-color: white; border-color: white"
+          style="color: black;  background-color: rgb(0, 245, 94);
+          border-color: rgb(0, 245, 94);"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -86,8 +87,11 @@
     <div class="tit" style="font-weight: 700; font-size: 20px">
       Industry averages
     </div>
-    <div class="s">{{ width1 }}</div>
-    <div class="sel">
+    <a>Select an Industry
+    
+   </a>
+   
+     <div class="sel">
       <h1 v-if="user == null">
         <select v-model="selected" class="select1">
           <option value="0">Advertising</option>

@@ -20,7 +20,7 @@
             /></svg
           >Back</router-link
         >
-        <h1 style="grid-area: header">{{ "$" + ticker.toUpperCase() }}</h1>
+        <h1 style="grid-area: header">{{ "$" + ticker.toUpperCase()}}</h1>
       </div>
       <VueTradingView
         style="grid-area: middle"
@@ -193,20 +193,72 @@
 
 <script>
 import VueTradingView from "vue-trading-view/src/vue-trading-view";
+import firebase from "firebase/compat/app";
+import { db } from "../firebase";
 
 export default {
+   created() {
+    firebase.auth().onAuthStateChanged((user) => {
+      this.user = user;
+    });
+  },
+
+
   components: {
     VueTradingView,
   },
+    firestore() {
+    return {
+      map1: db.doc("industry/data_new").onSnapshot((doc) => {
+        this.map1 = doc.data().roic;
+      }),
+      name: db.doc("users/bob").onSnapshot((doc) => {
+        this.name = doc.data();
+      }),
+    };
+  },
+
+  props:['ticker'],
 
   data() {
     return {
+      user: null,
       selected: "",
       width: screen.height,
     };
   },
 
+
+
   methods: {
+        logout: function () {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          // alert("logout");
+        })
+        .catch((error) => {
+          this.error = error;
+        });
+    },
+
+    googlesigin: function () {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      firebase
+        .auth()
+        .signInWithPopup(provider)
+        .then(() => {
+          // alert("signin");
+          // this.$router.push({
+          //   path: "results/" + this.user.uid,
+          // });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      // This gives you a Google Access Token. You can use it to access the Google API.
+    },
     return_id: function (id) {
       return id;
     },
@@ -258,7 +310,7 @@ export default {
     },
   },
 
-  props: ["ticker"],
+   
 };
 </script>
 
