@@ -171,6 +171,20 @@
 
 }
 
+.cards_mobile {
+    display: grid;
+    font-size: 10px;
+    /* margin-left: ; */
+    background-color: #000000;
+    width: 50vw;
+    height: 50vh;
+    grid-template-columns: repeat(1, 1fr);
+
+
+}
+
+
+
 .infocards {
     border-radius: 10px;
     font-family: Segoe UI;
@@ -186,6 +200,18 @@
     display: flex;
     justify-content: space-between;
     padding: 2%;
+}
+
+.infocards1 {
+    border-radius: 10px;
+    font-family: Segoe UI;
+    align-items: center;
+    text-align: left;
+    margin: 2%;
+}
+
+.cardname{
+    color: green;
 }
 
 .per{
@@ -213,14 +239,42 @@ width: 0.3vw;
 
 
 .select{
-    width: 500px;
-    color: white;
-    background-color: gray;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 2;
+    height: 50px;
+    transition: all 200ms linear;
+    border-radius: 4px;
+    width: 220px;
+    letter-spacing: 1px;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    text-align: center;
+    border: none;
+    background-color: #ffeba7;
+    cursor: pointer;
+    color: #000000;
+    box-shadow: 0 12px 35px 0 rgba(255,235,167,.15);
+    background-color: rgb(20, 207, 20);
+    
 }
 
 .select:hover{
     width: 500px;
     color: black;
-    background-color: rgb(17, 151, 17);
+    
+    background-color:  rgb(24, 209, 24);
 }
 

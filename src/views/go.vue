@@ -1,311 +1,404 @@
 <template>
   <div class="resultls">
-
-    
-  
-       
-         <div class="top">
-           <router-link class="home link"  style="grid-area: header1; text-decoration: none; color: inherit;" to="/">🡰 Back</router-link> 
-         <h1  style="grid-area: header">{{'$'+ticker.toUpperCase()}}</h1>
-         </div>
-       <VueTradingView style="grid-area: middle" class="view"
-       :options="{
-           theme: 'Dark',
-           symbol: ticker,
-           interval: 'D',
-           showdetails: true,
-           range:'60M' ,
-           width: '100%',
-            height: '300px',
-           
-               
-        
+    <div class="allview">
+      <div class="top">
+        <router-link
+          class="home link"
+          style="grid-area: header1; text-decoration: none; color: inherit"
+          to="/"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="21"
+            height="21"
+            fill="currentColor"
+            class="bi bi-arrow-left-short"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
+            /></svg
+          >Back</router-link
+        >
+        <h1 style="grid-area: header">{{ "$" + ticker.toUpperCase() }}</h1>
+      </div>
+      <VueTradingView
+        style="grid-area: middle"
+        class="view"
+        :options="{
+          theme: 'Dark',
+          symbol: ticker,
+          interval: 'D',
+          showdetails: true,
+          range: '60M',
+          width: '100%',
+          height: '300px',
         }"
-          />
+      />
+      <div class="navbar">
+        <h7
+          class="thing1"
+          style="
+            color: black;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+          "
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-house"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
+            />
+          </svg>
+          home
+        </h7>
 
-                  <div style="grid-area: left" class="three">
-            <button class="r_button" @click=annual(ticker)>Annual Statement </button>
-            <button class="r_button" @click=quaterly(ticker)>Quarterly Statement</button>
-            <button class="r_button" @click=ir(ticker)>Investor Relations</button>
-            <button class="r_button" @click=funds(ticker)>Share holders</button>
-
-            <button class="r_button" @click=insider(ticker)>Insider Buying</button>
-            <button class="r_button" @click=twitter(ticker)>Twitter</button>
-            <button class="r_button" @click=seekingalpha(ticker)>Seeking Alpha Analysis</button>
-             <button class="r_button" @click=kofi>Support💚</button>
-            <!-- <button class="r_button" @click=all(ticker)>All</button> -->
-            
-            
+        <div
+          class="icon"
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+          "
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-activity"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"
+            />
+          </svg>
+          <router-link
+            :to="{ path: '/industrym/' + ticker }"
+            replace
+            style="color: black"
+            >Industry</router-link
+          >
         </div>
-        
 
-        <!-- <h1>{{data}}</h1> -->
-      
-        
-           
+        <h1 v-if="user == null">
+          <b-button
+            @click="googlesigin"
+            class="btn"
+            style="
+           display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column; 
+            color: black; background-color: rgb(0, 245, 94); border-color: rgb(0, 245, 94);"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-box-arrow-in-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+              />
+            </svg>
+            Login</b-button
+          >
+        </h1>
 
+        <h1 v-else>
+          <b-button
+            @click="logout"
+            class="btn btn-success"
+            style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+              color: black;
+              background-color: rgb(0, 245, 94);
+              border-color: rgb(0, 245, 94);
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-box-arrow-in-left"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"
+              />
+            </svg>
+            logout</b-button
+          >
+        </h1>
+      </div>
 
-  
-     
-  
+      <div style="grid-area: left" class="three">
+        <button class="r_button" @click="annual(ticker)">
+          Annual Statement
+        </button>
+        <button class="r_button" @click="quaterly(ticker)">
+          Quarterly Statement
+        </button>
+        <button class="r_button" @click="ir(ticker)">Investor Relations</button>
+        <button class="r_button" @click="funds(ticker)">Share holders</button>
+
+        <button class="r_button" @click="insider(ticker)">
+          Insider Buying
+        </button>
+        <button class="r_button" @click="twitter(ticker)">Twitter</button>
+        <button class="r_button" @click="seekingalpha(ticker)">
+          Seeking Alpha Analysis
+        </button>
+        <button class="r_button" @click="kofi">Support💚</button>
+        <!-- <button class="r_button" @click=all(ticker)>All</button> -->
+      </div>
+      <footer>cwswjs</footer>
+
+      <!-- <h1>{{data}}</h1> -->
+    </div>
   </div>
-  
 </template>
 
 <script>
+import VueTradingView from "vue-trading-view/src/vue-trading-view";
 
-import VueTradingView from 'vue-trading-view/src/vue-trading-view';
+export default {
+  components: {
+    VueTradingView,
+  },
 
- 
+  data() {
+    return {
+      selected: "",
+      width: screen.height,
+    };
+  },
 
-export default{
-    components: {
-        VueTradingView
-        
+  methods: {
+    return_id: function (id) {
+      return id;
+    },
+    annual: function (ticker) {
+      window.open(
+        "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" +
+          ticker +
+          "&type=10-K&dateb=&owner=exclude&count=40#contentDiv"
+      );
+    },
+    quaterly: function (ticker) {
+      window.open(
+        "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" +
+          ticker +
+          "&type=10-Q&dateb=&owner=exclude&count=40#contentDiv"
+      );
+    },
+    ir: function (ticker) {
+      window.open(
+        "https://www.google.com/search?q=" + ticker + " ir" + " relations"
+      );
+    },
+    insider: function (ticker) {
+      window.open("http://openinsider.com/search?q=" + ticker + "#results");
+    },
+    twitter: function (ticker) {
+      window.open("https://twitter.com/search?q=$" + ticker + "&f=live");
+    },
+    seekingalpha: function (ticker) {
+      window.open("https://seekingalpha.com/symbol/" + ticker + "/analysis");
+    },
+    funds: function (ticker) {
+      window.open("https://whalewisdom.com/stock/" + ticker + "#frm_filings");
     },
 
-    data(){
-      return {
-data: [
-{
-    id: 2,
-    name: "Orval McLaughlin",
-    email: "okoch@example.org",
-    contacts: "09083692343",
-    created_at: "2018-09-05 15:08:54",
-    updated_at: "2018-09-05 15:08:54",
-    deleted_at: null
-}
-],
-
-        
-        selected: '',
-        
-    }},
-   
-
-    methods: {
-      return_id: function(id){
-          return id;
-        },
-                annual:function(ticker) {
-          window.open('https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=' +
-                  ticker+'&type=10-K&dateb=&owner=exclude&count=40#contentDiv' )},
-        quaterly:function(ticker) {
-          window.open('https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=' +
-                  ticker+'&type=10-Q&dateb=&owner=exclude&count=40#contentDiv' )},
-        ir :function(ticker) {
-          window.open('https://www.google.com/search?q=' +
-                  ticker+' ir'+' relations' )},
-        insider :function(ticker) {
-          window.open('http://openinsider.com/search?q=' +
-                  ticker +'#results' )},
-        twitter :function(ticker) {
-          window.open('https://twitter.com/search?q=$' +
-                  ticker + '&f=live')},   
-        seekingalpha :function(ticker) {
-          window.open('https://seekingalpha.com/symbol/' +
-                  ticker+'/analysis' )}, 
-        funds:function(ticker) {
-          window.open('https://whalewisdom.com/stock/' +
-                  ticker+'#frm_filings' )}, 
-
-         kofi:function() {
-          window.open('https://ko-fi.com/A0A47IK54' )}, 
-        
-        all : function(ticker){
-            window.open('https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=' +
-                  ticker+'&type=10-K&dateb=&owner=exclude&count=40' ),
-            
-                  window.open('https://www.google.com/search?q=' +
-                  ticker+' ir'+' relations' )
-        
-
-        }
-
-
-                  
+    kofi: function () {
+      window.open("https://ko-fi.com/A0A47IK54");
     },
 
-    props: ['ticker'],
-}
+    all: function (ticker) {
+      window.open(
+        "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" +
+          ticker +
+          "&type=10-K&dateb=&owner=exclude&count=40"
+      ),
+        window.open(
+          "https://www.google.com/search?q=" + ticker + " ir" + " relations"
+        );
+    },
+  },
 
-
+  props: ["ticker"],
+};
 </script>
 
-
-
-
 <style scoped>
-
-
-:root{
-    --main-color: #00a000;
-    --second-color: #00ff37;
+:root {
+  --main-color: #00a000;
+  --second-color: #00ff37;
 }
 
-.h2{
+.navbar {
+  overflow: hidden;
+  justify-content: space-evenly;
+
+  background-color: rgb(0, 245, 94);
+  height: 85%;
+  position: fixed; /* Set the navbar to fixed position */
+  bottom: 0;
+  height: 7vh; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+.h2 {
   border-radius: 0px 15px 0px 15px;
-    /* margin-left: 35%; */
-    border: 1px solid rgb(168, 168, 168);
-    margin-top: 2%;
-    text-align: center;
-    /* height: 70px; */
-    /* width: 200px; */
-    /* background-color: rgb(83, 255, 83); */
-    color: rgb(0, 0, 0);
-    font-size: 2.5rem;
-
+  /* margin-left: 35%; */
+  border: 1px solid rgb(168, 168, 168);
+  margin-top: 2%;
+  text-align: center;
+  /* height: 70px; */
+  /* width: 200px; */
+  /* background-color: rgb(83, 255, 83); */
+  color: rgb(0, 0, 0);
+  font-size: 2.5rem;
 }
 
-
-.h1{border-radius: 0px 15px 0px 15px;
-    margin-left: 35%;
-    border: 1px solid rgb(168, 168, 168);
-    margin-top: 2%;
-    text-align: center;
-    height: 70px;
-    width: 200px;
-    /* background-color: rgb(83, 255, 83); */
-    color: black;
-    font-size: 2.5rem;}
-
-
-
-.homelink{ 
-    margin-top: 100px;
-    padding: 30px;
-    color: black;
+.h1 {
+  border-radius: 0px 15px 0px 15px;
+  margin-left: 35%;
+  border: 1px solid rgb(168, 168, 168);
+  margin-top: 2%;
+  text-align: center;
+  height: 70px;
+  width: 200px;
+  /* background-color: rgb(83, 255, 83); */
+  color: black;
+  font-size: 2.5rem;
 }
 
-.box1{
-    /* background-color: #00a000; */
-    /* color: white; */
-    padding: 1%;
-    margin-top: 10%;
-    margin-bottom: 1%;
-    border-radius: 1%;
-    text-align: center;
+.homelink {
+  margin-top: 100px;
+  padding: 30px;
+  color: black;
 }
 
-.grid{
-    display: grid;
-    grid-template-areas: 
-        "header1 header header2"
-        "left   middle right"
-        "footer footer footer";
-
-    grid-template-columns: 1fr 2.5fr 1fr;
-    /* grid-template-rows: 1fr 1fr 1fr; */
-    
+.box1 {
+  /* background-color: #00a000; */
+  /* color: white; */
+  padding: 1%;
+  margin-top: 10%;
+  margin-bottom: 1%;
+  border-radius: 1%;
+  text-align: center;
 }
 
-.view{
-    /* box-shadow: 0 4px 14px 0 rgb(0 255 55 / 19%); */
+.grid {
+  display: grid;
+  grid-template-areas:
+    "header1 header header2"
+    "left   middle right"
+    "footer footer footer";
 
-   
-    margin-top: 1.3%;
-
-    height: 300px;
-    /* width: 100%; */
-    border: 0.1px solid black;
-    
-    
+  grid-template-columns: 1fr 2.5fr 1fr;
+  /* grid-template-rows: 1fr 1fr 1fr; */
 }
 
+.view {
+  /* box-shadow: 0 4px 14px 0 rgb(0 255 55 / 19%); */
 
+  margin-top: 1.3%;
 
-.three{
-    margin: 10px;
-    background-color: rgb(255, 255, 255);
-    display: grid;
-    height: 400px;
-/* 
-    height: 30%;
-    width: 50%; */
-    /* color: blue; */
-
+  height: 300px;
+  /* width: 100%; */
+  border: 0.1px solid black;
 }
 
+.three {
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  height: 400px;
+  /* 
+      height: 30%;
+      width: 50%; */
+  /* color: blue; */
+}
 
 .r_button {
+  /* font-size: 14px;160/48 */
+  line-height: 1;
+  border-radius: 0px 5px 0px 5px;
+  transition-property: background-color, border-color, color, box-shadow, filter;
+  transition-duration: 0.3s;
+  border: 1px solid transparent;
+  letter-spacing: 2px;
+  min-width: 100%;
+  /* text-transform: uppercase; */
+  white-space: normal;
+  font-weight: 700;
+  text-align: center;
+  padding: 17px 48px;
+  color: black;
+  border: 1px solid black;
+  background-color: rgb(255, 255, 255);
+  height: 85%;
 
-                    /* font-size: 14px;160/48 */
-                    line-height: 1;
-                    border-radius: 0px 5px 0px 5px;
-                    transition-property: background-color,border-color,color,box-shadow,filter;
-                    transition-duration: .3s;
-                    border: 1px solid transparent;
-                    letter-spacing: 2px;
-                    min-width: 100%;
-                    /* text-transform: uppercase; */
-                    white-space: normal;
-                    font-weight: 700;
-                    text-align: center;
-                    padding: 17px 48px;
-                    color: black;
-                    border: 1px solid black;
-                    background-color:rgb(255, 255, 255);
-                    height: 85%;
-                    
-                /* 
-                 */
+  /* 
+                   */
 }
-
 
 .r_button:hover {
+  /* font-size: 14px; */
+  line-height: 1;
+  border-radius: 5px 0px 5px 0px;
+  transition-property: background-color, border-color, color, box-shadow, filter;
+  transition-duration: 0.3s;
+  border: 1px solid transparent;
+  letter-spacing: 2px;
+  min-width: 100%;
+  /* text-transform: uppercase; */
+  white-space: normal;
+  font-weight: 700;
+  text-align: center;
+  padding: 17px 48px;
+  color: black;
 
-                    /* font-size: 14px; */
-                    line-height: 1;
-                    border-radius: 5px 0px 5px 0px;
-                    transition-property: background-color,border-color,color,box-shadow,filter;
-                    transition-duration: .3s;
-                    border: 1px solid transparent;
-                    letter-spacing: 2px;
-                    min-width: 100%;
-                    /* text-transform: uppercase; */
-                    white-space: normal;
-                    font-weight: 700;
-                    text-align: center;
-                    padding: 17px 48px;
-                    color: black;
-                    
-                    background-color:rgb(83, 255, 83);
-                    height: 85%;
-                    
-                /* 
-                 */
+  background-color: rgb(83, 255, 83);
+  height: 85%;
+
+  /* 
+                   */
 }
-
-@keyframes slideIn {
-  0% {
-    transform: translateX(500px) scale(.2);
-  }
-  100% {
-    transform: translateX(0px) scale(1);
-  }
-}
-
-@keyframes slideUp {
-  0% {
-    transform: translateY(300px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-@keyframes expand {
-  0% {
-    transform: translateX(1400px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
-}
-
-
-
 </style>
 
 // rgb(83, 255, 83)

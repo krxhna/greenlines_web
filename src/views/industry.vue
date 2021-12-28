@@ -49,8 +49,19 @@
           <!-- {{return_items1(selected,"Unlevered Beta",map1)}} -->
         </div>
         <h1 v-if="user == null">
-          <select v-model="selected">
-            <option disabled value="">login to get datas</option>
+          <select v-model="selected" class="select" style="width:30vw" >
+           <option value="0">Advertising</option>
+          <option value="1">Aerospace/Defense</option>
+          <option value="2">Air Transport</option>
+          <option value="3">Apparel</option>
+          <option value="4">Auto & Truck</option>
+          <option value="5">Auto Parts</option>
+          <option value="6">Bank (Money Center)</option>
+          <option value="7">Banks (Regional)</option>
+          <option value="8">Beverage (Alcoholic)</option>
+          <option value="9">Beverage (Soft)</option>
+          <option value="10">Broadcasting</option>
+          <option disabled value="" style="color:white;">login to view 90+ other industries</option>
           </select>
         </h1>
         <h1 v-else>
@@ -201,8 +212,8 @@ export default {
       map1: db.doc("industry/data_new").onSnapshot((doc) => {
         this.map1 = doc.data().roic;
       }),
-      name: db.doc("users/" + this.ticker).onSnapshot((doc) => {
-        this.name = doc.data().name;
+      name: db.doc("users/bob").onSnapshot((doc) => {
+        this.name = doc.data();
       }),
     };
   },
@@ -265,6 +276,7 @@ export default {
     });
   },
 };
+
 
 
 </script>
