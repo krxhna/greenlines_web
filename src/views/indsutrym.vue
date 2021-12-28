@@ -90,7 +90,7 @@
     <a>Select an Industry
     
    </a>
-   
+
      <div class="sel">
       <h1 v-if="user == null">
         <select v-model="selected" class="select1">
@@ -237,9 +237,14 @@
 <div class="infocards1"><h4>Pre-tax Operating Margin (Lease & R&D adjusted)</h4> <h1 class="per1"> {{ return_items1( selected,'Pre-tax Operating Margin (Lease & R&D adjusted)',map1)}}</h1></div>
      
      
-     
+    
     </div>
+    <div class="footer">
 
+
+       <a href="https://twitter.com/KrishUSD" target="_blank">📧Contact</a>
+        <a href="https://forms.clickup.com/f/13jcut-124/CWBEI7U7144EZ8WNHP" target="_blank">🐞Report a bug</a>
+    </div>
 
  
     
@@ -361,6 +366,7 @@ export default {
   color: rgb(0, 0, 0);
 }
 
+
 .select1 {
   position: relative;
   font-family: "Roboto", sans-serif;
@@ -392,6 +398,13 @@ export default {
   box-shadow: 0 12px 35px 0 rgba(255, 235, 167, 0.15);
   background-color: rgb(0, 245, 94);
   width: screenwidth;
+}
+
+.footer{
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  justify-content: space-around;
 }
 
 /* 
