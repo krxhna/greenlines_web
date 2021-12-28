@@ -11,6 +11,22 @@
 }
 
 
+.footernotes{
+    color:wheat;
+    font-size: 11px;
+    margin-top: auto;
+    padding: 20px;
+    
+}
+
+.footernotes:link{
+    color:rgb(255, 255, 255);
+}
+
+
+
+
+
 .navbar {
 
 

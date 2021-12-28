@@ -93,7 +93,7 @@
             :to="{ path: '/industrym/' + ticker }"
             replace
             style="color: black" @click="clicked_industry"
-            >Industry</router-link
+            >Industry Analysis</router-link
           >
         </div>
 
@@ -147,7 +147,9 @@
             </svg>
             logout</b-button
           >
+          
         </h1>
+        
       </div>
 
       <div style="grid-area: left" class="three">
@@ -266,6 +268,7 @@ export default {
           ticker +
           "&type=10-K&dateb=&owner=exclude&count=40#contentDiv"
       );
+      this.$gtag.event('clicked annual', { method: 'Google' })
     },
     quaterly: function (ticker) {
       window.open(
@@ -273,6 +276,7 @@ export default {
           ticker +
           "&type=10-Q&dateb=&owner=exclude&count=40#contentDiv"
       );
+      this.$gtag.event('clicked quater', { method: 'Google' })
     },
     ir: function (ticker) {
       window.open(
