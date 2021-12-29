@@ -123,33 +123,43 @@ export default {
           ticker +
           "&type=10-K&dateb=&owner=exclude&count=40#contentDiv"
       );
+      this.$gtag.event('clicked annaul desktop', { method: 'Google' });
     },
     quaterly: function (ticker) {
+
       window.open(
         "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" +
           ticker +
           "&type=10-Q&dateb=&owner=exclude&count=40#contentDiv"
       );
+      this.$gtag.event('clicked quaterly desktop', { method: 'Google' });
+      
     },
     ir: function (ticker) {
       window.open(
         "https://www.google.com/search?q=" + ticker + " ir" + " relations"
       );
+      this.$gtag.event('clicked ir desktop', { method: 'Google' });
     },
     insider: function (ticker) {
       window.open("http://openinsider.com/search?q=" + ticker + "#results");
+      this.$gtag.event('clicked insider desktop', { method: 'Google' });
     },
     twitter: function (ticker) {
       window.open("https://twitter.com/search?q=$" + ticker + "&f=live");
+      this.$gtag.event('clicked twitter desktop', { method: 'Google' });
     },
     seekingalpha: function (ticker) {
       window.open("https://seekingalpha.com/symbol/" + ticker + "/analysis");
+      this.$gtag.event('clicked seekingalpha desktop', { method: 'Google' });
     },
     funds: function (ticker) {
       window.open("https://whalewisdom.com/stock/" + ticker + "#frm_filings");
+      this.$gtag.event('clicked funds desktop', { method: 'Google' });
     },
     kofi: function () {
       window.open("https://ko-fi.com/A0A47IK54");
+      this.$gtag.event('clicked kofi desktop', { method: 'Google' });
     },
 
     all: function (ticker) {

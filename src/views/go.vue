@@ -67,9 +67,12 @@
           home
         </h7>
 
-        <div
+        <button
+        @click="clicked_industry('indus')"
+
           class="icon"
           style="
+         
             display: flex;
             align-items: center;
             justify-content: center;
@@ -92,10 +95,10 @@
           <router-link
             :to="{ path: '/industrym/' + ticker }"
             replace
-            style="color: black" @click="clicked_industry"
+            style="color: black" 
             >Industry Analysis</router-link
           >
-        </div>
+        </button>
 
         <h1 v-if="user == null">
           <b-button
@@ -219,9 +222,9 @@ export default {
 
 
   methods: {
-    clicked_industry: function(){
-      alert("meow");
-      this.$gtag.event('clicked industry', { method: 'Google' })
+    clicked_industry: function(yes){
+      console.log(yes);
+      this.$gtag.event('clicked industry', { method: 'Google' });
     },
      clicked_login() {
       this.$gtag.event('clicked login in home', { method: 'Google' })
@@ -268,7 +271,7 @@ export default {
           ticker +
           "&type=10-K&dateb=&owner=exclude&count=40#contentDiv"
       );
-      this.$gtag.event('clicked annual', { method: 'Google' })
+      this.$gtag.event('clicked annual', { method: 'Google' });
     },
     quaterly: function (ticker) {
       window.open(
@@ -276,27 +279,33 @@ export default {
           ticker +
           "&type=10-Q&dateb=&owner=exclude&count=40#contentDiv"
       );
-      this.$gtag.event('clicked quater', { method: 'Google' })
+      this.$gtag.event('clicked quater', { method: 'Google' });
     },
     ir: function (ticker) {
       window.open(
         "https://www.google.com/search?q=" + ticker + " ir" + " relations"
       );
+       this.$gtag.event('clicked ir', { method: 'Google' });
     },
     insider: function (ticker) {
       window.open("http://openinsider.com/search?q=" + ticker + "#results");
+ this.$gtag.event('clicked insider', { method: 'Google' });
     },
     twitter: function (ticker) {
       window.open("https://twitter.com/search?q=$" + ticker + "&f=live");
+       this.$gtag.event('clicked twitter', { method: 'Google' });
     },
     seekingalpha: function (ticker) {
+       this.$gtag.event('clicked seeking aplha', { method: 'Google' })
       window.open("https://seekingalpha.com/symbol/" + ticker + "/analysis");
     },
     funds: function (ticker) {
+       this.$gtag.event('clicked funds', { method: 'Google' })
       window.open("https://whalewisdom.com/stock/" + ticker + "#frm_filings");
     },
 
     kofi: function () {
+       this.$gtag.event('clicked kofi', { method: 'Google' });
       window.open("https://ko-fi.com/A0A47IK54");
     },
 
