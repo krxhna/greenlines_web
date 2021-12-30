@@ -9,6 +9,7 @@ import go from '../views/go.vue'
 import book from '../views/book.vue'
 import dashboard from '../views/dashboard.vue'
 import industry from '../views/industry.vue'
+import landing from '../views/landing.vue'
 
 // import { StripeCheckout } from '@vue-stripe/vue-stripe'
 
@@ -19,6 +20,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/landing',
+    name: 'landing',
+    component: landing
   },
   {
     path: '/results/:ticker',
