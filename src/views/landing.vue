@@ -76,7 +76,7 @@
               <span class="rating-star"> </span>
               <span class="rating-star"> </span>
               <a style="color: gray; margin-left: 3px"
-                >Trusted by 1,600+ investors</a
+                >Trusted by 1,700+ investors</a
               >
             </a>
           </div>
@@ -85,7 +85,7 @@
     </div>
 
     <div class="joinother">
-      join 1.6k+ highly productive investors from 54 countries
+      join 1.7k+ highly productive investors from 54 countries
       <!-- <a>top contries </a> -->
     </div>
 
@@ -99,7 +99,7 @@
             click, sec fliings, quaterly statements,insider buying twitter
             sentiment and much more</a
           >
-          <div class="empty" style="color: white">.</div>
+          <div class="empty" style="color:white;">.</div>
           <button
             @click="$router.push('signup')"
             type="submit"
@@ -141,7 +141,7 @@
             select from more than 90+ industry analysed just for you, get industry averages of a industry, all the data point you ever want for worldclass valuation presented to you
             </a
           >
-          <div class="empty">.</div>
+          <div class="empty"  style="color:white;">.</div>
           <button
             @click="$router.push('signup')"
             type="submit"
@@ -181,7 +181,7 @@
           <a style="font-weight: 500"
             >get vital infomration as average groeth reate of the industry,effective tax rate, return on investment, return on capital,capital expenditures, working capital ratios and much more</a
           >
-          <div class="empty">.</div>
+          <div class="empty"  style="color:white;">.</div>
           <button
             @click="$router.push('signup')"
             type="submit"
