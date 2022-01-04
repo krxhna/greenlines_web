@@ -14,8 +14,8 @@
           <div class="rectangle">
            
           </div>
-          <h5 v-if="user == null" style="color:green; text-transform: capitalize;">login/signup for free to get acess</h5>
-          <h5 v-else style="color:green; text-transform: capitalize;">{{user.displayName}}'s GL terminal</h5>
+          <h5 v-if="user.name == null" style="color:green; text-transform: capitalize;">{{username}} </h5>
+          <h5 v-else style="color:green; text-transform: capitalize;">{{user.email}}'s GL terminal</h5>
           <h4 class="current">Dashboard</h4>
           <router-link
             :to="{ path: '/industry/' + ticker }"
@@ -25,14 +25,14 @@
           >
           <h7 class="thing">News( coming soon)</h7>
           <h7 class="thing">Macroview( coming soon)</h7>
-
+<!-- 
           <h1 v-if="user == null">
-            <b-button @click="googlesigin" class="btn btn-success" style="color: black"
+            <b-button  class="btn btn-success" style="color: black"
               >Login/signinup</b-button
             >
-          </h1>
+          </h1> -->
 
-          <h1 v-else>
+          <h1>
             <b-button
               @click="logout"
               class="btn btn-success"
@@ -98,6 +98,7 @@
 <script>
 import firebase from "firebase/compat/app";
 import VueTradingView from "vue-trading-view/src/vue-trading-view";
+// import { db } from "../firebase";
 
 export default {
   components: {
@@ -106,6 +107,7 @@ export default {
   props: ["ticker"],
   data() {
     return {
+      username: "",
       user: null,
       error: null,
       awesome: "ds",
@@ -182,6 +184,7 @@ export default {
         .auth()
         .signOut()
         .then(() => {
+          this.$router.push("/signin");
           // alert("logout");
         })
         .catch((error) => {
@@ -206,6 +209,11 @@ export default {
       // This gives you a Google Access Token. You can use it to access the Google API.
     },
   },
+
+  firestore: {
+    username: 'fda'
+      },
+  
 
   created() {
     firebase.auth().onAuthStateChanged((user) => {

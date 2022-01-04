@@ -10,6 +10,13 @@ import book from '../views/book.vue'
 import dashboard from '../views/dashboard.vue'
 import industry from '../views/industry.vue'
 import landing from '../views/landing.vue'
+import signup from '../views/signup.vue'
+import signin from '../views/signin.vue'
+import firebase from '../firebase.js'
+
+
+
+
 
 // import { StripeCheckout } from '@vue-stripe/vue-stripe'
 
@@ -19,7 +26,13 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+
+    meta: {
+      requiresAuth: true
+    }
+    
+
   },
   {
     path: '/landing',
@@ -27,10 +40,21 @@ const routes = [
     component: landing
   },
   {
+    path: '/signin',
+    name: 'signin',
+    component: signin
+  },
+{
+  path: '/signup',
+  name: 'signup',
+  component: signup
+},
+  {
     path: '/results/:ticker',
     name: 'results',
     component: results,
     props: true,
+    
   
   },
   {
@@ -74,6 +98,9 @@ const routes = [
     path: '/dashboard/:ticker',
     name: 'dashboard',
     component: dashboard,
+    meta: {
+      requiresAuth: true
+    },
   
     props: true,
   
@@ -101,6 +128,19 @@ const router = new VueRouter({
   mode: 'history',
   routes
 })
+
+router.beforeEach(async (to, from, next) => {
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  if (requiresAuth && !await firebase.getCurrentUser()){
+    next('landing');
+  }else{
+    next(
+      
+    );
+  }
+})
+
+
 
 
 export default router

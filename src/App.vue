@@ -14,6 +14,7 @@
 
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 #app {
   font-family: poppins;
   -webkit-font-smoothing: antialiased;

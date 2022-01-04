@@ -1,0 +1,112 @@
+.login-page-new__main-form {
+    width: 480px;
+    background: #fff;
+    box-shadow: 0 25px 75px rgb(16 30 54 / 25%);
+    border-radius: 6px;
+    padding: 30px 60px 26px;
+    /* margin-top: -75px; */
+    /* position: relative; */
+    /* overflow: hidden; */
+  }
+  
+  .mb-3{
+    font-family: poppins;  
+    color: rgb(0, 0, 0);
+  
+  }
+  
+  .grid {
+    text-align: start;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .btn_login{
+      border-radius: 2px;
+      width: 100%;
+     padding: 15px;
+      background-color: #ffffff;
+  }
+    
+  .btn_login1{
+    
+  
+  
+      box-shadow: 0 25px 75px rgb(16 30 54 / 10%);
+  
+      border-radius: 2px;
+      width: 100%;
+     padding: 15px;
+      background-color: #ffffff;
+  }
+  
+  .vg{
+      
+       display: grid;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+  }
+  
+  
+  
+  .nav12{
+      background-color: black;
+      
+      padding: 1%;
+      display: flex;
+      justify-content: space-between;
+      background-color: rgb(255, 255, 255);
+  }
+  
+
+
+.google-btn {
+    width: 100%;
+  display: inline-block;
+  background: #ffffff;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 2px;
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-color: #dd4b39;
+  margin-top: 10px;
+}
+
+
+.nsm{
+    direction: ltr;
+   
+    color: #3c4043;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    text-align: center;
+    white-space: nowrap;
+    flex-grow: 1;
+    font-family: 'Google Sans',arial,sans-serif;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
+.LgbsSe-Bz112c {
+    height: 20px;
+    width: 20px;
+   
+}
+
+.tit{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}

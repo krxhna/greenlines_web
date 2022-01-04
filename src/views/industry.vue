@@ -13,7 +13,7 @@
           >
           <div class="rectangle"></div>
            <h5 v-if="user == null" style="color:green; text-transform: capitalize;">login/signup for free to get acess</h5>
-          <h5 v-else style="color:green; text-transform: capitalize;">{{user.displayName}}'s GL terminal</h5>
+          <h5 v-else style="color:green; text-transform: capitalize;"></h5>
           
           <router-link
             :to="{ path: '/dashboard/' + ticker }"

@@ -1,0 +1,260 @@
+.slogan {
+    display: flex;
+    flex-direction: column;
+    padding: 0%;
+    color: rgb(0, 0, 0);
+    font-family: poppins;
+    font-weight: 700;
+    font-size: 10vh;
+    text-align: left;
+    
+  }
+
+  .form-control1{
+    box-shadow: 0px 0px 2px 2px rgb(196, 196, 196);
+      
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    height: 50px;
+    line-height: normal;
+    color: #282828;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    user-select: auto;
+    font-size: 16px;
+    padding: 0 6px;
+    padding-left: 12px;
+    
+    
+    
+  }
+
+  .form-control1:focus{
+
+
+    border: none;
+
+}
+
+
+
+
+
+  
+  .middle {
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: rgb(255, 255, 255);
+    
+    border: black;
+    padding: 0% 10% 0% 10%;
+    color: aqua;
+  
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .fd {
+    padding-left: 10%;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .btn-grad {
+    background-image: linear-gradient(
+      to right,
+      #17d310 0%,
+      #38ea41 51%,
+      #00a724 100%
+    );
+  }
+  .btn-grad {
+    border-radius: 0 10px 0 10px ;
+    /* margin: 10px; */
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px rgb(21, 255, 0);
+    border-radius: 10px;
+    display: block;
+  }
+  
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .quickline {
+
+    /* display:grid; */
+    /* grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); */
+
+    
+    
+    box-shadow: 1px 10px 10px rgb(196, 196, 196);
+    display: flex;
+    flex-direction: row;
+
+    margin: 3% 10% 0 10%;
+
+    height: 74vh;
+    width: 80vw;
+    background-color: rgb(255, 255, 255);
+    
+  }
+  .quickline1 {
+
+    /* display:grid; */
+    /* grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); */
+
+    
+    
+    box-shadow: 1px 10px 10px rgb(196, 196, 196);
+    display: flex;
+    flex-direction: row;
+
+    margin: 3% 10% 0 10%;
+
+    height: 74vh;
+    width: 80vw;
+    background-color: rgb(255, 255, 255);
+    
+  }
+
+  
+
+  .infotext{
+     
+    
+      font-weight: 400;
+      font-family: poppins;
+      color: black;
+      font-size: 5vw;
+
+  }
+
+  .videobox{
+    /* overflow: hidden; */
+    border-radius: 10px;
+      margin: 1%;
+      /* height: 80%; */
+      width: 100vw;
+      height: auto;
+      
+      background-color: rgb(255, 255, 255);
+  }
+
+.textthing{
+  text-align: left;
+    padding: 3%;
+}
+
+.rating-star {
+  width: 15px;
+  height: 15px;
+  background: url(https://clickup.com/landing/images/icons/rating-star.svg) center/contain no-repeat;
+  display: inline-block;
+}
+
+
+.tesit{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 10%;
+}
+
+.quotes{
+  color: gray;
+  font-style: italic;
+  font-size: 2rem;
+  padding: 1%;
+}
+
+.names{
+  font-size: 3vh;
+}
+
+/* .forminputgroup{
+  
+} */
+
+.joinother{
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: poppins;
+  color: gray;
+
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+}
+
+.gap{ 
+  height: 2px;
+  width: 5px;
+}
+
+.nav12{
+    background-color: black;
+    
+    padding: 1%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+}
+
+
+.imgbox{
+  width: 95%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+
+@media screen and (max-width:728px) {
+
+
+  .infotext{
+    color: rgb(0, 0, 0);
+  }
+
+  .quickline{
+    /* padding-bottom: 30%; */
+    margin-bottom: 45%;
+    flex-direction: column;
+  }
+
+  .quickline1{
+    /* padding-bottom: 30%; */
+    
+    flex-direction: column;
+  }
+
+  .videobox{
+    
+    width: 80vw;
+
+  }
+
+  .imgbox{
+    overflow: visible;
+    width: 80vw;
+    height: 100px;
+  }
+
+  .quotes{
+    font-size: 1.5rem;
+  }
+
+
+
+  
+  
+}

@@ -117,7 +117,7 @@ export default {
   
   padding: 15px;
   border-radius: 10px 0px 10px 0px;
-  border: none;
+  border: 1px solid rgb(0, 0, 0);
   box-shadow: 0px 0px 10px 0px rgba(143, 143, 143, 0.2);
 
   font-size: 20px;
