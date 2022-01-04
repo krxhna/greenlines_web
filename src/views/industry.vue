@@ -39,6 +39,12 @@
               >logout</b-button
             >
           </h1>
+          <div class="footernotes" >
+
+
+       <a  style="color:white;" href="https://mail.google.com/mail/?view=cm&fs=1&to=krishhkrishhk@gmail.com" target="_blank">📧Contact</a>
+        <a style="color:white;" href="https://forms.clickup.com/f/13jcut-124/CWBEI7U7144EZ8WNHP" target="_blank">🐞Report a bug</a>
+    </div>
         </li>
       </ul>
     </div>

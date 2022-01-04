@@ -172,8 +172,22 @@ export default {
       //write data to firebase
       db.collection("users").doc(this.email).set({
         name: this.fullname,
+        uid: String(this.user.uid),
         
         email:this.email }).then(function() {
+          console.log("Document successfully written!");
+        })
+
+    },
+
+    writedata1: function(){
+      //write data to firebase
+      db.collection("users").doc(this.user.email).set({
+        name: String(this.user.fullname),
+        uid: String(this.user.uid),
+        
+        
+        email:String(this.user.email) }).then(function() {
           console.log("Document successfully written!");
         })
 
@@ -189,10 +203,12 @@ export default {
         .auth()
         .signInWithPopup(provider)
         .then(() => {
+          
           // alert("signin");
           this.$router.push({
             path: "/",
           });
+          this.writedata1();
         })
         .catch((err) => {
           console.log(err);
