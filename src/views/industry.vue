@@ -31,13 +31,22 @@
             >
           </h1>
 
-          <h1 v-else>
-            <b-button
-              @click="logout"
-              class="btn btn-success"
-              style="color: black"
-              >logout</b-button
-            >
+           <h1>
+            <a style="color: #0f0f0f">,</a>
+            <div class="fg" style="display: flex; flex-direction: column">
+              <b-button
+                @click="openstripe()"
+                class="btn btn-success"
+                style="color: black; background-color: #38ea41"
+                >GO pro <i class="fas fa-crown"></i
+              ></b-button>
+              <b-button
+                @click="logout"
+                class="btn btn-success"
+                style="color: gray; background-color: #0f0f0f; border: none"
+                >logout</b-button
+              >
+            </div>
           </h1>
           <div class="footernotes" >
 
@@ -52,6 +61,7 @@
       <div class="area">
         <div class="thentext" style="color:green">
           Select industry
+          
           <!-- {{return_items1(selected,"Unlevered Beta",map1)}} -->
         </div>
         <h1 v-if="user == null">
@@ -67,7 +77,21 @@
           <option value="8">Beverage (Alcoholic)</option>
           <option value="9">Beverage (Soft)</option>
           <option value="10">Broadcasting</option>
-          <option disabled value="" style="color:white;">login to view 90+ other industries</option>
+          <option class='pro' value="10">Broadcasting </option>
+          <option class="pro" disabled  value="34">Food Processing</option>
+<option class="pro" value="35">Food Wholesalers</option>
+<option class="pro" value="36">Furn/Home Furnishings</option>
+<option class="pro" value="37">Green & Renewable Energy</option>
+<option class="pro" value="38">Healthcare Products</option>
+<option class="pro" disabled  value="39">Healthcare Support Services</option>
+<option class="pro" disabled  value="40">Heathcare Information and Technology</option>
+<option class="pro" disabled  value="41">Homebuilding</option>
+<option class="pro" disabled  value="42">Hospitals/Healthcare Facilities</option>
+<option class="pro" disabled  value="43">Hotel/Gaming</option>
+          
+       
+         
+          
           </select>
         </h1>
         <h1 v-else>
@@ -236,7 +260,18 @@ export default {
     };
   },
 
+
   methods: {
+
+     openstripe: function(){
+window.open("https://buy.stripe.com/aEUfZkel41YJ6FW5kk")
+    },
+
+
+
+
+
+
     return_items: function (sel, name) {
       console.log(sel);
       return this.items[sel][name];

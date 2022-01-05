@@ -4,18 +4,19 @@
     <div class="navbar">
       <ul>
         <li class="navbarnav">
-          <router-link
-            :to="{ path: '/'}"
-            class="thing"
-            replace
-            >
+          <router-link :to="{ path: '/' }" class="thing" replace>
             ←Back</router-link
           >
-          <div class="rectangle">
-           
-          </div>
-          <h5 v-if="user.name == null" style="color:green; text-transform: capitalize;">{{username}} </h5>
-          <h5 v-else style="color:green; text-transform: capitalize;">{{user.email}}'s GL terminal</h5>
+          <div class="rectangle"></div>
+          <h5
+            v-if="user.name == null"
+            style="color: green; text-transform: capitalize"
+          >
+            {{ username }}
+          </h5>
+          <h5 v-else style="color: green; text-transform: capitalize">
+            {{ user.email }}'s GL terminal
+          </h5>
           <h4 class="current">Dashboard</h4>
           <router-link
             :to="{ path: '/industry/' + ticker }"
@@ -25,7 +26,7 @@
           >
           <h7 class="thing">News( coming soon)</h7>
           <h7 class="thing">Macroview( coming soon)</h7>
-<!-- 
+          <!-- 
           <h1 v-if="user == null">
             <b-button  class="btn btn-success" style="color: black"
               >Login/signinup</b-button
@@ -33,25 +34,42 @@
           </h1> -->
 
           <h1>
-            <b-button
-              @click="logout"
-              class="btn btn-success"
-              style="color: black"
-              >logout</b-button
-            >
+            <a style="color: #0f0f0f">,</a>
+            <div class="fg" style="display: flex; flex-direction: column">
+              <b-button
+                @click="openstripe()"
+                class="btn btn-success"
+                style="color: black; background-color: #38ea41"
+                >GO pro <i class="fas fa-crown"></i
+              ></b-button>
+              <b-button
+                @click="logout"
+                class="btn btn-success"
+                style="color: gray; background-color: #0f0f0f; border: none"
+                >logout</b-button
+              >
+            </div>
           </h1>
-          <div class="footernotes" >
-
-
-       <a  style="color:white;" href="https://mail.google.com/mail/?view=cm&fs=1&to=krishhkrishhk@gmail.com" target="_blank">📧Contact</a>
-        <a style="color:white;" href="https://forms.clickup.com/f/13jcut-124/CWBEI7U7144EZ8WNHP" target="_blank">🐞Report a bug</a>
-    </div>
+          <div class="footernotes">
+            <a
+              style="color: white"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=krishhkrishhk@gmail.com"
+              target="_blank"
+              >📧Contact</a
+            >
+            <a
+              style="color: white"
+              href="https://forms.clickup.com/f/13jcut-124/CWBEI7U7144EZ8WNHP"
+              target="_blank"
+              >🐞Report a bug</a
+            >
+          </div>
         </li>
       </ul>
     </div>
     <div class="options">
-      <h1 style="color:white; margin-top:4vh;">${{ ticker }}</h1>
-      <div style="display: grid; margin-top:5vh" class="three">
+      <h1 style="color: white; margin-top: 4vh">${{ ticker }}</h1>
+      <div style="display: grid; margin-top: 5vh" class="three">
         <button class="r_button" @click="annual(ticker)">
           Annual Statement
         </button>
@@ -116,6 +134,13 @@ export default {
   },
 
   methods: {
+
+    openstripe: function(){
+window.open("https://buy.stripe.com/aEUfZkel41YJ6FW5kk")
+    },
+
+
+
     return_id: function (id) {
       return id;
     },
@@ -125,43 +150,41 @@ export default {
           ticker +
           "&type=10-K&dateb=&owner=exclude&count=40#contentDiv"
       );
-      this.$gtag.event('clicked annaul desktop', { method: 'Google' });
+      this.$gtag.event("clicked annaul desktop", { method: "Google" });
     },
     quaterly: function (ticker) {
-
       window.open(
         "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" +
           ticker +
           "&type=10-Q&dateb=&owner=exclude&count=40#contentDiv"
       );
-      this.$gtag.event('clicked quaterly desktop', { method: 'Google' });
-      
+      this.$gtag.event("clicked quaterly desktop", { method: "Google" });
     },
     ir: function (ticker) {
       window.open(
         "https://www.google.com/search?q=" + ticker + " ir" + " relations"
       );
-      this.$gtag.event('clicked ir desktop', { method: 'Google' });
+      this.$gtag.event("clicked ir desktop", { method: "Google" });
     },
     insider: function (ticker) {
       window.open("http://openinsider.com/search?q=" + ticker + "#results");
-      this.$gtag.event('clicked insider desktop', { method: 'Google' });
+      this.$gtag.event("clicked insider desktop", { method: "Google" });
     },
     twitter: function (ticker) {
       window.open("https://twitter.com/search?q=$" + ticker + "&f=live");
-      this.$gtag.event('clicked twitter desktop', { method: 'Google' });
+      this.$gtag.event("clicked twitter desktop", { method: "Google" });
     },
     seekingalpha: function (ticker) {
       window.open("https://seekingalpha.com/symbol/" + ticker + "/analysis");
-      this.$gtag.event('clicked seekingalpha desktop', { method: 'Google' });
+      this.$gtag.event("clicked seekingalpha desktop", { method: "Google" });
     },
     funds: function (ticker) {
       window.open("https://whalewisdom.com/stock/" + ticker + "#frm_filings");
-      this.$gtag.event('clicked funds desktop', { method: 'Google' });
+      this.$gtag.event("clicked funds desktop", { method: "Google" });
     },
     kofi: function () {
       window.open("https://ko-fi.com/A0A47IK54");
-      this.$gtag.event('clicked kofi desktop', { method: 'Google' });
+      this.$gtag.event("clicked kofi desktop", { method: "Google" });
     },
 
     all: function (ticker) {
@@ -211,9 +234,8 @@ export default {
   },
 
   firestore: {
-    username: 'fda'
-      },
-  
+    username: "fda",
+  },
 
   created() {
     firebase.auth().onAuthStateChanged((user) => {
