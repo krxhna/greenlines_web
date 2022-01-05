@@ -38,7 +38,7 @@
         </div>
         
         <div class="vid">
-          <iframe class="player" width="672" height="378" src="https://www.youtube.com/embed/8X1e4PnLyR8?rel=0&amp;autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe class="player" width="672" height="378" src="https://www.youtube.com/embed/8X1e4PnLyR8?rel=0&amp;autoplay=1&mute=1&controls=0&loop=1&modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 </div>
         <form
