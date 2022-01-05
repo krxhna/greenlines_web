@@ -83,9 +83,17 @@
   </div>
 
   <div v-else>
-    LOGININ
+      <div class="logun">
+        Logged in
 
-    go to home
+    <router-link
+            :to="{ path: '/dashboard/' + ticker }"
+            class="thing"
+            replace
+            > click me!</router-link
+          >
+   
+      </div>
     </div>
 </template>
 

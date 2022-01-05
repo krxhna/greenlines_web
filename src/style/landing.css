@@ -1,7 +1,9 @@
 .slogan {
+    
+   
     display: flex;
     flex-direction: column;
-    padding: 0%;
+  padding: 0%;
     color: rgb(0, 0, 0);
     font-family: poppins;
     font-weight: 700;
@@ -37,6 +39,24 @@
     
     
     
+  }
+
+  .vid{
+    
+    border-radius: 10px;
+    overflow: hidden;
+    background: linear-gradient(to right, #bdfd47, #24fe41);
+  }
+
+
+  .first{
+    
+    justify-content: space-between;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    width: 80vw;
+    
+
   }
 
   .form-control1:focus{
@@ -230,6 +250,32 @@
 
 @media screen and (max-width:728px) {
 
+/* 
+  .vid{
+    height: auto;
+    width: 80vw;
+  }
+
+ .player{
+   height: 10v
+  
+  width: 80vw;
+ } */
+
+.first{
+    
+    justify-content: space-between;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+   flex-direction: column;
+    width: 80vw;
+    
+  
+    padding-bottom: 10%;
+
+
+  }
+
 
   .infotext{
     color: rgb(0, 0, 0);
@@ -267,6 +313,7 @@
   }
 
   .slogan{
+  
     font-size: 3.5rem;
   }
 

@@ -62,6 +62,11 @@ const routes = [
     name: 'results_new',
     component: results_new,
     props: true,
+
+    
+    meta: {
+      requiresAuth: true
+    }
   
   },
   {
