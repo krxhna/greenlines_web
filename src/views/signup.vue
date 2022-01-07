@@ -171,7 +171,7 @@ export default {
     writedata:function(){
       //write data to firebase
       db.collection("users").doc(this.email).set({
-        displayname: this.fullname,
+        name: this.fullname,
         uid: String(this.user.uid),
         
         email:this.email }).then(function() {
