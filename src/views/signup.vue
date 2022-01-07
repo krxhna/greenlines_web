@@ -168,7 +168,7 @@ export default {
         });
     },
 
-    writedata: function(){
+    writedata:function(){
       //write data to firebase
       db.collection("users").doc(this.email).set({
         displayname: this.fullname,
@@ -222,7 +222,7 @@ export default {
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(() => {
-          writedata();
+          this.writedata();
          
           this.$router.push({
             path: "/",
