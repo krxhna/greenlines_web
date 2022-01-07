@@ -13,7 +13,7 @@ import landing from '../views/landing.vue'
 import signup from '../views/signup.vue'
 import signin from '../views/signin.vue'
 import firebase from '../firebase.js'
-
+import macro from '../views/macro.vue'
 
 
 
@@ -39,6 +39,13 @@ const routes = [
     name: 'landing',
     component: landing
   },
+  {
+    path: '/macro',
+    name: 'macro',
+    component: macro
+  },
+
+
   {
     path: '/signin',
     name: 'signin',

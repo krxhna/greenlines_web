@@ -17,6 +17,7 @@
     margin-top: auto;
     padding: 20px;
     
+    flex-direction: column;
 }
 
 .footernotes:link{

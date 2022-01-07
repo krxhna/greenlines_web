@@ -208,7 +208,7 @@ export default {
           this.$router.push({
             path: "/",
           });
-          this.writedata1();
+         
         })
         .catch((err) => {
           console.log(err);
@@ -222,7 +222,7 @@ export default {
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(() => {
-          this.writedata();
+         
           this.$router.push({
             path: "/",
           });

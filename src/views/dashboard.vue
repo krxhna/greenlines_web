@@ -136,7 +136,8 @@ export default {
   methods: {
 
     openstripe: function(){
-window.open("https://buy.stripe.com/aEUfZkel41YJ6FW5kk")
+     window.open("https://buy.stripe.com/aEUfZkel41YJ6FW5kk");
+     this.$gtag.event("clicked on pro", { method: "Google" });
     },
 
 
