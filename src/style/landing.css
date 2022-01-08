@@ -249,6 +249,17 @@
 
 
 @media screen and (max-width:728px) {
+  .vid{
+    align-items: center;
+    width: 80vw;
+    aspect-ratio: 16/9;
+    /* padding-bottom: 10px; */
+  }
+  .player{
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 16/9;
+  }
 
 /* 
   .vid{
@@ -300,6 +311,7 @@
     width: 81vw;
 
   }
+  
 
   .imgbox{
     overflow: visible;

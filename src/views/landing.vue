@@ -287,13 +287,15 @@ export default {
     },
 
     writeandnavigated: function () {
-      if (this.email.length > 0) {
-        this.writeemail();
-        this.$router.push("signup");
-      } else {
-        alert("please enter an email");
-        this.$router.push("/");
-      }
+      this.$router.push("signup");
+
+      // if (this.email.length > 0) {
+      //   this.writeemail();
+      //   this.$router.push("signup");
+      // } else {
+      //   alert("please enter an email");
+      //   this.$router.push("/land");
+      // }
     },
   },
 };
