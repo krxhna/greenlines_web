@@ -287,7 +287,15 @@ export default {
     },
 
     writeandnavigated: function () {
-      this.$router.push("signup");
+      
+      if (this.email.length > 0) {
+        this.writeemail();}
+        else{
+          console.log("no email");
+        }
+      
+       this.$router.push("signup");
+     
 
       // if (this.email.length > 0) {
       //   this.writeemail();
