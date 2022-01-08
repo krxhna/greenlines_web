@@ -292,6 +292,7 @@ export default {
         this.$router.push("signup");
       } else {
         alert("please enter an email");
+        this.$router.push("/");
       }
     },
   },
