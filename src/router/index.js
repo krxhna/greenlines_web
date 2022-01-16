@@ -38,11 +38,16 @@ const routes = [
     path: '/landing',
     name: 'landing',
     component: landing
+    
   },
   {
     path: '/macro',
     name: 'macro',
-    component: macro
+    component: macro,
+    meta: {
+      requiresAuth: true
+    },
+
   },
 
 

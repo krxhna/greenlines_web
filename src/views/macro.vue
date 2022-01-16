@@ -115,9 +115,115 @@ export default {
     lineChart,
     lineChart_nofill
   },
+  
+  methods: {
+
+    openstripe: function(){
+     window.open("https://buy.stripe.com/aEUfZkel41YJ6FW5kk");
+     this.$gtag.event("clicked on pro", { method: "Google" });
+    },
+
+
+
+    return_id: function (id) {
+      return id;
+    },
+    annual: function (ticker) {
+      window.open(
+        "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" +
+          ticker +
+          "&type=10-K&dateb=&owner=exclude&count=40#contentDiv"
+      );
+      this.$gtag.event("clicked annaul desktop", { method: "Google" });
+    },
+    quaterly: function (ticker) {
+      window.open(
+        "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" +
+          ticker +
+          "&type=10-Q&dateb=&owner=exclude&count=40#contentDiv"
+      );
+      this.$gtag.event("clicked quaterly desktop", { method: "Google" });
+    },
+    ir: function (ticker) {
+      window.open(
+        "https://www.google.com/search?q=" + ticker + " ir" + " relations"
+      );
+      this.$gtag.event("clicked ir desktop", { method: "Google" });
+    },
+    insider: function (ticker) {
+      window.open("http://openinsider.com/search?q=" + ticker + "#results");
+      this.$gtag.event("clicked insider desktop", { method: "Google" });
+    },
+    twitter: function (ticker) {
+      window.open("https://twitter.com/search?q=$" + ticker + "&f=live");
+      this.$gtag.event("clicked twitter desktop", { method: "Google" });
+    },
+    seekingalpha: function (ticker) {
+      window.open("https://seekingalpha.com/symbol/" + ticker + "/analysis");
+      this.$gtag.event("clicked seekingalpha desktop", { method: "Google" });
+    },
+    funds: function (ticker) {
+      window.open("https://whalewisdom.com/stock/" + ticker + "#frm_filings");
+      this.$gtag.event("clicked funds desktop", { method: "Google" });
+    },
+    kofi: function () {
+      window.open("https://ko-fi.com/A0A47IK54");
+      this.$gtag.event("clicked kofi desktop", { method: "Google" });
+    },
+
+    all: function (ticker) {
+      window.open(
+        "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" +
+          ticker +
+          "&type=10-K&dateb=&owner=exclude&count=40"
+      ),
+        window.open(
+          "https://www.google.com/search?q=" + ticker + " ir" + " relations"
+        );
+    },
+    return_items: function (sel, name) {
+      console.log(sel);
+      return this.items[sel][name];
+    },
+
+    logout: function () {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.push("/signin");
+          // alert("logout");
+        })
+        .catch((error) => {
+          this.error = error;
+        });
+    },
+
+    googlesigin: function () {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      firebase
+        .auth()
+        .signInWithPopup(provider)
+        .then(() => {
+          // alert("signin");
+          // this.$router.push({
+          //   path: "results/" + this.user.uid,
+          // });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      // This gives you a Google Access Token. You can use it to access the Google API.
+    },
+  },
 
   data() {
     return {
+        username: "",
+      user: null,
+      error: null,
+      awesome: "ds",
+      selected: "0",
       map1: db.doc("macro/retail").onSnapshot((doc) => {
         this.map1 = doc.data().data;
       }),
@@ -483,7 +589,7 @@ export default {
 
 ,
       newdata: [40, 2, 12, 39, 10, 40, 2, 40, 40, 20, 12, 11],
-      yield_years:["1 Mo","2 Mo","3 Mo","6 Mo","1yr", "2yr", "3yr", "5yr", "7yr", "10yr", "20yr",],
+      yield_years:["1 Mo","2 Mo","3 Mo","6 Mo","1yr", "2yr", "3yr", "5yr", "7yr", "10yr", "20yr", "30yr" ],
       labels: [
         "2021-11-01",
         "2021-10-01",
