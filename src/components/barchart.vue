@@ -1,5 +1,5 @@
 <script>
-import {Line } from "vue-chartjs";
+import { Bar } from "vue-chartjs";
 
 var dates = [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11];
 
@@ -20,7 +20,7 @@ export default {
       }
   },
 
-  extends: Line,
+  extends: Bar,
   mounted() {
     this.renderChart(
       {

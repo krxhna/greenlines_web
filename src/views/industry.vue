@@ -69,6 +69,8 @@
         </li>
       </ul>
     </div>
+
+    
     <div class="view">
       <div class="area">
         <div class="thentext" style="color: green">

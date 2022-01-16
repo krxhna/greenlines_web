@@ -29,7 +29,7 @@ export default {
           {
             label: "Data One",
 
-               fill: true,
+               fill: false,
    borderColor: "green",
    borderDash: [0, 0],
    backgroundColor: "green",
