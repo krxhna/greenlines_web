@@ -74,10 +74,10 @@
    <div class="view_macro">
         <div class="area">
             <div class="char">
-        <h3>Yield Curve</h3> <h8>updated weekly</h8>
+        <h3>Yield Curve</h3> updated weekly
         <lineChart_nofill :newdata="[0.05,0.06,	0.08,	0.22,	0.40,	0.78,	1.04,	1.37,	1.55,	1.63,	2.05,	2.01]" :labels="yield_years"></lineChart_nofill>
         <h3>Retail sales</h3>
-        <BarChart :newdata="date_reverse" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart>
+        <!-- <BarChart :newdata="date_reverse" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart> -->
 
         <h3> Unemployment rate</h3>
       
@@ -104,14 +104,14 @@
 </template>
 
 <script>
-import BarChart from "../components/barchart.vue";
+// import BarChart from "../components/barchart.vue";
 // import lineChart from "../components/linechart.vue";
 import lineChart_nofill from "../components/linechart_nofill.vue";
 import firebase from "firebase/compat/app";
 import { db } from "../firebase";
 export default {
   components: {
-    BarChart,
+    // BarChart,
     // lineChart,
     lineChart_nofill
   },
