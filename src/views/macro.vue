@@ -77,25 +77,25 @@
         <h3>Yield Curve</h3> <h8>updated weekly</h8>
         <lineChart_nofill :newdata="[0.05,0.06,	0.08,	0.22,	0.40,	0.78,	1.04,	1.37,	1.55,	1.63,	2.05,	2.01]" :labels="yield_years"></lineChart_nofill>
         <h3>Retail sales</h3>
-        <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart>
+        <BarChart :newdata="date_reverse" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart>
 
         <h3> Unemployment rate</h3>
       
-        <lineChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></lineChart>
+        <!-- <lineChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></lineChart> -->
         <h3>Total Nonfarm Payroll</h3>
       
-        <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart>
+        <!-- <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart> -->
         <h3>  new orders of durable goods</h3>
       
-        <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart>
+        <!-- <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart> -->
 
         <h3>Consumer Sentiment </h3>
       
-        <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart>
+        <!-- <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart> -->
 
         <h3> consumer price index (CPI)</h3>
       
-        <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart>
+        <!-- <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart> -->
     </div>
         </div>
    </div>
@@ -105,14 +105,14 @@
 
 <script>
 import BarChart from "../components/barchart.vue";
-import lineChart from "../components/linechart.vue";
+// import lineChart from "../components/linechart.vue";
 import lineChart_nofill from "../components/linechart_nofill.vue";
 import firebase from "firebase/compat/app";
 import { db } from "../firebase";
 export default {
   components: {
     BarChart,
-    lineChart,
+    // lineChart,
     lineChart_nofill
   },
   
@@ -221,7 +221,9 @@ export default {
 
   data() {
     return {
-        username: "",
+    // date_reverse: this.dates.reverse().slice(Math.max(this.dates.length - 70, 0)),
+    // label_reverse: this.labels.reverse().slice(Math.max(this.labels.length - 70, 0)),
+    username: "",
       user: null,
       error: null,
       awesome: "ds",
