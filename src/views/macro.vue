@@ -217,6 +217,8 @@ export default {
     },
   },
 
+  props: ["ticker"],
+
   data() {
     return {
         username: "",

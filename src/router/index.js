@@ -41,9 +41,10 @@ const routes = [
     
   },
   {
-    path: '/macro',
+    path: '/macro/:ticker',
     name: 'macro',
     component: macro,
+    props: true,
     meta: {
       requiresAuth: true
     },
