@@ -1,47 +1,48 @@
 <script>
-import { Line } from "vue-chartjs";
+import {Line } from "vue-chartjs";
+
+var dates = [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11];
+
 export default {
-  extends: Line,
-  props: {
-    label: {
-      type: String
-    },
-    chartData: {
-      type: Array
-    },
-    options: {
-      type: Object
-    },
-    chartColors: {
-      type: Object
-    }
+  data() {
+    return {
+      dates: dates,
+    //   newdata: this.newdata
+    };
   },
+
+  props: {
+      newdata: {
+          type: Array,    
+      },
+      labels: {
+          type: Array,    
+      }
+  },
+
+  extends: Line,
   mounted() {
-    const dates = this.chartData.map(d => d.date).reverse();
-    const totals = this.chartData.map(d => d.total).reverse();
-    const {
-      borderColor,
-      pointBorderColor,
-      pointBackgroundColor,
-      backgroundColor
-    } = this.chartColors;
     this.renderChart(
       {
-        labels: dates,
+        labels: this.labels,
         datasets: [
           {
-            label: this.label,
-            data: totals,
-            fill: true,
-            borderColor: borderColor,
-            pointBorderColor: pointBorderColor,
-            pointBackgroundColor: pointBackgroundColor,
-            backgroundColor: backgroundColor
-          }
-        ]
+            label: "Data One",
+
+               fill: true,
+   borderColor: "green",
+   borderDash: [0, 0],
+   backgroundColor: "green",
+   pointBackgroundColor: "green",
+   pointBorderColor: "green",
+   pointHoverBackgroundColor: "lightgreen",
+   pointHoverBorderColor: "#55bae7",
+   data: this.newdata
+          },
+        ],
       },
-      this.options
+      { responsive: true, maintainAspectRatio: false }
     );
-  }
+  },
 };
 </script>

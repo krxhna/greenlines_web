@@ -1,162 +1,973 @@
 <template>
-  <div class="container">
-    <div class="row mt-5">
-      <div class="col">
-        <h1 class="text-center">COVID-19 DATA</h1>
-      </div>
-    </div>
-    <div class="row mt-5" v-if="arrPositive.length > 0">
-      <div class="col">
-        <h2 class="text-center">Positive</h2>
-        <line-chart
-          :chartData="arrPositive"
-          :options="chartOptions"
-          :chartColors="positiveChartColors"
-          label="Positive"
-        />
-      </div>
+  <div class="macro">
+    <!-- macro
+    {{ map1 }} -->
+    <div class="navbar">
+      <ul>
+        <li class="navbarnav">
+          <router-link :to="{ path: '/' }" class="thing" replace>
+            ←Back</router-link
+          >
+          <div class="rectangle"></div>
+          <h5
+            v-if="user == null"
+            style="color: green; text-transform: capitalize"
+          >
+            login/signup for free to get acess
+          </h5>
+          <h5 v-else style="color: green; text-transform: capitalize"></h5>
+
+          <router-link
+            :to="{ path: '/dashboard/' + ticker }"
+            class="thing"
+            replace
+            >Dashboard</router-link
+          >
+          <h4 class="current">industry</h4>
+          <h7 class="thing">News( coming soon)</h7>
+          <h7 class="thing">Macroview( coming soon)</h7>
+
+          <h1 v-if="user == null">
+            <b-button
+              @click="googlesigin"
+              class="btn btn-success"
+              style="color: black"
+              >Login/signinup</b-button
+            >
+          </h1>
+
+          <h1>
+            <a style="color: #0f0f0f">,</a>
+            <div class="fg" style="display: flex; flex-direction: column">
+              <b-button
+                @click="openstripe()"
+                class="btn btn-success"
+                style="color: black; background-color: #38ea41"
+                >GO pro <i class="fas fa-crown"></i
+              ></b-button>
+              <b-button
+                @click="logout"
+                class="btn btn-success"
+                style="color: gray; background-color: #0f0f0f; border: none"
+                >logout</b-button
+              >
+            </div>
+          </h1>
+          <div class="footernotes">
+            <a
+              style="color: white"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=krishhkrishhk@gmail.com"
+              target="_blank"
+              >📧Contact</a
+            >
+            <a
+              style="color: white"
+              href="https://forms.clickup.com/f/13jcut-124/CWBEI7U7144EZ8WNHP"
+              target="_blank"
+              >🐞Report a bug</a
+            >
+          </div>
+        </li>
+      </ul>
     </div>
 
-    <div class="row mt-5" v-if="arrHospitalized.length > 0">
-      <div class="col">
-        <h2 class="text-center">Hospitalized</h2>
-        <line-chart
-          :chartData="arrHospitalized"
-          :options="chartOptions"
-          :chartColors="hospitalizedChartColors"
-          label="Hospitalized"
-        />
-      </div>
-    </div>
+   <div class="view_macro">
+        <div class="area">
+            <div class="char">
+        <h3>Yield Curve</h3> updated weekly
+        <lineChart_nofill :newdata="[0.05,0.06,	0.08,	0.22,	0.40,	0.78,	1.04,	1.37,	1.55,	1.63,	2.05,	2.01]" :labels="yield_years"></lineChart_nofill>
+        <h3>Retail sales</h3>
+         <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart>
+       
 
-    <div class="row mt-5" v-if="arrInIcu.length > 0">
-      <div class="col">
-        <h2 class="text-center">In ICU</h2>
-        <line-chart
-          :chartData="arrInIcu"
-          :options="chartOptions"
-          :chartColors="inIcuColors"
-          label="In ICU"
-        />
-      </div>
-    </div>
+        <h3> Unemployment rate</h3>
+      
+        <lineChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></lineChart>
+        <h3>Total Nonfarm Payroll</h3>
+      
+        <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart>
+        <h3>  new orders of durable goods</h3>
+      
+        <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart>
 
-    <div class="row mt-5" v-if="arrOnVentilators.length > 0">
-      <div class="col">
-        <h2 class="text-center">On Ventilators</h2>
-        <line-chart
-          :chartData="arrOnVentilators"
-          :options="chartOptions"
-          :chartColors="onVentilatorsColors"
-          label="On Ventilators"
-        />
-      </div>
-    </div>
+        <h3>Consumer Sentiment </h3>
+      
+        <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart>
 
-    <div class="row mt-5" v-if="arrRecovered.length > 0">
-      <div class="col">
-        <h2 class="text-center">Recovered</h2>
-        <line-chart
-          :chartData="arrRecovered"
-          :options="chartOptions"
-          :chartColors="recoveredColors"
-          label="Recovered"
-        />
-      </div>
+        <h3> consumer price index (CPI)</h3>
+      
+        <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart>
     </div>
-
-    <div class="row mt-5 mb-5">
-      <div class="col">
-        <h2 class="text-center">Deaths</h2>
-        <line-chart
-          v-if="arrDeaths.length > 0"
-          :chartData="arrDeaths"
-          :options="chartOptions"
-          :chartColors="deathColors"
-          label="Deaths"
-        />
-      </div>
-    </div>
+        </div>
+   </div>
+    
   </div>
 </template>
 
 <script>
-import axios from "axios";
-import moment from "moment";
-import LineChart from "../components/linechart";
+import BarChart from "../components/barchart.vue";
+import lineChart from "../components/linechart.vue";
+import lineChart_nofill from "../components/linechart_nofill.vue";
+import firebase from "firebase/compat/app";
+import { db } from "../firebase";
 export default {
   components: {
-    LineChart
+    BarChart,
+    lineChart,
+    lineChart_nofill
   },
+  
+  methods: {
+
+    openstripe: function(){
+     window.open("https://buy.stripe.com/aEUfZkel41YJ6FW5kk");
+     this.$gtag.event("clicked on pro", { method: "Google" });
+    },
+
+
+
+    return_id: function (id) {
+      return id;
+    },
+    annual: function (ticker) {
+      window.open(
+        "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" +
+          ticker +
+          "&type=10-K&dateb=&owner=exclude&count=40#contentDiv"
+      );
+      this.$gtag.event("clicked annaul desktop", { method: "Google" });
+    },
+    quaterly: function (ticker) {
+      window.open(
+        "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" +
+          ticker +
+          "&type=10-Q&dateb=&owner=exclude&count=40#contentDiv"
+      );
+      this.$gtag.event("clicked quaterly desktop", { method: "Google" });
+    },
+    ir: function (ticker) {
+      window.open(
+        "https://www.google.com/search?q=" + ticker + " ir" + " relations"
+      );
+      this.$gtag.event("clicked ir desktop", { method: "Google" });
+    },
+    insider: function (ticker) {
+      window.open("http://openinsider.com/search?q=" + ticker + "#results");
+      this.$gtag.event("clicked insider desktop", { method: "Google" });
+    },
+    twitter: function (ticker) {
+      window.open("https://twitter.com/search?q=$" + ticker + "&f=live");
+      this.$gtag.event("clicked twitter desktop", { method: "Google" });
+    },
+    seekingalpha: function (ticker) {
+      window.open("https://seekingalpha.com/symbol/" + ticker + "/analysis");
+      this.$gtag.event("clicked seekingalpha desktop", { method: "Google" });
+    },
+    funds: function (ticker) {
+      window.open("https://whalewisdom.com/stock/" + ticker + "#frm_filings");
+      this.$gtag.event("clicked funds desktop", { method: "Google" });
+    },
+    kofi: function () {
+      window.open("https://ko-fi.com/A0A47IK54");
+      this.$gtag.event("clicked kofi desktop", { method: "Google" });
+    },
+
+    all: function (ticker) {
+      window.open(
+        "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" +
+          ticker +
+          "&type=10-K&dateb=&owner=exclude&count=40"
+      ),
+        window.open(
+          "https://www.google.com/search?q=" + ticker + " ir" + " relations"
+        );
+    },
+    return_items: function (sel, name) {
+      console.log(sel);
+      return this.items[sel][name];
+    },
+
+    logout: function () {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.push("/signin");
+          // alert("logout");
+        })
+        .catch((error) => {
+          this.error = error;
+        });
+    },
+
+    googlesigin: function () {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      firebase
+        .auth()
+        .signInWithPopup(provider)
+        .then(() => {
+          // alert("signin");
+          // this.$router.push({
+          //   path: "results/" + this.user.uid,
+          // });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      // This gives you a Google Access Token. You can use it to access the Google API.
+    },
+  },
+
+  props: ["ticker"],
+
   data() {
     return {
-      arrPositive: [],
-      positiveChartColors: {
-        borderColor: "#077187",
-        pointBorderColor: "#0E1428",
-        pointBackgroundColor: "#AFD6AC",
-        backgroundColor: "#74A57F"
-      },
-      arrHospitalized: [],
-      hospitalizedChartColors: {
-        borderColor: "#251F47",
-        pointBorderColor: "#260F26",
-        pointBackgroundColor: "#858EAB",
-        backgroundColor: "#858EAB"
-      },
-      arrInIcu: [],
-      inIcuColors: {
-        borderColor: "#190B28",
-        pointBorderColor: "#190B28",
-        pointBackgroundColor: "#E55381",
-        backgroundColor: "#E55381"
-      },
-      arrOnVentilators: [],
-      onVentilatorsColors: {
-        borderColor: "#784F41",
-        pointBorderColor: "#784F41",
-        pointBackgroundColor: "#BBE5ED",
-        backgroundColor: "#BBE5ED"
-      },
-      arrRecovered: [],
-      recoveredColors: {
-        borderColor: "#4E5E66",
-        pointBorderColor: "#4E5E66",
-        pointBackgroundColor: "#31E981",
-        backgroundColor: "#31E981"
-      },
-      arrDeaths: [],
-      deathColors: {
-        borderColor: "#E06D06",
-        pointBorderColor: "#E06D06",
-        pointBackgroundColor: "#402A2C",
-        backgroundColor: "#402A2C"
-      },
-      chartOptions: {
-        responsive: true,
-        maintainAspectRatio: false
-      }
+    // date_reverse: this.dates.reverse().slice(Math.max(this.dates.length - 70, 0)),
+    // label_reverse: this.labels.reverse().slice(Math.max(this.labels.length - 70, 0)),
+    username: "",
+      user: null,
+      error: null,
+      awesome: "ds",
+      selected: "0",
+      map1: db.doc("macro/retail").onSnapshot((doc) => {
+        this.map1 = doc.data().data;
+      }),
+      dates: ['579368',
+ '559301',
+ '536229',
+ '557018',
+ '558031',
+ '562929',
+ '570641',
+ '558181',
+ '567933',
+ '440019',
+ '464362',
+ '559932',
+ '492362',
+ '495722',
+ '476247',
+ '488949',
+ '494905',
+ '481205',
+ '462286',
+ '377210',
+ '430527',
+ '415511',
+ '418734',
+ '521467',
+ '469003',
+ '456436',
+ '429556',
+ '473482',
+ '462097',
+ '448595',
+ '475897',
+ '442921',
+ '447155',
+ '384967',
+ '399461',
+ '493526',
+ '459319',
+ '441878',
+ '417172',
+ '456030',
+ '441767',
+ '443577',
+ '464050',
+ '420245',
+ '444994',
+ '380671',
+ '389808',
+ '497027',
+ '442077',
+ '417830',
+ '412578',
+ '431822',
+ '416900',
+ '423034',
+ '434450',
+ '407165',
+ '422891',
+ '365480',
+ '368960',
+ '482053',
+ '413872',
+ '397337',
+ '394147',
+ '416449',
+ '405935',
+ '410045',
+ '413047',
+ '394766',
+ '405050',
+ '363622',
+ '351890',
+ '464110',
+ '396150',
+ '392721',
+ '382135',
+ '405111',
+ '406760',
+ '398034',
+ '409703',
+ '387581',
+ '393318',
+ '342030',
+ '350466',
+ '451346',
+ '391652',
+ '388493',
+ '374507',
+ '401546',
+ '394790',
+ '385557',
+ '408383',
+ '383895',
+ '383642',
+ '337558',
+ '340558',
+ '430754',
+ '378800',
+ '369868',
+ '352749',
+ '388299',
+ '377031',
+ '369355',
+ '389709',
+ '362978',
+ '374171',
+ '332471',
+ '333663',
+ '416807',
+ '368593',
+ '355823',
+ '342582',
+ '372986',
+ '351520',
+ '356083',
+ '373129',
+ '349194',
+ '368502',
+ '331470',
+ '315540',
+ '408910',
+ '351517',
+ '337067',
+ '333642',
+ '352224',
+ '341381',
+ '346620',
+ '348979',
+ '339014',
+ '345052',
+ '299920',
+ '298626',
+ '386878',
+ '328381',
+ '315059',
+ '307638',
+ '322319',
+ '320915',
+ '319183',
+ '324820',
+ '316940',
+ '321305',
+ '275566',
+ '279044',
+ '362735',
+ '303850',
+ '300360',
+ '288071',
+ '314505',
+ '308847',
+ '306050',
+ '307481',
+ '292041',
+ '290068',
+ '264465',
+ '273998',
+ '346513',
+ '299238',
+ '311422',
+ '313308',
+ '342443',
+ '344158',
+ '339791',
+ '357277',
+ '331002',
+ '334416',
+ '308171',
+ '307576',
+ '387473',
+ '341848',
+ '331073',
+ '317145',
+ '349191',
+ '333815',
+ '338189',
+ '353201',
+ '321981',
+ '335917',
+ '290065',
+ '295284',
+ '380188',
+ '323089',
+ '312976',
+ '310775',
+ '339155',
+ '325905',
+ '330844',
+ '337393',
+ '316526',
+ '326153',
+ '282417',
+ '286152',
+ '370726',
+ '311715',
+ '302213',
+ '300439',
+ '321409',
+ '316887',
+ '317375',
+ '311292',
+ '302054',
+ '306384',
+ '265320',
+ '263469',
+ '354627',
+ '294278',
+ '287468',
+ '282974',
+ '294133',
+ '294875',
+ '289664',
+ '296253',
+ '284325',
+ '287944',
+ '253689',
+ '252818',
+ '327693',
+ '272396',
+ '273781',
+ '265331',
+ '285212',
+ '279323',
+ '271242',
+ '281482',
+ '265990',
+ '264532',
+ '233478',
+ '242271',
+ '308821',
+ '263738',
+ '259945',
+ '246350',
+ '277716',
+ '266795',
+ '260385',
+ '271682',
+ '257357',
+ '257133',
+ '228084',
+ '230546',
+ '298666',
+ '262004',
+ '265188',
+ '236210',
+ '266460',
+ '251504',
+ '260315',
+ '268658',
+ '249062',
+ '253439',
+ '223971',
+ '226791',
+ '294197',
+ '252145',
+ '245167',
+ '243624',
+ '257487',
+ '244445',
+ '255066',
+ '257581',
+ '239051',
+ '253717',
+ '227087',
+ '213709',
+ '293013',
+ '240857',
+ '233193',
+ '230665',
+ '240478',
+ '236992',
+ '236830',
+ '237462',
+ '227109',
+ '230230',
+ '199451',
+ '196810',
+ '265618',
+ '218969',
+ '220499',
+ '208915',
+ '216605',
+ '217687',
+ '220867',
+ '221155',
+ '212262',
+ '207973',
+ '183767',
+ '187445',
+ '249389',
+ '207533',
+ '210145',
+ '201415',
+ '211952',
+ '208856',
+ '205491',
+ '211516',
+ '199219',
+ '203750',
+ '178428',
+ '181073',
+ '237478',
+ '203621',
+ '201927',
+ '189424',
+ '204270',
+ '197140',
+ '196842',
+ '205797',
+ '191886',
+ '191851',
+ '173941',
+ '167372',
+ '227552',
+ '193405',
+ '184276',
+ '182521',
+ '193370',
+ '182909',
+ '191609',
+ '190269',
+ '176635',
+ '181910',
+ '155156',
+ '158004',
+ '221549',
+ '184272',
+ '178642',
+ '175128',
+ '182445',
+ '173198',
+ '178509',
+ '175527',
+ '170795',
+ '173562',
+ '146332',
+ '145276',
+ '206174',
+ '169980',
+ '163992',
+ '159298',
+ '163989',
+ '164590',
+ '162964',
+ '163519',
+ '158615',
+ '153025',
+ '134462',
+ '137020',
+ '191347',
+ '154824',
+ '155987',
+ '148158',
+ '152476',
+ '152586',
+ '151849',
+ '152420',
+ '147175',
+ '142488',
+ '131244',
+ '130683']
+
+,
+      newdata: [40, 2, 12, 39, 10, 40, 2, 40, 40, 20, 12, 11],
+      yield_years:["1 Mo","2 Mo","3 Mo","6 Mo","1yr", "2yr", "3yr", "5yr", "7yr", "10yr", "20yr", "30yr" ],
+      labels: [
+        "2021-11-01",
+        "2021-10-01",
+        "2021-09-01",
+        "2021-08-01",
+        "2021-07-01",
+        "2021-06-01",
+        "2021-05-01",
+        "2021-04-01",
+        "2021-03-01",
+        "2021-02-01",
+        "2021-01-01",
+        "2020-12-01",
+        "2020-11-01",
+        "2020-10-01",
+        "2020-09-01",
+        "2020-08-01",
+        "2020-07-01",
+        "2020-06-01",
+        "2020-05-01",
+        "2020-04-01",
+        "2020-03-01",
+        "2020-02-01",
+        "2020-01-01",
+        "2019-12-01",
+        "2019-11-01",
+        "2019-10-01",
+        "2019-09-01",
+        "2019-08-01",
+        "2019-07-01",
+        "2019-06-01",
+        "2019-05-01",
+        "2019-04-01",
+        "2019-03-01",
+        "2019-02-01",
+        "2019-01-01",
+        "2018-12-01",
+        "2018-11-01",
+        "2018-10-01",
+        "2018-09-01",
+        "2018-08-01",
+        "2018-07-01",
+        "2018-06-01",
+        "2018-05-01",
+        "2018-04-01",
+        "2018-03-01",
+        "2018-02-01",
+        "2018-01-01",
+        "2017-12-01",
+        "2017-11-01",
+        "2017-10-01",
+        "2017-09-01",
+        "2017-08-01",
+        "2017-07-01",
+        "2017-06-01",
+        "2017-05-01",
+        "2017-04-01",
+        "2017-03-01",
+        "2017-02-01",
+        "2017-01-01",
+        "2016-12-01",
+        "2016-11-01",
+        "2016-10-01",
+        "2016-09-01",
+        "2016-08-01",
+        "2016-07-01",
+        "2016-06-01",
+        "2016-05-01",
+        "2016-04-01",
+        "2016-03-01",
+        "2016-02-01",
+        "2016-01-01",
+        "2015-12-01",
+        "2015-11-01",
+        "2015-10-01",
+        "2015-09-01",
+        "2015-08-01",
+        "2015-07-01",
+        "2015-06-01",
+        "2015-05-01",
+        "2015-04-01",
+        "2015-03-01",
+        "2015-02-01",
+        "2015-01-01",
+        "2014-12-01",
+        "2014-11-01",
+        "2014-10-01",
+        "2014-09-01",
+        "2014-08-01",
+        "2014-07-01",
+        "2014-06-01",
+        "2014-05-01",
+        "2014-04-01",
+        "2014-03-01",
+        "2014-02-01",
+        "2014-01-01",
+        "2013-12-01",
+        "2013-11-01",
+        "2013-10-01",
+        "2013-09-01",
+        "2013-08-01",
+        "2013-07-01",
+        "2013-06-01",
+        "2013-05-01",
+        "2013-04-01",
+        "2013-03-01",
+        "2013-02-01",
+        "2013-01-01",
+        "2012-12-01",
+        "2012-11-01",
+        "2012-10-01",
+        "2012-09-01",
+        "2012-08-01",
+        "2012-07-01",
+        "2012-06-01",
+        "2012-05-01",
+        "2012-04-01",
+        "2012-03-01",
+        "2012-02-01",
+        "2012-01-01",
+        "2011-12-01",
+        "2011-11-01",
+        "2011-10-01",
+        "2011-09-01",
+        "2011-08-01",
+        "2011-07-01",
+        "2011-06-01",
+        "2011-05-01",
+        "2011-04-01",
+        "2011-03-01",
+        "2011-02-01",
+        "2011-01-01",
+        "2010-12-01",
+        "2010-11-01",
+        "2010-10-01",
+        "2010-09-01",
+        "2010-08-01",
+        "2010-07-01",
+        "2010-06-01",
+        "2010-05-01",
+        "2010-04-01",
+        "2010-03-01",
+        "2010-02-01",
+        "2010-01-01",
+        "2009-12-01",
+        "2009-11-01",
+        "2009-10-01",
+        "2009-09-01",
+        "2009-08-01",
+        "2009-07-01",
+        "2009-06-01",
+        "2009-05-01",
+        "2009-04-01",
+        "2009-03-01",
+        "2009-02-01",
+        "2009-01-01",
+        "2008-12-01",
+        "2008-11-01",
+        "2008-10-01",
+        "2008-09-01",
+        "2008-08-01",
+        "2008-07-01",
+        "2008-06-01",
+        "2008-05-01",
+        "2008-04-01",
+        "2008-03-01",
+        "2008-02-01",
+        "2008-01-01",
+        "2007-12-01",
+        "2007-11-01",
+        "2007-10-01",
+        "2007-09-01",
+        "2007-08-01",
+        "2007-07-01",
+        "2007-06-01",
+        "2007-05-01",
+        "2007-04-01",
+        "2007-03-01",
+        "2007-02-01",
+        "2007-01-01",
+        "2006-12-01",
+        "2006-11-01",
+        "2006-10-01",
+        "2006-09-01",
+        "2006-08-01",
+        "2006-07-01",
+        "2006-06-01",
+        "2006-05-01",
+        "2006-04-01",
+        "2006-03-01",
+        "2006-02-01",
+        "2006-01-01",
+        "2005-12-01",
+        "2005-11-01",
+        "2005-10-01",
+        "2005-09-01",
+        "2005-08-01",
+        "2005-07-01",
+        "2005-06-01",
+        "2005-05-01",
+        "2005-04-01",
+        "2005-03-01",
+        "2005-02-01",
+        "2005-01-01",
+        "2004-12-01",
+        "2004-11-01",
+        "2004-10-01",
+        "2004-09-01",
+        "2004-08-01",
+        "2004-07-01",
+        "2004-06-01",
+        "2004-05-01",
+        "2004-04-01",
+        "2004-03-01",
+        "2004-02-01",
+        "2004-01-01",
+        "2003-12-01",
+        "2003-11-01",
+        "2003-10-01",
+        "2003-09-01",
+        "2003-08-01",
+        "2003-07-01",
+        "2003-06-01",
+        "2003-05-01",
+        "2003-04-01",
+        "2003-03-01",
+        "2003-02-01",
+        "2003-01-01",
+        "2002-12-01",
+        "2002-11-01",
+        "2002-10-01",
+        "2002-09-01",
+        "2002-08-01",
+        "2002-07-01",
+        "2002-06-01",
+        "2002-05-01",
+        "2002-04-01",
+        "2002-03-01",
+        "2002-02-01",
+        "2002-01-01",
+        "2001-12-01",
+        "2001-11-01",
+        "2001-10-01",
+        "2001-09-01",
+        "2001-08-01",
+        "2001-07-01",
+        "2001-06-01",
+        "2001-05-01",
+        "2001-04-01",
+        "2001-03-01",
+        "2001-02-01",
+        "2001-01-01",
+        "2000-12-01",
+        "2000-11-01",
+        "2000-10-01",
+        "2000-09-01",
+        "2000-08-01",
+        "2000-07-01",
+        "2000-06-01",
+        "2000-05-01",
+        "2000-04-01",
+        "2000-03-01",
+        "2000-02-01",
+        "2000-01-01",
+        "1999-12-01",
+        "1999-11-01",
+        "1999-10-01",
+        "1999-09-01",
+        "1999-08-01",
+        "1999-07-01",
+        "1999-06-01",
+        "1999-05-01",
+        "1999-04-01",
+        "1999-03-01",
+        "1999-02-01",
+        "1999-01-01",
+        "1998-12-01",
+        "1998-11-01",
+        "1998-10-01",
+        "1998-09-01",
+        "1998-08-01",
+        "1998-07-01",
+        "1998-06-01",
+        "1998-05-01",
+        "1998-04-01",
+        "1998-03-01",
+        "1998-02-01",
+        "1998-01-01",
+        "1997-12-01",
+        "1997-11-01",
+        "1997-10-01",
+        "1997-09-01",
+        "1997-08-01",
+        "1997-07-01",
+        "1997-06-01",
+        "1997-05-01",
+        "1997-04-01",
+        "1997-03-01",
+        "1997-02-01",
+        "1997-01-01",
+        "1996-12-01",
+        "1996-11-01",
+        "1996-10-01",
+        "1996-09-01",
+        "1996-08-01",
+        "1996-07-01",
+        "1996-06-01",
+        "1996-05-01",
+        "1996-04-01",
+        "1996-03-01",
+        "1996-02-01",
+        "1996-01-01",
+        "1995-12-01",
+        "1995-11-01",
+        "1995-10-01",
+        "1995-09-01",
+        "1995-08-01",
+        "1995-07-01",
+        "1995-06-01",
+        "1995-05-01",
+        "1995-04-01",
+        "1995-03-01",
+        "1995-02-01",
+        "1995-01-01",
+        "1994-12-01",
+        "1994-11-01",
+        "1994-10-01",
+        "1994-09-01",
+        "1994-08-01",
+        "1994-07-01",
+        "1994-06-01",
+        "1994-05-01",
+        "1994-04-01",
+        "1994-03-01",
+        "1994-02-01",
+        "1994-01-01",
+        "1993-12-01",
+        "1993-11-01",
+        "1993-10-01",
+        "1993-09-01",
+        "1993-08-01",
+        "1993-07-01",
+        "1993-06-01",
+        "1993-05-01",
+        "1993-04-01",
+        "1993-03-01",
+        "1993-02-01",
+        "1993-01-01",
+        "1992-12-01",
+        "1992-11-01",
+        "1992-10-01",
+        "1992-09-01",
+        "1992-08-01",
+        "1992-07-01",
+        "1992-06-01",
+        "1992-05-01",
+        "1992-04-01",
+        "1992-03-01",
+        "1992-02-01",
+        "1992-01-01",
+      ],
     };
   },
-  async created() {
-    const { data } = await axios.get("https://covidtracking.com/api/us/daily");
-    data.forEach(d => {
-      const date = moment(d.date, "YYYYMMDD").format("MM/DD");
-      const {
-        positive,
-        hospitalizedCurrently,
-        inIcuCurrently,
-        onVentilatorCurrently,
-        recovered,
-        death
-      } = d;
-      this.arrPositive.push({ date, total: positive });
-      this.arrHospitalized.push({ date, total: hospitalizedCurrently });
-      this.arrInIcu.push({ date, total: inIcuCurrently });
-      this.arrOnVentilators.push({ date, total: onVentilatorCurrently });
-      this.arrRecovered.push({ date, total: recovered });
-      this.arrDeaths.push({ date, total: death });
+
+  created() {
+    firebase.auth().onAuthStateChanged((user) => {
+      this.user = user;
     });
-  }
+  },
 };
 </script>
+
+<style>
+@import url("../style/dashboard.css");
+</style>
+
