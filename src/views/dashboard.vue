@@ -24,12 +24,12 @@
             replace
             >Industry</router-link
           >
-          <!-- <router-link
+          <router-link
             :to="{ path: '/macro/' + ticker }"
             class="thing"
             replace
             >Macro view</router-link
-          > -->
+          >
           <h7 class="thing">News( coming soon)</h7>
           <h7 class="thing">Macroview( coming soon)</h7>
           
