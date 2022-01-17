@@ -75,28 +75,28 @@
         <div class="area">
             <div class="char">
         <h3>Yield Curve</h3> updated weekly
-        <lineChart_nofill :newdata="[0.05,0.06,	0.08,	0.22,	0.40,	0.78,	1.04,	1.37,	1.55,	1.63,	2.05,	2.01]" :labels="yield_years"></lineChart_nofill>
+        <lineChart :newdata="[0.05,0.06,	0.08,	0.22,	0.40,	0.78,	1.04,	1.37,	1.55,	1.63,	2.05,	2.01]" :labels="yield_years"></lineChart>
         <h3>Retail sales</h3>
-         <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart>
+         <BarChart :newdata="dates" :labels="labels"></BarChart>
        
 
         <h3> Unemployment rate</h3>
       
-        <lineChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></lineChart>
+        <lineChart_nofill :newdata="dates" :labels="labels"></lineChart_nofill>
         <h3>Total Nonfarm Payroll</h3>
       
-        <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart>
+        <BarChart :newdata="dates" :labels="labels"></BarChart>
         <h3>  new orders of durable goods</h3>
       
-        <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart>
+        <BarChart :newdata="dates" :labels="labels"></BarChart>
 
         <h3>Consumer Sentiment </h3>
       
-        <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart>
+        <BarChart :newdata="dates" :labels="labels"></BarChart>
 
         <h3> consumer price index (CPI)</h3>
       
-        <BarChart :newdata="dates.reverse().slice(Math.max(dates.length - 70, 0))" :labels="labels.reverse().slice(Math.max(dates.length - 70, 0))"></BarChart>
+        <BarChart :newdata="dates" :labels="labels"></BarChart>
     </div>
         </div>
    </div>
