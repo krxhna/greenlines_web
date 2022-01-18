@@ -27,7 +27,7 @@ export default {
         labels: this.labels,
         datasets: [
           {
-            label: "Data One",
+            label: "Data",
 
                fill: false,
    borderColor: "green",
