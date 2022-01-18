@@ -30,6 +30,48 @@
     color:rgb(255, 255, 255);
 }
 
+.buttondiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /* margin-top: auto; */
+    /* padding: 20px; */
+}
+
+.searchbox .search-bar1{
+    margin: 2px;
+    border: 1px solid rgb(0, 255, 42);
+    color: white;
+    background-color: black;
+    height: 5vh;
+    
+
+    border-radius: 0 5px 0 5px;
+
+}
+
+.searchbox .search-bar1:focus{
+    outline: none;
+
+    border: 2px solid rgb(0, 255, 21);
+
+}
+
+
+
+
+.gobutton{
+    width: 5vw;
+    border-radius:  0 5px 0 5px;
+    
+    padding: 2px;
+    /* padding-left: 20%; */
+
+    background-color: rgb(15, 221, 15);
+    border: none;
+    
+}
 
 
 

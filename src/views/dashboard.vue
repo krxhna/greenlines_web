@@ -7,6 +7,14 @@
           <router-link :to="{ path: '/' }" class="thing" replace>
             ←Back</router-link
           >
+          <div class="searchbox">
+            <input :key="$route.fullPath" type="text" class="search-bar1" :placeholder="'$'+ticker"  @keyup.enter="the_go(message.toUpperCase())" v-model="message" >
+          </div>
+          
+          <div class="buttondiv">
+            <button :key="$route.fullPath" class="gobutton" @click="the_go(message.toUpperCase())">
+            GO</button>
+          </div>
           <div class="rectangle"></div>
           <h5
             v-if="user.name == null"
@@ -31,7 +39,7 @@
             >Macro view</router-link
           >
           <h7 class="thing">News( coming soon)</h7>
-          <h7 class="thing">Macroview( coming soon)</h7>
+          
           
           <!-- 
           <h1 v-if="user == null">
@@ -93,7 +101,7 @@
         <button class="r_button" @click="seekingalpha(ticker)">
           Seeking Alpha Analysis
         </button>
-        <button class="r_button" @click="kofi">Support💚</button>
+        <!-- <button class="r_button" @click="kofi">Support💚</button> -->
         <!-- <button class="r_button" @click=all(ticker)>All</button> -->
       </div>
       <!-- <h1>{{data}}</h1> -->
@@ -102,6 +110,7 @@
     <div class="chart">
       <div class="somt" style="background-color: #00f85f">
         <VueTradingView
+        :key="$route.fullPath"
           style="grid-area: middle"
           class="view1"
           :options="{
@@ -208,6 +217,15 @@ export default {
     return_items: function (sel, name) {
       console.log(sel);
       return this.items[sel][name];
+    },
+
+    the_go:function(ticker){
+      this.$router.push({
+        path: '/dashboard/'+ ticker,
+      });
+      this.$forceUpdate();
+      // location.reload();
+      // this.$router.go(this.$router.currentRoute);
     },
 
     logout: function () {

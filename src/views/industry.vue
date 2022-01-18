@@ -7,6 +7,14 @@
           <router-link :to="{ path: '/' }" class="thing" replace>
             ←Back</router-link
           >
+          <div class="searchbox">
+            <input :key="$route.fullPath" type="text" class="search-bar1" :placeholder="'$'+ticker"  @keyup.enter="the_go(message.toUpperCase())" v-model="message" >
+          </div>
+          
+          <div class="buttondiv">
+            <button :key="$route.fullPath" class="gobutton" @click="the_go(message.toUpperCase())">
+            GO</button>
+          </div>
           <div class="rectangle"></div>
           <h5
             v-if="user == null"
@@ -23,8 +31,14 @@
             >Dashboard</router-link
           >
           <h4 class="current">industry</h4>
+          <router-link
+            :to="{ path: '/macro/' + ticker }"
+            class="thing"
+            replace
+            >Macro view</router-link
+          >
           <h7 class="thing">News( coming soon)</h7>
-          <h7 class="thing">Macroview( coming soon)</h7>
+          <!-- <h7 class="thing">Macroview( coming soon)</h7> -->
 
           <h1 v-if="user == null">
             <b-button
@@ -443,6 +457,15 @@ export default {
           this.error = error;
         });
     },
+     the_go:function(ticker){
+      this.$router.push({
+        path: '/dashboard/'+ ticker,
+      });
+      this.$forceUpdate();
+      // location.reload();
+      // this.$router.go(this.$router.currentRoute);
+    },
+
 
     googlesigin: function () {
       const provider = new firebase.auth.GoogleAuthProvider();
