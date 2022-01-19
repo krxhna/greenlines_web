@@ -31,13 +31,26 @@
 }
 
 .buttondiv{
+    padding: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-end;
     /* margin-top: auto; */
     /* padding: 20px; */
 }
+
+.searchbox{
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: auto; */
+    /* padding: 20px; */
+}
+
+
 
 .searchbox .search-bar1{
     margin: 2px;
@@ -77,9 +90,12 @@
 
 
 .navbar {
+    
+
+    border-right: 1px solid rgb(58, 58, 58);
 
 
-    background-color: #0f0f0f;
+    background-color: #000000;
     width: 20vw;
     height: 100vh;
 }
@@ -104,7 +120,10 @@
 }
 
 .thing {
-    background-color: #121212;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: #000000;
     color: #CDCDCD;
     padding: 10px;
     font-family: Segoe UI;
@@ -120,7 +139,10 @@
 }
 
 .current {
-    background-color: #121212;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: #000000;
     color: #CDCDCD;
     font-weight: bold;
     padding: 10px;
@@ -130,7 +152,7 @@
 }
 
 .current:hover {
-    background-color: #121212;
+    background-color: #021a00;
     color: #CDCDCD;
     font-weight: bold;
     padding: 10px;
@@ -140,7 +162,7 @@
 }
 
 .thing:hover {
-    background-color: #121212;
+    background-color: #021a00;
     color: var(--main-color);
     padding: 10px;
 
@@ -366,3 +388,22 @@ width: 0.3vw;
     background-color:  rgb(24, 209, 24);
 }
 
+
+
+@media screen and (max-width:728px) {
+
+    .navbar{
+        width: 1px;
+    }
+
+    .current{
+        width: 1px;
+    }
+    .current:hover{
+        width: 1px;
+    }
+
+    .view{
+         flex-direction: column;
+    }
+}

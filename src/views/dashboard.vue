@@ -15,7 +15,9 @@
             <button :key="$route.fullPath" class="gobutton" @click="the_go(message.toUpperCase())">
             GO</button>
           </div>
+          
           <div class="rectangle"></div>
+          
           <h5
             v-if="user.name == null"
             style="color: green; text-transform: capitalize"
@@ -25,6 +27,7 @@
           <h5 v-else style="color: green; text-transform: capitalize">
             {{ user.email }}'s GL terminal
           </h5>
+          
           <h4 class="current">Dashboard</h4>
           <router-link
             :to="{ path: '/industry/' + ticker }"
@@ -83,6 +86,7 @@
       </ul>
     </div>
     <div class="options">
+      
       <h1 style="color: white; margin-top: 4vh">${{ ticker }}</h1>
       <div style="display: grid; margin-top: 5vh" class="three">
         <button class="r_button" @click="annual(ticker)">
@@ -101,6 +105,7 @@
         <button class="r_button" @click="seekingalpha(ticker)">
           Seeking Alpha Analysis
         </button>
+        
         <!-- <button class="r_button" @click="kofi">Support💚</button> -->
         <!-- <button class="r_button" @click=all(ticker)>All</button> -->
       </div>

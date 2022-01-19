@@ -5,20 +5,38 @@
     
    
     <div class="grid">
+
+      <div class="logo1">
+         <img src="../assets/logotrans.png" alt="logo" style="width:50vw; height:auto;">
+          <div class="phrase">
+             30 minute valuation work takes 30 seconds with greenlines
+          </div>
+      </div>
      
-      <div class="heading" style="grid-area: header">
+    
+       <!-- <h1 style="font-family: poppins; font-weight:700; color:black;" >Greenlines.club</h1> -->
+     
+     
 
-        <h1 style="font-family: poppins; font-weight:700; color:black;" >Greenlines.club</h1>
-      <h5> 30 minute valuation work takes 30 seconds with greenlines</h5>
-      
-      </div>
-          <div class="searchbox" style="grid-area: middle">
+
+      <div class="search">
+        <div class="searchbox">
         <input type="text" class="search-bar" placeholder="Enter Ticker (eg., MSFT )"  @keyup.enter="handleClick(message.toUpperCase())" v-model="message">
-        <button class="button" @click=handleClick(message.toUpperCase())>
-          GO 
-        </button>
-
+        
       </div>
+      </div>
+
+      <div class="buttondiv">
+            <button class="button" @click=handleClick(message.toUpperCase())>
+          GO 
+        </button> 
+      </div>
+      
+  
+      
+      
+     
+          
 
         
         </div>
@@ -111,9 +129,9 @@ export default {
 
 
 .searchbox .search-bar{
-  margin-top: 15%;
+  /* margin-top: 15%; */
   display: block;
-  width: 90%;
+  width: 70vw;
   
   padding: 15px;
   border-radius: 10px 0px 10px 0px;
@@ -128,6 +146,19 @@ export default {
   color: aqua;
 }
 
+
+.phrase{
+  
+  font-family: poppins;
+  
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+
+
+}
+
 .h1{
   margin-top: 60%;
  
@@ -137,11 +168,11 @@ export default {
 .searchbox .search-bar:focus{
   
   display: block;
-  width: 90%;
+  
   
   padding: 15px;
   border-radius: 10px;
-  border: none;
+  border: 1px solid rgb(0, 255, 85);
   outline: none;
   border-radius: 0px 10px 0px 10px;
   box-shadow: 0px 0px 10px 0px rgb(83, 255, 83);
@@ -151,21 +182,32 @@ export default {
 }
 
 .grid{
-  display: grid;
+  /* margin-top: 30px; */
+  display: flex;
+  align-items: center;
+    flex-direction: column;
+  /* display: grid;
     grid-template-areas: 
         "header1 header header2"
         "left   middle right"
         "footer footer footer";
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr; */
     /* grid-template-rows: 4fr 1fr 1fr; */
+    
+}
+
+.logo1{
+ 
+  display: flex;
+  align-items: center;
+    flex-direction: column;
+ 
     
 }
 
 
 .button {
-
-  margin-top: 5%;
                     display: inline-block;
                     outline: none;
                     cursor: pointer;
@@ -185,16 +227,36 @@ export default {
                     color: black;
                     background-color: rgb(83, 255, 83);
                     height: 48px;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
+                    /* position: absolute; */
+                    /* top: 50%;
+                    left: 50%; */
+                    /* transform: translate(-50%, -50%); */
                     /* :hover{
                         transform: scale(1.04);
                         background-color: #21e065;
                     } */
                 
 }
+
+
+@media screen and (max-width:728px) {
+
+
+
+.searchbox .search-bar{
+  width: 85vw;
+}
+
+.logo1{
+  margin-top: 10%;
+}
+
+
+
+
+
+}
+
 
 
 
