@@ -8,7 +8,7 @@
             ←Back</router-link
           >
           <div class="searchbox">
-            <input :key="$route.fullPath" type="text" class="search-bar1" :placeholder="'$'+ticker"  @keyup.enter="the_go(message.toUpperCase())" v-model="message" >
+            <input :key="$route.fullPath" type="text" class="search-bar1" :placeholder="'$'+ticker" style="text-transform:uppercase" @keyup.enter="the_go(message.toUpperCase())" v-model="message" >
           </div>
           
           <div class="buttondiv">

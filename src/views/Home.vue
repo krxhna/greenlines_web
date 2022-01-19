@@ -7,7 +7,7 @@
     <div class="grid">
 
       <div class="logo1">
-         <img src="../assets/logotrans.png" alt="logo" style="width:50vw; height:auto;">
+         <img src="../assets/dotclub1.png" alt="logo"  style="width:50vw; height:auto;">
           <div class="phrase">
              30 minute valuation work takes 30 seconds with greenlines
           </div>
@@ -20,8 +20,8 @@
 
 
       <div class="search">
-        <div class="searchbox">
-        <input type="text" class="search-bar" placeholder="Enter Ticker (eg., MSFT )"  @keyup.enter="handleClick(message.toUpperCase())" v-model="message">
+        <div class="searchbox_home">
+        <input type="text" class="search-bar" style="text-transform:uppercase" placeholder="Enter Ticker (eg., MSFT )"  @keyup.enter="handleClick(message.toUpperCase())" v-model="message">
         
       </div>
       </div>
@@ -128,7 +128,7 @@ export default {
 
 
 
-.searchbox .search-bar{
+.searchbox_home .search-bar{
   /* margin-top: 15%; */
   display: block;
   width: 70vw;
@@ -165,7 +165,7 @@ export default {
 }
 
 
-.searchbox .search-bar:focus{
+.searchbox_home .search-bar:focus{
   
   display: block;
   
