@@ -135,8 +135,9 @@ export default {
   
   padding: 15px;
   border-radius: 10px 0px 10px 0px;
-  border: 1px solid rgb(0, 0, 0);
-  box-shadow: 0px 0px 10px 0px rgba(143, 143, 143, 0.2);
+  border: 0px solid rgb(0, 228, 19);
+   box-shadow: 0px 0px 10px 0px rgb(83, 255, 83);
+  /* box-shadow: 0px 0px 10px 0px rgba(143, 143, 143, 0.2); */
 
   font-size: 20px;
 
@@ -175,7 +176,7 @@ export default {
   border: 1px solid rgb(0, 255, 85);
   outline: none;
   border-radius: 0px 10px 0px 10px;
-  box-shadow: 0px 0px 10px 0px rgb(83, 255, 83);
+  box-shadow: 0px 0px 20px 0px rgb(83, 255, 83);
 
   font-size: 20px;
 
@@ -225,7 +226,7 @@ export default {
                     text-align: center;
                     padding: 17px 48px;
                     color: black;
-                    background-color: rgb(83, 255, 83);
+                    background-color: rgb(0, 255, 0);
                     height: 48px;
                     /* position: absolute; */
                     /* top: 50%;
