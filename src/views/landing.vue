@@ -222,7 +222,49 @@
          
         </div> -->
       </div>
+ <div class="quickline">
+        <div class="textthing">
+          <div class="infotext">Macro-econimic data for smart decisions</div>
+          <a style="font-weight: 500"
+            >
+            see whats going on in a macro level, make smart investment decisions,all in one place, yield curve, unemploymnet, inflation data, comsumer sentiment and much more</a
+          >
+          <div class="empty"  style="color:white;">.</div>
+          <button
+            @click="$router.push('signup')"
+            type="submit"
+            class="btn-grad"
+            style="background-color: green; border: none font-family:poppins; font-size:15px; font-weight:700; flex-direction: row; align-items:center;
+  display: flex; "
+          >
+            Get Started
+            <div class="gap"></div>
 
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-arrow-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="imgbox">
+          <img
+            style="Scale Mode:scale-down; border-radius: 5px; w"
+            src="../assets/ssmacro.png"
+          />
+        </div>
+        <!-- <div class="videobox">
+         
+        </div> -->
+      </div>
       <div class="tesit">
         <h1>what people are saying</h1>
 
