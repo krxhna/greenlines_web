@@ -8,16 +8,29 @@
             ←Back</router-link
           >
           <div class="searchbox">
-            <input :key="$route.fullPath" type="text" class="search-bar1" :placeholder="'$'+ticker" style="text-transform:uppercase" @keyup.enter="the_go(message.toUpperCase())" v-model="message" >
+            <input
+              :key="$route.fullPath"
+              type="text"
+              class="search-bar1"
+              :placeholder="'$' + ticker"
+              style="text-transform: uppercase"
+              @keyup.enter="the_go(message.toUpperCase())"
+              v-model="message"
+            />
           </div>
-          
+
           <div class="buttondiv">
-            <button :key="$route.fullPath" class="gobutton" @click="the_go(message.toUpperCase())">
-            GO</button>
+            <button
+              :key="$route.fullPath"
+              class="gobutton"
+              @click="the_go(message.toUpperCase())"
+            >
+              GO
+            </button>
           </div>
-          
+
           <div class="rectangle"></div>
-          
+
           <h5
             v-if="user.name == null"
             style="color: green; text-transform: capitalize"
@@ -27,7 +40,7 @@
           <h5 v-else style="color: green; text-transform: capitalize">
             {{ user.email }}'s GL terminal
           </h5>
-          
+
           <h4 class="current">Dashboard</h4>
           <router-link
             :to="{ path: '/industry/' + ticker }"
@@ -35,15 +48,11 @@
             replace
             >Industry</router-link
           >
-          <router-link
-            :to="{ path: '/macro/' + ticker }"
-            class="thing"
-            replace
+          <router-link :to="{ path: '/macro/' + ticker }" class="thing" replace
             >Macro view</router-link
           >
           <h7 class="thing">News( coming soon)</h7>
-          
-          
+
           <!-- 
           <h1 v-if="user == null">
             <b-button  class="btn btn-success" style="color: black"
@@ -86,15 +95,35 @@
       </ul>
     </div>
     <div class="options">
-      
       <h1 style="color: white; margin-top: 4vh">${{ ticker }}</h1>
+      <div class="custom-control custom-switch" style="color:gray">
+        <input @change="onChangeEventHandler"
+ 
+          type="checkbox"
+          class="custom-control-input"
+          id="customSwitches"
+        />
+        <label style="color:rgb(24, 209, 24); font-weight: 500;" v-if="international" class="custom-control-label" for="customSwitches"
+          >International Company<i class="fas fa-globe-asia"></i></label
+        >
+        <label v-else class="custom-control-label" for="customSwitches"
+          >International Company<i class="fas fa-globe-asia"></i></label
+        >
+      </div>
+     
       <div style="display: grid; margin-top: 5vh" class="three">
-        <button class="r_button" @click="annual(ticker)">
+        <button v-if="international" class="r_button" @click="annual_int(ticker)">
+          Annual Statement international
+        </button>
+        <button v-else class="r_button" @click="annual(ticker)">
           Annual Statement
         </button>
-        <button class="r_button" @click="quaterly(ticker)">
+        <button v-if="!international" class="r_button" @click="quaterly(ticker)">
           Quarterly Statement
         </button>
+        <!-- <button v-else class="r_button" @click="quaterly(ticker)">
+          Quarterly Statement
+        </button> -->
         <button class="r_button" @click="ir(ticker)">Investor Relations</button>
         <button class="r_button" @click="funds(ticker)">Share holders</button>
 
@@ -105,7 +134,7 @@
         <button class="r_button" @click="seekingalpha(ticker)">
           Seeking Alpha Analysis
         </button>
-        
+
         <!-- <button class="r_button" @click="kofi">Support💚</button> -->
         <!-- <button class="r_button" @click=all(ticker)>All</button> -->
       </div>
@@ -115,7 +144,7 @@
     <div class="chart">
       <div class="somt" style="background-color: #00f85f">
         <VueTradingView
-        :key="$route.fullPath"
+          :key="$route.fullPath"
           style="grid-area: middle"
           class="view1"
           :options="{
@@ -146,6 +175,7 @@ export default {
   props: ["ticker"],
   data() {
     return {
+      international:false,
       username: "",
       user: null,
       error: null,
@@ -155,13 +185,13 @@ export default {
   },
 
   methods: {
-
-    openstripe: function(){
-     window.open("https://buy.stripe.com/aEUfZkel41YJ6FW5kk");
-     this.$gtag.event("clicked on pro", { method: "Google" });
+     onChangeEventHandler(){
+          this.international = !this.international;
+      },
+    openstripe: function () {
+      window.open("https://buy.stripe.com/aEUfZkel41YJ6FW5kk");
+      this.$gtag.event("clicked on pro", { method: "Google" });
     },
-
-
 
     return_id: function (id) {
       return id;
@@ -174,11 +204,27 @@ export default {
       );
       this.$gtag.event("clicked annaul desktop", { method: "Google" });
     },
+    annual_int: function (ticker) {
+      window.open(
+        "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" +
+          ticker +
+          "&type=20-f&dateb=&owner=exclude&count=40#contentDiv"
+      );
+      this.$gtag.event("clicked annaul desktop", { method: "Google" });
+    },
     quaterly: function (ticker) {
       window.open(
         "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" +
           ticker +
           "&type=10-Q&dateb=&owner=exclude&count=40#contentDiv"
+      );
+      this.$gtag.event("clicked quaterly desktop", { method: "Google" });
+    },
+    quaterly_int: function (ticker) {
+      window.open(
+        "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=" +
+          ticker +
+          "&type=13F&dateb=&owner=exclude&count=40#contentDiv"
       );
       this.$gtag.event("clicked quaterly desktop", { method: "Google" });
     },
@@ -224,10 +270,12 @@ export default {
       return this.items[sel][name];
     },
 
-    the_go:function(ticker){
+    the_go: function (ticker) {
+      this.international = false;
       this.$router.push({
-        path: '/dashboard/'+ ticker,
+        path: "/dashboard/" + ticker,
       });
+      
       this.$forceUpdate();
       // location.reload();
       // this.$router.go(this.$router.currentRoute);

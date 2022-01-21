@@ -1,5 +1,5 @@
 :root {
-    
+
     font-size: 16px;
     /* background-color: #121212; */
     --main-color: rgb(15, 221, 15);
@@ -17,21 +17,21 @@
 }
 
 
-.footernotes{
-    color:wheat;
+.footernotes {
+    color: wheat;
     font-size: 11px;
     margin-top: auto;
     padding: 20px;
-    
+
     flex-direction: column;
 }
 
-.footernotes:link{
-    color:rgb(255, 255, 255);
+.footernotes:link {
+    color: rgb(255, 255, 255);
 }
 
-.buttondiv{
-    
+.buttondiv {
+
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -41,7 +41,7 @@
     /* padding: 20px; */
 }
 
-.searchbox{
+.searchbox {
     width: 15vw;
     padding: 5px;
     display: flex;
@@ -53,7 +53,7 @@
 }
 
 
-.searchbox_home{
+.searchbox_home {
     width: 70vw;
     padding: 5px;
     display: flex;
@@ -66,21 +66,21 @@
 
 
 
-.searchbox .search-bar1{
+.searchbox .search-bar1 {
     width: 15vw;
     margin: 0px;
     border: 1px solid rgb(0, 255, 42);
     color: white;
     background-color: black;
     height: 5vh;
-   
-    
+
+
 
     border-radius: 0 5px 0 5px;
 
 }
 
-.searchbox .search-bar1:focus{
+.searchbox .search-bar1:focus {
     width: 15vw;
     outline: none;
 
@@ -91,23 +91,23 @@
 
 
 
-.gobutton{
+.gobutton {
     width: 5vw;
-    border-radius:  0 5px 0 5px;
-    
+    border-radius: 0 5px 0 5px;
+
     padding: 2px;
     /* padding-left: 20%; */
 
     background-color: rgb(15, 221, 15);
     border: none;
-    
+
 }
 
 
 
 
 .navbar {
-    
+
 
     border-right: 1px solid rgb(58, 58, 58);
 
@@ -177,7 +177,7 @@
     background-color: #021a00;
     color: #CDCDCD;
     font-weight: bold;
-    
+
     padding: 10px;
     text-decoration: underline;
     text-decoration-color: var(--main-color);
@@ -191,30 +191,31 @@
     padding: 10px;
 
 }
-.r_button{
+
+.r_button {
     align-items: center;
     margin-left: 2%;
     font-family: Segoe UI;
     /* font-style: italic; */
     line-height: 1;
-  border-radius: 0px 5px 0px 5px;
-  transition-property: background-color, border-color, color, box-shadow, filter;
-  transition-duration: 0.3s;
-  border: 1px solid transparent;
-  letter-spacing: 2px;
-  min-width: 100%;
-  /* text-transform: uppercase; */
-  white-space: normal;
-  font-weight: 700;
-  text-align: center;
-  padding: 17px 48px;
-  color: #ebebeb;
-  /* border: 0.2px solid rgb(1, 26, 12); */
-  background-color: #121212;
-  height: 85%;
+    border-radius: 0px 5px 0px 5px;
+    transition-property: background-color, border-color, color, box-shadow, filter;
+    transition-duration: 0.3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 100%;
+    /* text-transform: uppercase; */
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 17px 48px;
+    color: #ebebeb;
+    /* border: 0.2px solid rgb(1, 26, 12); */
+    background-color: #000000;
+    height: 85%;
 }
 
-.r_button:hover{
+.r_button:hover {
 
     background-color: var(--main-color);
     color: black;
@@ -228,7 +229,7 @@
     height: 100vh;
 }
 
-.char{
+.char {
     background-color: #000000;
     color: #CDCDCD;
     padding: 20px;
@@ -248,9 +249,9 @@
 }
 
 /* list 2 in the thing */
-.view1{
-    
-    
+.view1 {
+
+
     height: 50vh;
     width: 100%;
 
@@ -324,7 +325,7 @@
 
 
 .infocards {
-    border-radius: 10px;
+    border-radius: 0 10px 0 10px;
     font-family: Segoe UI;
     align-items: center;
     text-align: left;
@@ -334,7 +335,7 @@
 
     width: vw;
     color: #DADADA;
-    background-color: #1E1E1E;
+    background-color: #161616;
     display: flex;
     justify-content: space-between;
     padding: 2%;
@@ -348,35 +349,35 @@
     margin: 2%;
 }
 
-.cardname{
+.cardname {
     color: green;
 }
 
-.per{
+.per {
     color: #707070;
 }
 
 ::-webkit-scrollbar {
-width: 0.3vw;
+    width: 0.3vw;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #000000;
+    background: #000000;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(9, 129, 59);
+    background: rgb(9, 129, 59);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+    background: #555;
 }
 
 
-.select{
+.select {
     position: relative;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
@@ -404,34 +405,65 @@ width: 0.3vw;
     background-color: #ffeba7;
     cursor: pointer;
     color: #000000;
-    box-shadow: 0 12px 35px 0 rgba(255,235,167,.15);
+    box-shadow: 0 12px 35px 0 rgba(255, 235, 167, .15);
     background-color: rgb(20, 207, 20);
-    
+
 }
 
-.select:hover{
+.select:hover {
     width: 500px;
     color: black;
-    
-    background-color:  rgb(24, 209, 24);
+
+    background-color: rgb(24, 209, 24);
 }
 
 
 
 @media screen and (max-width:728px) {
 
-    .navbar{
+    .navbar {
         width: 1px;
     }
 
-    .current{
-        width: 1px;
-    }
-    .current:hover{
+    .current {
         width: 1px;
     }
 
-    .view{
-         flex-direction: column;
+    .current:hover {
+        width: 1px;
     }
+
+    .view {
+        flex-direction: column;
+    }
+}
+
+
+.custom-control-input:focus:not(:checked)~.custom-control-label::before {
+    border-color: rgb(0, 0, 0) !important;
+}
+
+/*sets the background color of
+          switch to violet when it is checked*/
+.custom-control-input:checked~.custom-control-label::before {
+    border-color: rgb(0, 0, 0) !important;
+    background-color: rgb(24, 209, 24) !important;
+}
+
+/*sets the background color of
+          switch to violet when it is active*/
+.custom-control-input:active~.custom-control-label::before {
+    background-color: rgb(0, 0, 0) !important;
+    border-color: rgb(0, 0, 0) !important;
+}
+
+.custom-control-input:focus~.custom-control-label::before {
+    /* when the button is toggled off 
+    it is still in focus and a violet border will appear */
+    border-color: rgb(0, 0, 0) !important;
+    /* box shadow is blue by default
+    but we do not want any shadow hence we have set 
+    all the values as 0 */
+    box-shadow:
+        0 0 0 0rem rgba(0, 0, 0, 0) !important;
 }

@@ -7,7 +7,7 @@
     <div class="grid">
 
       <div class="logo1">
-         <img src="../assets/dotclub1.png" alt="logo"  style="width:50vw; height:auto;">
+         <img src="../assets/dotclub1.png" alt="logo"  style="width:35vw; height:auto; padding-top:vh;">
           <div class="phrase">
              30 minute valuation work takes 30 seconds with greenlines
           </div>
