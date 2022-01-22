@@ -34,7 +34,7 @@
           Do
           <a>Worldclass</a>
 
-          <a> Valuation. </a>
+          <div class="grad1"> Valuation. </div>
         </div>
         
         <div class="vid">
@@ -69,7 +69,7 @@
               style="background-color: green; border: none font-family:poppins; font-size:15px; font-weight:700; flex-direction: row; align-items:center;
   display: flex; "
             >
-              Get Started
+              Get Started!
             </button>
           </div>
 

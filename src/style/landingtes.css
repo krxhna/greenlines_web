@@ -1,0 +1,147 @@
+.titletext {
+    /* position: absolute; */
+    width: 560px;
+    height: 600px;
+    /* left: 156px;
+top: 113px; */
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 80px;
+
+
+    color: #000000;
+
+}
+
+
+.grad1{
+    font-weight: 900;
+    font-family: 'poppins';
+    color: indigo;
+    background: -webkit-linear-gradient(112.1deg, #1be608, #07b455db 86%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: FADE-IN 10s infinite;
+    animation-timing-function: linear;
+    -webkit-animation: FADE-IN 10s infinite;
+    -moz-animation:    FADE-IN 10s infinite;
+    -o-animation:      FADE-IN 10s infinite;
+
+}
+
+
+@-webkit-keyframes FADE-IN {
+    0% {
+        background: -webkit-linear-gradient(112.1deg, #0831e6, #07b455db 86%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    50% {
+
+        background: -webkit-linear-gradient(50.1deg, #bde608, #07b455db 86%);
+
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    100% {
+        background: -webkit-linear-gradient(0.1deg, #08dfe6, #07b455db 86%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+  }
+@-moz-keyframes FADE-IN {
+    0% {
+        background: -webkit-linear-gradient(112.1deg, #0831e6, #07b455db 86%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    50% {
+
+        background: -webkit-linear-gradient(50.1deg, #bde608, #07b455db 86%);
+
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    100% {
+        background: -webkit-linear-gradient(0.1deg, #08dfe6, #07b455db 86%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+  }
+@-o-keyframes FADE-IN {
+    0% {
+        background: -webkit-linear-gradient(112.1deg, #0831e6, #07b455db 86%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    50% {
+
+        background: -webkit-linear-gradient(50.1deg, #bde608, #07b455db 86%);
+
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    100% {
+        background: -webkit-linear-gradient(0.1deg, #08dfe6, #07b455db 86%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+  } 
+@keyframes FADE-IN {
+    0% {
+        background: -webkit-linear-gradient(112.1deg, #0831e6, #07b455db 86%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    50% {
+
+        background: -webkit-linear-gradient(50.1deg, #bde608, #07b455db 86%);
+
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    100% {
+        background: -webkit-linear-gradient(0.1deg, #08dfe6, #07b455db 86%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+    }
+}
+
+
+.landingtest {
+    /* justify-content: center;
+    display: flex;
+    flex-direction: column; */
+    /* position: relative; */
+    width: 99.7vw;
+    height: 982px;
+
+    background: linear-gradient(112.1deg, #b6eec5 1.07%, #ffffff 100%);
+}

@@ -246,6 +246,126 @@
   overflow: hidden;
 }
 
+.grad1{
+  font-weight: 900;
+  font-family: 'poppins';
+  /* color: indigo; */
+  background: -webkit-linear-gradient(112.1deg, #1be608, #029946db 86%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: FADE-IN 7s infinite;
+  animation-timing-function: linear;
+  -webkit-animation: FADE-IN 7s infinite;
+  -moz-animation:    FADE-IN 7s infinite;
+  -o-animation:      FADE-IN 7s infinite;
+
+}
+
+
+@-webkit-keyframes FADE-IN {
+  0% {
+      background: -webkit-linear-gradient(112.1deg, #0831e6, #07b455db 86%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+
+  50% {
+
+      background: -webkit-linear-gradient(50.1deg, #bde608, #07b455db 86%);
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+
+  100% {
+      background: -webkit-linear-gradient(0.1deg, #08dfe6, #07b455db 86%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+  }
+}
+@-moz-keyframes FADE-IN {
+  0% {
+      background: -webkit-linear-gradient(112.1deg, #0831e6, #07b455db 86%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+
+  50% {
+
+      background: -webkit-linear-gradient(50.1deg, #bde608, #07b455db 86%);
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+
+  100% {
+      background: -webkit-linear-gradient(0.1deg, #08dfe6, #07b455db 86%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+  }
+}
+@-o-keyframes FADE-IN {
+  0% {
+      background: -webkit-linear-gradient(112.1deg, #0831e6, #07b455db 86%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+
+  50% {
+
+      background: -webkit-linear-gradient(50.1deg, #bde608, #07b455db 86%);
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+
+  100% {
+      background: -webkit-linear-gradient(0.1deg, #08dfe6, #07b455db 86%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+  }
+} 
+@keyframes FADE-IN {
+  0% {
+      background: -webkit-linear-gradient(112.1deg, #0831e6, #07b455db 86%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+
+  50% {
+
+      background: -webkit-linear-gradient(50.1deg, #bde608, #07b455db 86%);
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+
+  100% {
+      background: -webkit-linear-gradient(0.1deg, #08dfe6, #07b455db 86%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+  }
+}
+
+
+
 
 
 @media screen and (max-width:728px) {

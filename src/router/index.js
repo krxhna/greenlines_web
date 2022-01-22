@@ -90,10 +90,10 @@ const routes = [
   
   },
   {
-    path: '/test/:ticker',
+    path: '/test',
     name: 'test',
     component: test,
-    props: true,
+    
   
   },
   {
