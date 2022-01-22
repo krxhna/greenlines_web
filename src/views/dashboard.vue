@@ -98,6 +98,7 @@
       <h1 style="color: white; margin-top: 4vh">${{ ticker }}</h1>
       <div class="custom-control custom-switch" style="color:gray">
         <input @change="onChangeEventHandler"
+         :key="$route.fullPath"
  
           type="checkbox"
           class="custom-control-input"
