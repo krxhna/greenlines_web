@@ -222,7 +222,7 @@
          
         </div> -->
       </div>
- <div class="quickline">
+ <div class="quickline3">
         <div class="textthing">
           <div class="infotext">Macro-econimic data for smart decisions</div>
           <a style="font-weight: 500"
@@ -255,8 +255,9 @@
             </svg>
           </button>
         </div>
-        <div class="imgbox">
+        <div class="imgbox3">
           <img
+          
             style="Scale Mode:scale-down; border-radius: 5px; w"
             src="../assets/ssmacro.png"
           />

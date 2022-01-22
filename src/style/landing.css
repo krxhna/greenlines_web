@@ -154,6 +154,25 @@
     
   }
 
+  .quickline3 {
+
+    /* display:grid; */
+    /* grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); */
+
+    
+    
+    box-shadow: 1px 10px 10px rgb(196, 196, 196);
+    display: flex;
+    flex-direction: row;
+
+    margin: 3% 10% 0 10%;
+
+    height: 74vh;
+    width: 80vw;
+    background-color: rgb(255, 255, 255);
+    
+  }
+
   
 
   .infotext{
@@ -245,6 +264,14 @@
   height: 100%;
   overflow: hidden;
 }
+
+.imgbox3{
+  width: 95%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
 
 .grad1{
   font-weight: 900;
@@ -425,6 +452,13 @@
     
     flex-direction: column;
   }
+  .quickline3{
+    /* height: 55vh; */
+    
+    /* padding-bottom: 30%; */
+    
+    flex-direction: column;
+  }
 
   .videobox{
     
@@ -448,6 +482,8 @@
   
     font-size: 3.5rem;
   }
+
+ 
 
 
 
