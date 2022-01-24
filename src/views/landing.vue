@@ -38,6 +38,7 @@
         </div>
         
         <div class="vid">
+          <!-- <iframe class="yt-player" id="ytplayer-948c2c" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="640" height="360" src="https://www.youtube.com/embed/DyDfgMOUjCI?autoplay=1&amp;cc_load_policy=0&amp;controls=0&amp;disablekb=1&amp;enablejsapi=1&amp;fs=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;origin=https%3A%2F%2Fbillie.withyoutube.com&amp;playsinline=1&amp;rel=1&amp;wmode=opaque&amp;widgetid=1"></iframe> -->
           <iframe class="player" width="672" height="378" src="https://www.youtube.com/embed/8X1e4PnLyR8?rel=0&amp;autoplay=1&mute=1&controls=0&loop=1&modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 </div>
