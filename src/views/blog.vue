@@ -66,7 +66,7 @@ export default {
 
 <style>
 
-.first {
+.firstdqad {
   /* background-color: aqua; */
   width: 98vw;
   height: 10vh;
