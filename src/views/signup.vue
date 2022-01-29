@@ -220,11 +220,16 @@ export default {
       //signup with email and password
       firebase
         .auth()
-        .createUserWithEmailAndPassword(this.email, this.password)
+        .createUserWithEmailAndPassword(this.email, this.password,
+        
+        
+        )
         .then(() => {
-          this.writedata();
-         
-          this.$router.push({
+          this.user.updateProfile({
+        displayName: this.fullname,
+    });
+    // alert("signedup");
+    this.$router.push({
             path: "/",
           });
           // alert("signup");
@@ -237,10 +242,6 @@ export default {
         });
       
     }
-
-
-
-
 
   },
 

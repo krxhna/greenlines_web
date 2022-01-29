@@ -1,13 +1,10 @@
 .
 <template>
   <div class="dash">
-    <div class="navbar">
-      <ul>
-        <li class="navbarnav">
-          <router-link :to="{ path: '/' }" class="thing" replace>
-            ←Back</router-link
-          >
-          <div class="searchbox">
+   <div v-if="popup" class="poppartent">
+      <div class="popup">
+  popup
+  <div class="searchbox">
             <input
               :key="$route.fullPath"
               type="text"
@@ -27,6 +24,50 @@
             >
               GO
             </button>
+
+           
+          
+          </div>
+</div>
+   </div>
+    <div class="navbar">
+      <ul>
+        <li class="navbarnav">
+          <router-link :to="{ path: '/' }" class="thing" replace>
+            ←Back</router-link
+          >
+          <div class="searchbox">
+            <input
+              :key="$route.fullPath"
+              type="text"
+              class="search-bar1"
+              :placeholder="'$' + ticker"
+              style="text-transform: uppercase"
+              @keyup.enter="the_go(message.toUpperCase())"
+              v-model="message"
+            />
+          </div>
+
+          <div class="buttondiv">
+           <div class="a" style="color:white">
+
+           </div>
+            <button
+              :key="$route.fullPath"
+              class="gobutton"
+              @click="the_go(message.toUpperCase())"
+            >
+              GO
+            </button>
+             <!-- <button
+              :key="$route.fullPath"
+              class="gobutton"
+              @click="setpopup"
+            >
+              test
+            </button> -->
+
+            
           </div>
 
           <div class="rectangle"></div>
@@ -176,6 +217,7 @@ export default {
   props: ["ticker"],
   data() {
     return {
+      popup:false,
       international:false,
       username: "",
       user: null,
@@ -196,6 +238,18 @@ export default {
 
     return_id: function (id) {
       return id;
+    },
+
+    
+    setpopup: function () {
+      alert("popup");
+      this.popup = !this.popup;
+    },
+
+
+    meowalert:function(){
+      alert("meow")
+    
     },
     annual: function (ticker) {
       window.open(
@@ -272,6 +326,7 @@ export default {
     },
 
     the_go: function (ticker) {
+      this.popup = false;
       this.international = false;
       this.$router.push({
         path: "/dashboard/" + ticker,
@@ -300,7 +355,7 @@ export default {
       firebase
         .auth()
         .signInWithPopup(provider)
-        .then(() => {
+                .then(() => {
           // alert("signin");
           // this.$router.push({
           //   path: "results/" + this.user.uid,

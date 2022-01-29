@@ -30,12 +30,46 @@
     color: rgb(255, 255, 255);
 }
 
-.buttondiv {
+.popup{
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position  : absolute;
+   
+    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    padding: 5px;
+}
+
+
+/* .poppartent{
+    background-color: white;
+    width: 50%;
+    height: 50%;
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+} */
+.buttondiv {
+    ;
+
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: flex-end;
     /* margin-top: auto; */
     /* padding: 20px; */

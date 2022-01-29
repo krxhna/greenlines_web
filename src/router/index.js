@@ -14,6 +14,7 @@ import signup from '../views/signup.vue'
 import signin from '../views/signin.vue'
 import firebase from '../firebase.js'
 import macro from '../views/macro.vue'
+import blog from '../views/blog.vue'
 
 
 
@@ -39,6 +40,11 @@ const routes = [
     name: 'landing',
     component: landing
     
+  },
+  {
+    path: '/blog',
+    name: 'blog',
+    component: blog
   },
   {
     path: '/macro/:ticker',
