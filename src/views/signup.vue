@@ -47,8 +47,11 @@
             <label for="exampleInputEmail1" class="form-label"
               >Full name</label
             >
+            <div class="a">
+              {{fullname}}
+            </div>
             <input
-              v-model="fullname"
+              v-model="fullname_e"
               type="email"
               class="form-control"
               id="exampleInputEmail1"
@@ -81,7 +84,7 @@
             />
           </div>
        
-           <b-button @click="emailsignup" class="btn_login" style="background-color: #14e20d; border: none; color:black; padding: 10px;">
+           <b-button @click="emailsignup(fullname_e)" class="btn_login" style="background-color: #14e20d; border: none; color:black; padding: 10px;">
              Sign up</b-button
             >
           <div class="or" style="text-align: center;">
@@ -129,7 +132,7 @@ export default {
   },
   data() {
     return {
-      fullname: "",
+      fullname: "gfdsgff",
       email:'',
       password:'',
       user: null,
@@ -180,10 +183,10 @@ export default {
 
     },
 
-    writedata1: function(){
+    writedata1: function(fullname){
       //write data to firebase
-      db.collection("users").doc(this.user.email).set({
-        name: String(this.user.fullname),
+      db.collection("names_emails").doc(this.user.email).set({
+        name: fullname,
         uid: String(this.user.uid),
         
         
@@ -216,15 +219,19 @@ export default {
       // This gives you a Google Access Token. You can use it to access the Google API.
     },
 
-    emailsignup:function(){
+    emailsignup:function(name){
+      
+      
       //signup with email and password
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(() => {
           this.user.updateProfile({
-        displayName: this.fullname,
-    }).
+        displayName: name,
+    });
+    this.writedata1(name);
+
     this.$router.push({
             path: "/",
           });
