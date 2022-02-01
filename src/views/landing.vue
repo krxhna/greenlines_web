@@ -17,7 +17,8 @@
         >greenlines</span
       >
 
-      <button
+     <div class="buttons" style="display:flex">
+        <button
         @click="alpha"
         
         class="btn btn-primary"
@@ -26,6 +27,20 @@
       >
         Get Alpha Access
       </button>
+      <div class="a" style="color:white">
+        mfd
+      </div>
+      <button
+        @click="$router.push('signin')"
+        
+        class="btn btn-primary"
+        type="submit"
+        style="background-color: white; color:black; border: none"
+      >
+        login
+      </button>
+     </div>
+      
     </nav>
 
     <div class="middle">

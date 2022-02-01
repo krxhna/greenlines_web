@@ -6,7 +6,7 @@
         <span class="navbar-brand mb-0 h1" style="color: black">
           greenlines</span
         >
-
+<!-- 
         <div class="bb">
            <a>Don't have an account?    </a>
             <button
@@ -18,7 +18,7 @@
           SIGN UP
           
         </button>
-        </div>
+        </div> -->
      
     </nav>
 
