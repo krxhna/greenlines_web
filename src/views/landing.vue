@@ -18,12 +18,13 @@
       >
 
       <button
-        @click="$router.push('signin')"
+        @click="alpha"
+        
         class="btn btn-primary"
         type="submit"
         style="background-color: #14e20d; border: none"
       >
-        LOGIN
+        Get Alpha Access
       </button>
     </nav>
 
@@ -64,13 +65,13 @@
             <a style="color: white">.</a>
 
             <button
-              @click="writeandnavigated"
+              @click="alpha"
               type="submit"
               class="btn-grad"
               style="background-color: green; border: none font-family:poppins; font-size:15px; font-weight:700; flex-direction: row; align-items:center;
   display: flex; "
             >
-              Get Started!
+              Get Aplha Acsess
             </button>
           </div>
 
@@ -107,13 +108,13 @@
           >
           <div class="empty" style="color:white;">.</div>
           <button
-            @click="$router.push('signup')"
+            @click="alpha"
             type="submit"
             class="btn-grad"
             style="background-color: green; border: none font-family:poppins; font-size:15px; font-weight:700; flex-direction: row; align-items:center;
   display: flex; "
           >
-            <a>Get Started</a>
+            <a>Get Aplha Acsess </a>
             <div class="gap"></div>
 
             <svg
@@ -149,13 +150,13 @@
           >
           <div class="empty"  style="color:white;">.</div>
           <button
-            @click="$router.push('signup')"
+            @click="alpha"
             type="submit"
             class="btn-grad"
             style="background-color: green; border: none font-family:poppins; font-size:15px; font-weight:700; flex-direction: row; align-items:center;
   display: flex; "
           >
-            Get Started
+            Get Aplha Acsess 
             <div class="gap"></div>
 
             <svg
@@ -189,13 +190,13 @@
           >
           <div class="empty"  style="color:white;">.</div>
           <button
-            @click="$router.push('signup')"
+            @click="alpha"
             type="submit"
             class="btn-grad"
             style="background-color: green; border: none font-family:poppins; font-size:15px; font-weight:700; flex-direction: row; align-items:center;
   display: flex; "
           >
-            Get Started
+            Get Aplha Acsess 
             <div class="gap"></div>
 
             <svg
@@ -232,13 +233,13 @@
           >
           <div class="empty"  style="color:white;">.</div>
           <button
-            @click="$router.push('signup')"
+            @click="alpha"
             type="submit"
             class="btn-grad"
             style="background-color: green; border: none font-family:poppins; font-size:15px; font-weight:700; flex-direction: row; align-items:center;
   display: flex; "
           >
-            Get Started
+            Get Aplha Acsess 
             <div class="gap"></div>
 
             <svg
@@ -280,8 +281,8 @@
         <div class="quotes">"saved me so much time"</div>
         
 
-        <button @click="$router.push('signup')" type="submit" class="btn-grad">
-          Get Started
+        <button @click="alpha" type="submit" class="btn-grad">
+          Get Aplha Acsess 
           <div class="gap"></div>
 
           <svg
@@ -330,6 +331,15 @@ export default {
         });
     },
 
+    alpha: 
+      function () {
+      window.open(
+        "https://greenliness.gumroad.com/l/qxwozl"
+      );
+      this.$gtag.event("clicked alpha", { method: "Google" });
+    },
+    
+
     writeandnavigated: function () {
       
       if (this.email.length > 0) {
@@ -337,8 +347,10 @@ export default {
         else{
           console.log("no email");
         }
+
+        this.alpha();
       
-       this.$router.push("signup");
+      //  this.$router.push("signup");
      
 
       // if (this.email.length > 0) {
