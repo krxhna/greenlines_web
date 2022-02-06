@@ -15,6 +15,7 @@ import signin from '../views/signin.vue'
 import firebase from '../firebase.js'
 import macro from '../views/macro.vue'
 import blog from '../views/blog.vue'
+import alpha from '../views/alpha.vue'
 
 
 
@@ -40,6 +41,12 @@ const routes = [
     name: 'landing',
     component: landing
     
+  },
+
+  {
+    path: '/alpha',
+    name: 'alpha',
+    component: alpha
   },
   {
     path: '/blog',

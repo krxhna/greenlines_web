@@ -17,47 +17,51 @@
         >greenlines</span
       >
 
-     <div class="buttons" style="display:flex">
+      <div class="buttons" style="display: flex">
         <button
-        @click="alpha"
-        
-        class="btn btn-primary"
-        type="submit"
-        style="background-color: #14e20d; border: none"
-      >
-        Get Alpha Access
-      </button>
-      <div class="a" style="color:white">
-        mfd
+          @click="alpha"
+          class="btn btn-primary"
+          type="submit"
+          style="background-color: #14e20d; border: none"
+        >
+          Get Alpha Access
+        </button>
+        <div class="a" style="color: white">mfd</div>
+        <button
+          @click="$router.push('signin')"
+          class="btn btn-primary"
+          type="submit"
+          style="background-color: white; color: black; border: none"
+        >
+          login
+        </button>
       </div>
-      <button
-        @click="$router.push('signin')"
-        
-        class="btn btn-primary"
-        type="submit"
-        style="background-color: white; color:black; border: none"
-      >
-        login
-      </button>
-     </div>
-      
     </nav>
 
     <div class="middle">
       <div class="title">
         <div class="first">
-        <div class="slogan">
-          Do
-          <a>Worldclass</a>
+          <div class="slogan">
+            Do
+            <a>Worldclass</a>
 
-          <div class="grad1"> Valuation. </div>
+            <div class="grad1">Valuation.</div>
+          </div>
+
+          <div class="vid">
+            <!-- <iframe class="yt-player" id="ytplayer-948c2c" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="640" height="360" src="https://www.youtube.com/embed/DyDfgMOUjCI?autoplay=1&amp;cc_load_policy=0&amp;controls=0&amp;disablekb=1&amp;enablejsapi=1&amp;fs=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;origin=https%3A%2F%2Fbillie.withyoutube.com&amp;playsinline=1&amp;rel=1&amp;wmode=opaque&amp;widgetid=1"></iframe> -->
+            <iframe
+              class="player"
+              width="672"
+              height="378"
+              src="https://www.youtube.com/embed/8X1e4PnLyR8?rel=0&amp;autoplay=1&mute=1&controls=0&loop=1&modestbranding=1"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
-        
-        <div class="vid">
-          <!-- <iframe class="yt-player" id="ytplayer-948c2c" frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" width="640" height="360" src="https://www.youtube.com/embed/DyDfgMOUjCI?autoplay=1&amp;cc_load_policy=0&amp;controls=0&amp;disablekb=1&amp;enablejsapi=1&amp;fs=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;origin=https%3A%2F%2Fbillie.withyoutube.com&amp;playsinline=1&amp;rel=1&amp;wmode=opaque&amp;widgetid=1"></iframe> -->
-          <iframe class="player" width="672" height="378" src="https://www.youtube.com/embed/8X1e4PnLyR8?rel=0&amp;autoplay=1&mute=1&controls=0&loop=1&modestbranding=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-</div>
         <form
           style="
             color: black;
@@ -83,15 +87,23 @@
               @click="alpha"
               type="submit"
               class="btn-grad"
-              style="background-color: green; border: none font-family:poppins; font-size:15px; font-weight:700; flex-direction: row; align-items:center;
-  display: flex; "
+              style="
+                background-color: green;
+                border: none;
+                font-family: poppins;
+                font-size: 15px;
+                font-weight: 700;
+                flex-direction: row;
+                align-items: center;
+                display: flex;
+              "
             >
               Get Aplha Acsess
             </button>
           </div>
 
           <div class="rated">
-            <a style="padding-top: 10px; aligh-text: start">
+            <a style="padding-top: 10px; text-align: start">
               <span class="rating-star"> </span>
               <span class="rating-star"> </span>
               <span class="rating-star"> </span>
@@ -121,13 +133,21 @@
             click, sec fliings, quaterly statements,insider buying twitter
             sentiment and much more</a
           >
-          <div class="empty" style="color:white;">.</div>
+          <div class="empty" style="color: white">.</div>
           <button
             @click="alpha"
             type="submit"
             class="btn-grad"
-            style="background-color: green; border: none font-family:poppins; font-size:15px; font-weight:700; flex-direction: row; align-items:center;
-  display: flex; "
+            style="
+              background-color: green;
+              border: none;
+              font-family: poppins;
+              font-size: 15px;
+              font-weight: 700;
+              flex-direction: row;
+              align-items: center;
+              display: flex;
+            "
           >
             <a>Get Aplha Acsess </a>
             <div class="gap"></div>
@@ -150,28 +170,36 @@
 
         <div class="videobox">
           <img
-            style="Scale Mode: Fit; border-radius: 5px; "
+            style="object-fit: Fit; border-radius: 5px"
             src="../assets/ss3.png"
           />
         </div>
       </div>
       <div class="quickline">
         <div class="textthing">
-          <div class="infotext">90+ Industry analysis in just One click  </div>
-          <a style="font-weight: 500"
-            >
-            select from more than 90+ industry analysed just for you, get industry averages of a industry, all the data point you ever want for worldclass valuation presented to you
-            </a
-          >
-          <div class="empty"  style="color:white;">.</div>
+          <div class="infotext">90+ Industry analysis in just One click</div>
+          <a style="font-weight: 500">
+            select from more than 90+ industry analysed just for you, get
+            industry averages of a industry, all the data point you ever want
+            for worldclass valuation presented to you
+          </a>
+          <div class="empty" style="color: white">.</div>
           <button
             @click="alpha"
             type="submit"
             class="btn-grad"
-            style="background-color: green; border: none font-family:poppins; font-size:15px; font-weight:700; flex-direction: row; align-items:center;
-  display: flex; "
+            style="
+              background-color: green;
+              border: none;
+              font-family: poppins;
+              font-size: 15px;
+              font-weight: 700;
+              flex-direction: row;
+              align-items: center;
+              display: flex;
+            "
           >
-            Get Aplha Acsess 
+            Get Aplha Acsess
             <div class="gap"></div>
 
             <svg
@@ -192,7 +220,7 @@
 
         <div class="imgbox">
           <img
-            style="Scale Mode: Fit; border-radius: 10px;  "
+            style="object-fit: Fit; border-radius: 10px"
             src="../assets/ss4.png"
           />
         </div>
@@ -201,17 +229,28 @@
         <div class="textthing">
           <div class="infotext">Get 23 datapoints for every industry</div>
           <a style="font-weight: 500"
-            >get vital infomration as average groeth reate of the industry,effective tax rate, return on investment, return on capital,capital expenditures, working capital ratios and much more</a
+            >get vital infomration as average groeth reate of the
+            industry,effective tax rate, return on investment, return on
+            capital,capital expenditures, working capital ratios and much
+            more</a
           >
-          <div class="empty"  style="color:white;">.</div>
+          <div class="empty" style="color: white">.</div>
           <button
             @click="alpha"
             type="submit"
             class="btn-grad"
-            style="background-color: green; border: none font-family:poppins; font-size:15px; font-weight:700; flex-direction: row; align-items:center;
-  display: flex; "
+            style="
+              background-color: green;
+              border: none;
+              font-family: poppins;
+              font-size: 15px;
+              font-weight: 700;
+              flex-direction: row;
+              align-items: center;
+              display: flex;
+            "
           >
-            Get Aplha Acsess 
+            Get Aplha Acsess
             <div class="gap"></div>
 
             <svg
@@ -231,7 +270,7 @@
         </div>
         <div class="imgbox">
           <img
-            style="Scale Mode: Fit; border-radius: 5px; w"
+            style="object-fit: Fit; border-radius: 5px; w"
             src="../assets/screenshot1.png"
           />
         </div>
@@ -239,22 +278,31 @@
          
         </div> -->
       </div>
- <div class="quickline3">
+      <div class="quickline3">
         <div class="textthing">
           <div class="infotext">Macro-econimic data for smart decisions</div>
-          <a style="font-weight: 500"
-            >
-            see whats going on in a macro level, make smart investment decisions,all in one place, yield curve, unemploymnet, inflation data, comsumer sentiment and much more</a
+          <a style=" ;">
+            see whats going on in a macro level, make smart investment
+            decisions,all in one place, yield curve, unemploymnet, inflation
+            data, comsumer sentiment and much more</a
           >
-          <div class="empty"  style="color:white;">.</div>
+          <div class="empty" style="color: white">.</div>
           <button
             @click="alpha"
             type="submit"
             class="btn-grad"
-            style="background-color: green; border: none font-family:poppins; font-size:15px; font-weight:700; flex-direction: row; align-items:center;
-  display: flex; "
+            style="
+              background-color: green;
+              border: none;
+              font-family: poppins;
+              font-size: 15px;
+              font-weight: 700;
+              flex-direction: row;
+              align-items: center;
+              display: flex;
+            "
           >
-            Get Aplha Acsess 
+            Get Aplha Acsess
             <div class="gap"></div>
 
             <svg
@@ -274,8 +322,7 @@
         </div>
         <div class="imgbox3">
           <img
-          
-            style="Scale Mode:scale-down; border-radius: 5px; w"
+            style="object-fit:scale-down; border-radius: 5px; w"
             src="../assets/ssmacro.png"
           />
         </div>
@@ -291,13 +338,12 @@
         <!-- <div class="names">william</div> -->
 
         <div class="quotes">" nifty implementation, I like it so much "</div>
-<div class="quotes">"smooth! works like magic"</div>
+        <div class="quotes">"smooth! works like magic"</div>
         <div class="quotes">"Impressive!"</div>
         <div class="quotes">"saved me so much time"</div>
-        
 
         <button @click="alpha" type="submit" class="btn-grad">
-          Get Aplha Acsess 
+          Get Aplha Acsess
           <div class="gap"></div>
 
           <svg
@@ -346,27 +392,21 @@ export default {
         });
     },
 
-    alpha: 
-      function () {
-      window.open(
-        "https://greenliness.gumroad.com/l/qxwozl"
-      );
+    alpha: function () {
+      window.open("https://greenliness.gumroad.com/l/qxwozl");
       this.$gtag.event("clicked alpha", { method: "Google" });
     },
-    
 
     writeandnavigated: function () {
-      
       if (this.email.length > 0) {
-        this.writeemail();}
-        else{
-          console.log("no email");
-        }
+        this.writeemail();
+      } else {
+        console.log("no email");
+      }
 
-        this.alpha();
-      
+      this.alpha();
+
       //  this.$router.push("signup");
-     
 
       // if (this.email.length > 0) {
       //   this.writeemail();
