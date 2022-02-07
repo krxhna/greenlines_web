@@ -4,9 +4,16 @@
     <div class="navbar_alpha" >
       <div class="a" style="padding-left:4vw">Greenlines</div>
       <div class="navc">
-      <div class="a">about</div>
-      <div class="a">contact</div>
-      <div class="a">login</div>
+      <div class="a">About</div>
+      <div class="a" >Contact</div>
+      <button
+          @click="$router.push('signin')"
+          class="a"
+          type="submit"
+          style="background-color: transparent; color: rgb(255, 255, 255); border: none"
+        >
+          Login
+        </button>
       </div>
     </div>
 
@@ -18,10 +25,10 @@
           <div class="colortext">Faster.</div>
           <div class="textalp">
             your valuation workspace do everything from checking sec reports, to
-            industry averages to amcro data all in one place
+            industry averages to cro data all in one place
           </div>
           <div class="buttonsometh">
-            <button class="btn_alp">Get Started</button>
+            <button class="btn_alp" @click="alpha" >Get Started</button>
           </div>
         </div>
       </div>
@@ -38,6 +45,7 @@
     </div>
     
     <div class="cards">
+        
         <div class="quickline_alp">
         <div class="textthing">
           <div class="infotext_alp">90+ Industry analysis in just One click</div>
@@ -83,11 +91,19 @@
 
         <div class="imgbox">
           <img
-            style="object-fit: Fit; border-radius: 10px"
-            src="../assets/ss4.png"
+            style="object-fit: Fit; border-radius: 10px; margin-top:10vh;"
+            src="../assets/side_macro_2.png"
           />
         </div>
+      
+      
+      
+      
+      
+      
+      
       </div>
+      
     </div>
     <div class="rect_alp"></div>
     <div class="rect_alp2"></div>
@@ -97,7 +113,51 @@
 </template>
 
 <script>
-export default {};
+import { db } from "../firebase";
+    
+export default {
+
+
+
+      methods: {
+    writeemail: function () {
+      //write data to firebase
+      db.collection("emails")
+        .doc(this.email)
+        .set({
+          email: this.email,
+        })
+        .then(function () {
+          console.log("Document successfully written!");
+        });
+    },
+
+    alpha: function () {
+      window.open("https://greenliness.gumroad.com/l/qxwozl");
+      this.$gtag.event("clicked alpha", { method: "Google" });
+    },
+
+    writeandnavigated: function () {
+      if (this.email.length > 0) {
+        this.writeemail();
+      } else {
+        console.log("no email");
+      }
+
+      this.alpha();
+
+      //  this.$router.push("signup");
+
+      // if (this.email.length > 0) {
+      //   this.writeemail();
+      //   this.$router.push("signup");
+      // } else {
+      //   alert("please enter an email");
+      //   this.$router.push("/land");
+      // }
+    },
+  },
+};
 </script>
 
 <style>
@@ -118,6 +178,10 @@ export default {};
 
 .em {
   height: 10vh;
+}
+
+.a{
+    padding-top: 1rem;
 }
 
 .middle_alpha {
@@ -282,7 +346,12 @@ height: 80vh;
   @media screen and (max-width:728px) {
 
       .middle_alpha{
+          height: 140vh;
           margin-left: 8vw;
+          flex-direction: column;
+      }
+
+      .quickline_alp{
           flex-direction: column;
       }
 
