@@ -1,11 +1,13 @@
 <template>
   <div class="alpha">
     
-    <div class="navbar_alpha" style="display: flex">
-      <div class="a">greenlines</div>
-      <div class="a">greenlines</div>
-      <div class="a">greenlines</div>
-      <div class="a">greenlines</div>
+    <div class="navbar_alpha" >
+      <div class="a" style="padding-left:4vw">Greenlines</div>
+      <div class="navc">
+      <div class="a">about</div>
+      <div class="a">contact</div>
+      <div class="a">login</div>
+      </div>
     </div>
 
     <div class="em"></div>
@@ -38,6 +40,7 @@
     <div class="dec">
         <div class="rect_alp"></div>
     <div class="rect_alp2"></div>
+    <div class="rect_alp3"></div>
     </div>
     
     
@@ -122,15 +125,28 @@ height: 80vh;
 } */
 .rect_alp2 {
     
-  position: fixed;
-  width: 344px;
-  height: 273px;
-  left: 837px;
-  top: 239px;
+  position: absolute;
+  width: 25vw;
+  height: 30vh;
+  left: 55%;
+  top: 37%;
 
   background: rgba(0, 75, 85, 0.91);
   filter: blur(150px);
 }
+
+.rect_alp3 {
+    
+  position: absolute;
+  width: 15vw;
+  height: 20vh;
+  left: 0%;
+  top: 37%;
+
+  background: rgba(0, 105, 56, 0.91);
+  filter: blur(150px);
+}
+
 
 .btn_alp {
   border: none;
@@ -158,6 +174,18 @@ height: 80vh;
   font-family: poppins;
 }
 
+.navbar_alpha{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.navc{
+    width: 30vw;
+    display: flex;
+    justify-content: space-around;
+}
 
 .infotext_alp{
      
@@ -190,5 +218,24 @@ height: 80vh;
     width: 80vw;
     background-color: rgb(0, 0, 0);
     
+  }
+
+
+
+
+  @media screen and (max-width:728px) {
+
+      .middle_alpha{
+          margin-left: 8vw;
+          flex-direction: column;
+      }
+
+      .frcard{
+   
+width: 60vw;
+
+
+}
+
   }
 </style>
