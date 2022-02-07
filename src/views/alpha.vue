@@ -37,12 +37,61 @@
       
     </div>
     
-    <div class="dec">
-        <div class="rect_alp"></div>
+    <div class="cards">
+        <div class="quickline_alp">
+        <div class="textthing">
+          <div class="infotext_alp">90+ Industry analysis in just One click</div>
+          <a style="font-weight: 500">
+            select from more than 90+ industry analysed just for you, get
+            industry averages of a industry, all the data point you ever want
+            for worldclass valuation presented to you
+          </a>
+          <div class="empty" style="color: rgb(0, 0, 0)">.</div>
+          <button
+            @click="alpha"
+            type="submit"
+            class="btn_alp"
+            style="
+              background-color: green;
+              border: none;
+              font-family: poppins;
+              font-size: 15px;
+              font-weight: 700;
+              flex-direction: row;
+              align-items: center;
+              display: flex;
+            "
+          >
+            Get Aplha Acsess
+            <div class="gap"></div>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-arrow-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="imgbox">
+          <img
+            style="object-fit: Fit; border-radius: 10px"
+            src="../assets/ss4.png"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="rect_alp"></div>
     <div class="rect_alp2"></div>
     <div class="rect_alp3"></div>
-    </div>
-    
     
   </div>
 </template>
@@ -53,6 +102,8 @@ export default {};
 
 <style>
 .alpha {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 0;
   background-color: black;
@@ -192,11 +243,16 @@ height: 80vh;
     
       font-weight: 400;
       font-family: poppins;
-      color: rgb(255, 255, 255);
-      font-size: 5vw;
+      color: rgb(119, 119, 119);
+      font-size: 4rem;
 
   }
 
+
+.morethan{
+    height: 20vh;
+    color: #495248;
+}
 
 
   .quickline_alp{
@@ -210,12 +266,12 @@ height: 80vh;
     display: flex;
     flex-direction: row;
     color: white;
-    margin-left: 10vw;
+    margin-left: 3vw;
 
     /* margin: 3% 10% 0 10%; */
 
     height: 74vh;
-    width: 80vw;
+    width: 85vw;
     background-color: rgb(0, 0, 0);
     
   }
