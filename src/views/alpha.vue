@@ -50,11 +50,12 @@
         
       <div class="quickline_alp">
         <div class="textthing">
-          <div class="infotext_alp">90+ Industry analysis in just One click</div>
+          <div class="infotext_alp">All useful links in just One Click</div>
+        
           <a style="font-weight: 500; color:silver" >
-            select from more than 90+ industry analysed just for you, get
-            industry averages of a industry, all the data point you ever want
-            for worldclass valuation presented to you
+           Enter the ticker get all the infomration plus links in just one
+            click, sec fliings, quaterly statements,insider buying twitter
+            sentiment and much more
           </a>
           <div class="empty" style="color: rgb(0, 0, 0)">.</div>
           <button
@@ -110,7 +111,7 @@
 
       <div class="quickline_alp">
         <div class="textthing">
-          <div class="infotext_alp">90+ Industry analysis in just One click</div>
+          <div class="infotext_alp">Get access to data on over 90+ Industry</div>
           <a style="font-weight: 500; color:silver" >
             select from more than 90+ industry analysed just for you, get
             industry averages of a industry, all the data point you ever want
@@ -133,6 +134,7 @@
             "
           >
             Get Aplha Acsess
+
             <div class="gap"></div>
 
             <svg
@@ -167,11 +169,12 @@
       </div>
       <div class="quickline_alp">
         <div class="textthing">
-          <div class="infotext_alp">90+ Industry analysis in just One click</div>
+          <div class="infotext_alp">Get 23 datapoints for every industry</div>
           <a style="font-weight: 500; color:silver" >
-            select from more than 90+ industry analysed just for you, get
-            industry averages of a industry, all the data point you ever want
-            for worldclass valuation presented to you
+            get vital infomration as average groeth reate of the
+            industry,effective tax rate, return on investment, return on
+            capital,capital expenditures, working capital ratios and much
+            more
           </a>
           <div class="empty" style="color: rgb(0, 0, 0)">.</div>
           <button
@@ -224,11 +227,11 @@
       </div>
       <div class="quickline_alp">
         <div class="textthing">
-          <div class="infotext_alp">90+ Industry analysis in just One click</div>
+          <div class="infotext_alp">Macro-econimic data for smart decisions</div>
           <a style="font-weight: 500; color:silver" >
-            select from more than 90+ industry analysed just for you, get
-            industry averages of a industry, all the data point you ever want
-            for worldclass valuation presented to you
+            see whats going on in a macro level, make smart investment
+            decisions,all in one place, yield curve, unemploymnet, inflation
+            data, comsumer sentiment and much more
           </a>
           <div class="empty" style="color: rgb(0, 0, 0)">.</div>
           <button
@@ -270,8 +273,10 @@
             style="object-fit: Fit; border-radius: 10px; margin-top:10vh;"
             src="../assets/side_macro_2.png"
           />
+        
         </div>
-      
+
+        
       
       
       
@@ -280,19 +285,20 @@
       
       </div>
 
-       <div class="tesit">
-        <h1>what people are saying</h1>
+      
+       <div class="tesit_alp">
+        <h1></h1>
 
         <div class="quotes">" Rock solid! "</div>
 
         <!-- <div class="names">william</div> -->
 
-        <div class="quotes">" nifty implementation, I like it so much "</div>
+        <div class="quotes">" nifty implementation,I like it so much "</div>
         <div class="quotes">"smooth! works like magic"</div>
         <div class="quotes">"Impressive!"</div>
         <div class="quotes">"saved me so much time"</div>
 
-        <button @click="alpha" type="submit" class="btn-grad">
+        <button @click="alpha" type="submit" class="btn_alp" style="background-color: green;">
           Get Aplha Acsess
           <div class="gap"></div>
 
@@ -370,6 +376,17 @@ export default {
 
 <style>
 
+
+.tesit_alp{
+  margin-top: 1vh;
+  /* background-color: #f5f5f5; */
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 1%;
+}
+
 .body{
   background-color: black;
 }
@@ -381,7 +398,7 @@ export default {
     padding: 0;
   background-color: black;
   width: 99.75vw;
-  height: 500vh;
+  height: 470vh;
   text-align: center;
   color: white;
   /* font-size: 7rem;
@@ -586,7 +603,13 @@ height: 80vh;
 
   @media screen and (max-width:728px) {
 
+
+
+
+
+
       .alpha{
+        height: 600vh;
         padding: 0;
         margin: 0;
           width: 99.9vw;
@@ -625,6 +648,29 @@ height: 80vh;
         margin-top: 20vh;
           flex-direction: column;
 
+      }
+
+        .imgbox_alp{
+        
+        width: 100vw;
+       
+      
+        background-color: #000000;
+      }
+
+      .bbox{
+        width: 50vw;
+        height: 100vh;
+        background-color: #ff0000;
+
+      }
+
+
+
+    
+      .tesit_alp{
+        background-color: black;
+        margin-top: 30vh;
       }
 
       .infotext_alp{
