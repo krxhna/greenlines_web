@@ -322,6 +322,12 @@
     <div class="rect_alp"></div>
     <div class="rect_alp2"></div>
     <div class="rect_alp3"></div>
+    <div class="rect_alp4"></div>
+    <div class="rect_alp5"></div>
+    <div class="rect_alp6"></div>
+    <div class="rect_alp7"></div>
+    <div class="rect_alp8"></div>
+    
     
   </div>
 </template>
@@ -479,6 +485,75 @@ height: 80vh;
   background: rgba(0, 75, 85, 0.91);
   filter: blur(150px);
 }
+
+.rect_alp4 {
+    
+  position: absolute;
+  width: 25vw;
+  height: 30vh;
+  left: 55%;
+  top: 7%;
+
+  background: rgba(85, 0, 35, 0.91);
+  filter: blur(150px);
+}
+
+
+.rect_alp5{
+    
+  position: absolute;
+  width: 15vw;
+  height: 20vh;
+  right: 1%;
+  top: 207%;
+
+  background: rgba(0, 60, 100, 0.91);
+  filter: blur(170px);
+}
+
+.rect_alp6{
+    
+  position: absolute;
+  width: 25vw;
+  height: 20vh;
+  left: 1%;
+  top: 284%;
+
+  background: rgba(0, 78, 30, 0.91);
+  filter: blur(170px);
+}
+
+
+
+.rect_alp7{
+    
+  position: absolute;
+  width: 25vw;
+  height: 20vh;
+  right: 1%;
+  top: 450%;
+
+  background: rgba(0, 60, 100, 0.91);
+  filter: blur(170px);
+}
+
+.rect_alp8{
+    
+  position: absolute;
+  width: 25vw;
+  height: 20vh;
+  left: 1%;
+  top: 390%;
+
+  background: rgba(0, 78, 30, 0.91);
+  filter: blur(170px);
+}
+
+
+
+
+
+
 
 .cards_alp{
     display: flex;
