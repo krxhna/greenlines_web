@@ -2,6 +2,7 @@
   <div class="alpha">
     
     <div class="navbar_alpha" >
+    
       <div class="a" style="padding-left:4vw">Greenlines</div>
       <div class="navc">
       <div class="a">About</div>
@@ -24,8 +25,8 @@
           <div class="head_alp">Do Valaution</div>
           <div class="colortext">Faster.</div>
           <div class="textalp">
-            your valuation workspace do everything from checking sec reports, to
-            industry averages to cro data all in one place
+            your complete valuation workspace do everything from checking sec reports, to
+            industry averages to macro data all in one place
           </div>
           <div class="buttonsometh">
             <button class="btn_alp" @click="alpha" >Get Started</button>
@@ -44,12 +45,69 @@
       
     </div>
     
-    <div class="cards">
+    <div class="cards_alp">
         
         <div class="quickline_alp">
         <div class="textthing">
           <div class="infotext_alp">90+ Industry analysis in just One click</div>
           <a style="font-weight: 500">
+            select from more than 90+ industry analysed just for you, get
+            industry averages of a industry, all the data point you ever want
+            for worldclass valuation presented to you
+          </a>
+          <div class="empty" style="color: rgb(0, 0, 0)">.</div>
+          <button
+            @click="alpha"
+            type="submit"
+            class="btn_alp"
+            style="
+              background-color: green;
+              border: none;
+              font-family: poppins;
+              font-size: 15px;
+              font-weight: 700;
+              flex-direction: row;
+              align-items: center;
+              display: flex;
+            "
+          >
+            Get Aplha Acsess
+            <div class="gap"></div>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-arrow-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="imgbox">
+          <img
+            style="object-fit: Fit; border-radius: 10px; margin-top:10vh;"
+            src="../assets/side_macro_2.png"
+          />
+        </div>
+      
+      
+      
+      
+      
+      
+      
+      </div>
+      <div class="quickline_alp">
+        <div class="textthing">
+          <div class="infotext_alp">90+ Industry analysis in just One click</div>
+          <a style="font-weight: 500; color:silver" >
             select from more than 90+ industry analysed just for you, get
             industry averages of a industry, all the data point you ever want
             for worldclass valuation presented to you
@@ -250,6 +308,12 @@ height: 80vh;
   filter: blur(150px);
 }
 
+.cards_alp{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
 .rect_alp3 {
     
   position: absolute;
@@ -345,8 +409,37 @@ height: 80vh;
 
   @media screen and (max-width:728px) {
 
+      .alpha{
+        padding: 0;
+        margin: 0;
+          width: 100vw;
+      }
+
+      .head_alp{
+        font-size: 4.5rem;
+      }
+
+      .textalp{
+          width: 80vw;
+        font-size: 1.3rem;
+      }
+
+      .a{
+          display: flex;
+          
+          padding-left: 0.5rem;
+          font-size: 1rem;
+      }
+      .navc{
+          width: 50vw;
+      }
+
+      .colortext{
+        font-size: 4.5rem;
+      }
+
       .middle_alpha{
-          height: 140vh;
+          height: 100vh;
           margin-left: 8vw;
           flex-direction: column;
       }
