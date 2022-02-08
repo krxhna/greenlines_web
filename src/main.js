@@ -12,6 +12,9 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 // Vue.forceUpdate();
 
+import VueTilt from 'vue-tilt.js'
+Vue.use(VueTilt)
+
 // import firebase from "firebase/compat/app";
 // import "firebase/compat/firestore";
 Vue.use(BootstrapVue)

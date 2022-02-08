@@ -34,8 +34,8 @@
         </div>
       </div>
     
-      <div class="frcard">
-            <img
+      <div  class="frcard">
+            <img class="cardfg" v-tilt="{speed: 500, perspective: 1200}" 
             style="object-fit: Fit; border-radius: 5px "
             src="../assets/card.png"
           />
@@ -621,6 +621,10 @@ height: 80vh;
       color: rgb(119, 119, 119);
       font-size: 4rem;
 
+  }
+
+  .cardfg{
+    transform: translateZ(20px);
   }
 
 
