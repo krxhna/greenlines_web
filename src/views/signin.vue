@@ -1,9 +1,9 @@
 .
 <template>
   <div  v-if="user == null" class="signup">
-          <nav class="nav12">
+          <div class="nav12">
      
-        <span class="navbar-brand mb-0 h1" style="color: black">
+        <span style="color: rgb(255, 255, 255)">
           greenlines</span
         >
 <!-- 
@@ -20,15 +20,15 @@
         </button>
         </div> -->
      
-    </nav>
+    </div>
 
-    <h3 style="color:white;">.</h3>
+    <h3 style="color:rgb(0, 0, 0);">.</h3>
     <div class="grid">
       <div class="login-page-new__main-form">
         <div class="tit">
             <h1>Welcome back!</h1>
         </div>
-        <a style="color:white;">.</a>
+        <a style="color:rgb(224, 209, 209);">.</a>
         <form>
                       <div class="mb-3">
                           
@@ -80,6 +80,9 @@
         </form>
       </div>
     </div>
+       <div class="rect_alp"></div>
+    <div class="rect_alp2"></div>
+    <div class="rect_alp3"></div>
   </div>
 
   <div v-else>

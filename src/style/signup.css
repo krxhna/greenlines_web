@@ -1,6 +1,7 @@
 .login-page-new__main-form {
     width: 480px;
-    background: #fff;
+    background: rgb(224, 209, 209);
+    
     box-shadow: 0 25px 75px rgb(16 30 54 / 25%);
     border-radius: 6px;
     padding: 30px 60px 26px;
@@ -8,7 +9,16 @@
     /* position: relative; */
     /* overflow: hidden; */
   }
+
+
+  .signup{
+    height: 100vh;
+    background-color: black;
+  }
   
+ 
+
+
   .mb-3{
     font-family: poppins;  
     color: rgb(0, 0, 0);
@@ -52,12 +62,12 @@
   
   
   .nav12{
-      background-color: black;
       
+      background-color: black;
       padding: 1%;
       display: flex;
       justify-content: space-between;
-      background-color: rgb(255, 255, 255);
+  
   }
   
 
