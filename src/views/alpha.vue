@@ -46,11 +46,12 @@
     </div>
     
     <div class="cards_alp">
+        <!-- home -->
         
-        <div class="quickline_alp">
+      <div class="quickline_alp">
         <div class="textthing">
           <div class="infotext_alp">90+ Industry analysis in just One click</div>
-          <a style="font-weight: 500">
+          <a style="font-weight: 500; color:silver" >
             select from more than 90+ industry analysed just for you, get
             industry averages of a industry, all the data point you ever want
             for worldclass valuation presented to you
@@ -93,7 +94,124 @@
         <div class="imgbox">
           <img
             style="object-fit: Fit; border-radius: 10px; margin-top:10vh;"
-            src="../assets/side_macro_2.png"
+            src="../assets/side_home.png"
+          />
+        </div>
+      
+      
+      
+      
+      
+      
+      
+      </div>
+
+<!-- industry analysis -->
+
+      <div class="quickline_alp">
+        <div class="textthing">
+          <div class="infotext_alp">90+ Industry analysis in just One click</div>
+          <a style="font-weight: 500; color:silver" >
+            select from more than 90+ industry analysed just for you, get
+            industry averages of a industry, all the data point you ever want
+            for worldclass valuation presented to you
+          </a>
+          <div class="empty" style="color: rgb(0, 0, 0)">.</div>
+          <button
+            @click="alpha"
+            type="submit"
+            class="btn_alp"
+            style="
+              background-color: green;
+              border: none;
+              font-family: poppins;
+              font-size: 15px;
+              font-weight: 700;
+              flex-direction: row;
+              align-items: center;
+              display: flex;
+            "
+          >
+            Get Aplha Acsess
+            <div class="gap"></div>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-arrow-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="imgbox">
+          <img
+            style="object-fit: Fit; border-radius: 10px; margin-top:10vh;"
+            src="../assets/side_avg.png"
+          />
+        </div>
+      
+      
+      
+      
+      
+      
+      
+      </div>
+      <div class="quickline_alp">
+        <div class="textthing">
+          <div class="infotext_alp">90+ Industry analysis in just One click</div>
+          <a style="font-weight: 500; color:silver" >
+            select from more than 90+ industry analysed just for you, get
+            industry averages of a industry, all the data point you ever want
+            for worldclass valuation presented to you
+          </a>
+          <div class="empty" style="color: rgb(0, 0, 0)">.</div>
+          <button
+            @click="alpha"
+            type="submit"
+            class="btn_alp"
+            style="
+              background-color: green;
+              border: none;
+              font-family: poppins;
+              font-size: 15px;
+              font-weight: 700;
+              flex-direction: row;
+              align-items: center;
+              display: flex;
+            "
+          >
+            Get Aplha Acsess
+            <div class="gap"></div>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-arrow-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div class="imgbox">
+          <img
+            style="object-fit: Fit; border-radius: 10px; margin-top:10vh;"
+            src="../assets/side_industries.png"
           />
         </div>
       
@@ -161,6 +279,38 @@
       
       
       </div>
+
+       <div class="tesit">
+        <h1>what people are saying</h1>
+
+        <div class="quotes">" Rock solid! "</div>
+
+        <!-- <div class="names">william</div> -->
+
+        <div class="quotes">" nifty implementation, I like it so much "</div>
+        <div class="quotes">"smooth! works like magic"</div>
+        <div class="quotes">"Impressive!"</div>
+        <div class="quotes">"saved me so much time"</div>
+
+        <button @click="alpha" type="submit" class="btn-grad">
+          Get Aplha Acsess
+          <div class="gap"></div>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-arrow-right"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+            />
+          </svg>
+        </button>
+      </div>
       
     </div>
     <div class="rect_alp"></div>
@@ -219,6 +369,11 @@ export default {
 </script>
 
 <style>
+
+.body{
+  background-color: black;
+}
+
 .alpha {
     display: flex;
     flex-direction: column;
@@ -404,6 +559,28 @@ height: 80vh;
     
   }
 
+    .quickline_alp_1{
+
+    /* display:grid; */
+    /* grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); */
+
+    
+    
+   
+    display: flex;
+    flex-direction: row;
+    color: white;
+    margin-left: 3vw;
+
+    /* margin: 3% 10% 0 10%; */
+
+    height: 74vh;
+    width: 85vw;
+    background-color: rgb(0, 0, 0);
+    
+  }
+
+
 
 
 
@@ -412,7 +589,7 @@ height: 80vh;
       .alpha{
         padding: 0;
         margin: 0;
-          width: 100vw;
+          width: 99.9vw;
       }
 
       .head_alp{
@@ -445,7 +622,13 @@ height: 80vh;
       }
 
       .quickline_alp{
+        margin-top: 20vh;
           flex-direction: column;
+
+      }
+
+      .infotext_alp{
+        font-size: 3rem;
       }
 
       .frcard{
