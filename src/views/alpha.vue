@@ -1,7 +1,7 @@
 <template>
-  <div class="alpha">
+  <div class="Alpha">
     
-    <div class="navbar_alpha" >
+    <div class="navbar_Alpha" >
     
       <div class="a" style="padding-left:4vw">Greenlines</div>
       <div class="navc">
@@ -19,24 +19,24 @@
     </div>
 
     <div class="em"></div>
-    <div class="middle_alpha">
-      <div class="slogan_alpha">
+    <div class="middle_Alpha">
+      <div class="slogan_Alpha">
         <div class="alp_text">
           <div class="head_alp">Do Valaution</div>
-          <div class="colortext">Faster.</div>
+          <div class="colortext"><span1></span1></div>
           <div class="textalp">
             your complete valuation workspace do everything from checking sec reports, to
             industry averages to macro data all in one place
           </div>
           <div class="buttonsometh">
-            <button class="btn_alp" @click="alpha" >Get Started</button>
+            <button class="btn_alp" @click="Alpha" >Get Started</button>
           </div>
         </div>
       </div>
     
       <div  class="frcard">
-            <img class="cardfg" v-tilt="{speed: 500, perspective: 1200}" 
-            style="object-fit: Fit; border-radius: 5px "
+            <img class="cardfg"  v-tilt="{speed: 500, perspective: 1200}" 
+            style="object-fit: Fit; border-radius: 5px; "
             src="../assets/card.png"
           />
 
@@ -44,6 +44,10 @@
 
       
     </div>
+    <div class="s" style="color: black;">d</div>
+    <div class="e">Exclusive Alpha acess</div>
+  
+    <div class="e1">@Only $7 a month!</div>
     
     <div class="cards_alp">
         <!-- home -->
@@ -59,7 +63,7 @@
           </a>
           <div class="empty" style="color: rgb(0, 0, 0)">.</div>
           <button
-            @click="alpha"
+            @click="Alpha"
             type="submit"
             class="btn_alp"
             style="
@@ -73,7 +77,7 @@
               display: flex;
             "
           >
-            Get Aplha Acsess
+            Get Alpha Acsess
             <div class="gap"></div>
 
             <svg
@@ -119,7 +123,7 @@
           </a>
           <div class="empty" style="color: rgb(0, 0, 0)">.</div>
           <button
-            @click="alpha"
+            @click="Alpha"
             type="submit"
             class="btn_alp"
             style="
@@ -133,7 +137,7 @@
               display: flex;
             "
           >
-            Get Aplha Acsess
+            Get Alpha Acsess
 
             <div class="gap"></div>
 
@@ -178,7 +182,7 @@
           </a>
           <div class="empty" style="color: rgb(0, 0, 0)">.</div>
           <button
-            @click="alpha"
+            @click="Alpha"
             type="submit"
             class="btn_alp"
             style="
@@ -192,7 +196,7 @@
               display: flex;
             "
           >
-            Get Aplha Acsess
+            Get Alpha Acsess
             <div class="gap"></div>
 
             <svg
@@ -235,7 +239,7 @@
           </a>
           <div class="empty" style="color: rgb(0, 0, 0)">.</div>
           <button
-            @click="alpha"
+            @click="Alpha"
             type="submit"
             class="btn_alp"
             style="
@@ -249,7 +253,7 @@
               display: flex;
             "
           >
-            Get Aplha Acsess
+            Get Alpha Acsess
             <div class="gap"></div>
 
             <svg
@@ -298,8 +302,8 @@
         <div class="quotes">"Impressive!"</div>
         <div class="quotes">"saved me so much time"</div>
 
-        <button @click="alpha" type="submit" class="btn_alp" style="background-color: green;">
-          Get Aplha Acsess
+        <button @click="Alpha" type="submit" class="btn_alp" style="background-color: green;">
+          Get Alpha Acsess
           <div class="gap"></div>
 
           <svg
@@ -352,9 +356,9 @@ export default {
         });
     },
 
-    alpha: function () {
+    Alpha: function () {
       window.open("https://greenliness.gumroad.com/l/qxwozl");
-      this.$gtag.event("clicked alpha", { method: "Google" });
+      this.$gtag.event("clicked Alpha", { method: "Google" });
     },
 
     writeandnavigated: function () {
@@ -364,7 +368,7 @@ export default {
         console.log("no email");
       }
 
-      this.alpha();
+      this.Alpha();
 
       //  this.$router.push("signup");
 
@@ -397,7 +401,7 @@ export default {
   background-color: black;
 }
 
-.alpha {
+.Alpha {
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -420,7 +424,7 @@ export default {
     padding-top: 1rem;
 }
 
-.middle_alpha {
+.middle_Alpha {
     display: flex;
   margin-left: 10vh;
   width: 80vw;
@@ -430,7 +434,7 @@ export default {
 
 re
 
-.slogan_alpha {
+.slogan_Alpha {
   background-color: #000000;
 
   display: flex;
@@ -575,6 +579,7 @@ height: 80vh;
 
 
 .btn_alp {
+  
   border: none;
   font-size: 1.5rem;
   color: black;
@@ -585,6 +590,26 @@ height: 80vh;
   margin-top: 10px;
 }
 
+
+  
+
+
+
+
+.e{
+  padding: 2px;
+
+  color:silver;
+        font-size: 1.3rem;
+      }
+
+      .e1{
+  padding-bottom: 2vh;
+
+  color:silver;
+        font-size: 1rem;
+      }
+
 .head_alp {
   text-align: start;
   font-size: 5rem;
@@ -592,15 +617,37 @@ height: 80vh;
   font-family: poppins;
 }
 
+span1:before{
+  animation: animate 3s linear infinite;
+ content: "";
+}
+
+@keyframes animate {
+  50% {
+    content: 'Better.';
+  }
+  100% {
+    content: 'Faster.';
+  }
+  
+  0% {
+    content: 'Smarter.';
+  
+  }
+}
+
+
 .colortext {
-    color: #12e000;
+  content: 'gh';
+  
+  color: #12e000;
   text-align: start;
   font-size: 5rem;
   font-weight: 900;
   font-family: poppins;
 }
 
-.navbar_alpha{
+.navbar_Alpha{
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -687,7 +734,7 @@ height: 80vh;
 
 
 
-      .alpha{
+      .Alpha{
         height: 600vh;
         padding: 0;
         margin: 0;
@@ -699,9 +746,12 @@ height: 80vh;
       }
 
       .textalp{
+        font-family: 'Courier New', Courier, monospace;
           width: 80vw;
         font-size: 1.3rem;
       }
+
+      
 
       .a{
           display: flex;
@@ -717,7 +767,7 @@ height: 80vh;
         font-size: 4.5rem;
       }
 
-      .middle_alpha{
+      .middle_Alpha{
           height: 100vh;
           margin-left: 8vw;
           flex-direction: column;
