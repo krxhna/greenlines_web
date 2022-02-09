@@ -1,6 +1,6 @@
 .login-page-new__main-form {
     width: 480px;
-    background: rgb(224, 209, 209);
+    background: white 10%;
     
     box-shadow: 0 25px 75px rgb(16 30 54 / 25%);
     border-radius: 6px;
@@ -9,6 +9,17 @@
     /* position: relative; */
     /* overflow: hidden; */
   }
+
+  .form-label{
+    font-size: 14px;
+    font-weight: bold;
+    color: gray;
+    margin-bottom: 10px;
+  }
+
+  /* .form-control{
+    background-color: red;
+  } */
 
 
   .signup{
