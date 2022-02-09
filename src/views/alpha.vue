@@ -45,7 +45,7 @@
       
     </div>
     <div class="s" style="color: black;">d</div>
-    <div class="e">Exclusive Alpha acess</div>
+    <div class="e">Exclusive Alpha Acess Pass</div>
   
     <div class="e1">@Only $7 a month!</div>
     
