@@ -29,7 +29,7 @@
             industry averages to macro data all in one place
           </div>
           <div class="buttonsometh">
-            <button class="btn_alp" @click="Alpha" >Get Started</button>
+            <button class="btn_alp" style="color:white;" @click="Alpha" >Start Your Free Trial</button>
           </div>
         </div>
       </div>
@@ -45,6 +45,8 @@
       
     </div>
     <div class="s" style="color: black;">d</div>
+    <div class="s" style="color: black;">d</div>
+    <div class="s" style="color: black;">d</div>
     <div class="e">Exclusive Alpha Acess Pass</div>
   
     <div class="e1">@Only $7 a month!</div>
@@ -52,7 +54,7 @@
     <div class="cards_alp">
         <!-- home -->
         
-      <div class="quickline_alp">
+      <div class="quickline_alp1">
         <div class="textthing">
           <div class="infotext_alp">All useful links in just One Click</div>
         
@@ -77,7 +79,7 @@
               display: flex;
             "
           >
-            Get Alpha Acsess
+            Start Your Free Trial
             <div class="gap"></div>
 
             <svg
@@ -137,7 +139,7 @@
               display: flex;
             "
           >
-            Get Alpha Acsess
+            Start Your Free Trial
 
             <div class="gap"></div>
 
@@ -196,7 +198,7 @@
               display: flex;
             "
           >
-            Get Alpha Acsess
+            Start Your Free Trial
             <div class="gap"></div>
 
             <svg
@@ -253,7 +255,7 @@
               display: flex;
             "
           >
-            Get Alpha Acsess
+            Start Your Free Trial
             <div class="gap"></div>
 
             <svg
@@ -303,7 +305,7 @@
         <div class="quotes">"saved me so much time"</div>
 
         <button @click="Alpha" type="submit" class="btn_alp" style="background-color: green;">
-          Get Alpha Acsess
+          Start Your Free Trial
           <div class="gap"></div>
 
           <svg
@@ -579,16 +581,37 @@ height: 80vh;
 
 
 .btn_alp {
+  border-radius: 30px;
   
-  border: none;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
   font-size: 1.5rem;
-  color: black;
+  color: rgb(0, 0, 0);
   font-family: Roboto;
   padding: 10px;
-  background: #c4c4c4;
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 0.1rem;
   margin-top: 10px;
 }
+
+/* .btn_alp:hover {
+  border-radius: 30px;
+  
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.4);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 0px solid rgba(255, 255, 255, 0.3);
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
+  font-family: Roboto;
+  padding: 10px;
+
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0.1rem;
+  margin-top: 10px;
+} */
 
 
   
@@ -702,6 +725,27 @@ span1:before{
     
   }
 
+    .quickline_alp1{
+
+    /* display:grid; */
+    /* grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); */
+
+    
+    
+   
+    display: flex;
+    flex-direction: row;
+    color: white;
+    margin-left: 3vw;
+
+    /* margin: 3% 10% 0 10%; */
+
+    height: 74vh;
+    width: 85vw;
+    background-color: rgb(0, 0, 0);
+    
+  }
+
     .quickline_alp_1{
 
     /* display:grid; */
@@ -746,7 +790,7 @@ span1:before{
       }
 
       .textalp{
-        font-family: 'Courier New', Courier, monospace;
+        font-family: Roboto;
           width: 80vw;
         font-size: 1.3rem;
       }
@@ -775,6 +819,11 @@ span1:before{
 
       .quickline_alp{
         margin-top: 20vh;
+          flex-direction: column;
+
+      }
+      .quickline_alp1{
+        margin-top: 5vh;
           flex-direction: column;
 
       }
