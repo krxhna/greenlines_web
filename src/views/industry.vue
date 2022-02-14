@@ -87,8 +87,15 @@
     
     <div class="view">
       <div class="area">
+        
         <div class="thentext" style="color: green">
+          
+            <div class="thentext" style="color: green">
           Select industry
+
+          <!-- {{return_items1(selected,"Unlevered Beta",map1)}} -->
+        </div>
+
 
           <!-- {{return_items1(selected,"Unlevered Beta",map1)}} -->
         </div>
@@ -240,9 +247,9 @@
         </div>
         <div class="infocards">
 
-          <h4>Annual Average Revenue growth - Last 5 years</h4>
+          <h4 >Annual Average Revenue growth - Last 5 years</h4>
           
-           <h1 class="per">
+           <h1 v-if="ispro" class="per">
             {{
               return_items1(
                 selected,
@@ -251,6 +258,13 @@
               )
             }}
           </h1>
+          <div v-else class="blur1dfs"> <b-button
+@click="openstripe()"
+class="btn btn-success"
+style="color: black; background-color: #38ea41"
+>pro <i class="fas fa-lock"></i
+></b-button></div>
+
         </div>
         <div class="infocards">
           <h4>Pre-tax Operating Margin (Unadjusted)</h4>
@@ -284,9 +298,16 @@
         </div>
         <div class="infocards">
           <h4>Equity (Levered) Beta</h4>
-          <h1 class="per">
+          <h1 v-if="ispro" class="per">
             {{ return_items1(selected, "Equity (Levered) Beta", map1) }}
           </h1>
+          <div v-else class="blur1dfs"> <b-button
+@click="openstripe()"
+class="btn btn-success"
+style="color: black; background-color: #38ea41"
+>pro <i class="fas fa-lock"></i
+></b-button></div>
+
         </div>
         <div class="infocards">
           <h4>Cost of equity</h4>
@@ -302,9 +323,17 @@
         </div>
         <div class="infocards">
           <h4>Pre-tax cost of debt</h4>
-          <h1 class="per">
+          <h1 v-if="ispro" class="per">
             {{ return_items1(selected, "Pre-tax cost of debt", map1) }}
           </h1>
+          <div v-else class="blur1dfs"> <b-button
+@click="openstripe()"
+class="btn btn-success"
+style="color: black; background-color: #38ea41"
+>pro <i class="fas fa-lock"></i
+></b-button></div>
+
+
         </div>
         <div class="infocards">
           <h4>Market Debt/Capital</h4>
@@ -320,13 +349,26 @@
         </div>
         <div class="infocards">
           <h4>Sales/Capital</h4>
-          <h1 class="per">
+          <h1 v-if="ispro" class="per">
             {{ return_items1(selected, "Sales/Capital", map1) }}
           </h1>
+          <div v-else class="blur1dfs"> <b-button
+@click="openstripe()"
+class="btn btn-success"
+style="color: black; background-color: #38ea41"
+>pro <i class="fas fa-lock"></i
+></b-button></div>
+
         </div>
         <div class="infocards">
           <h4>EV/Sales</h4>
-          <h1 class="per">{{ return_items1(selected, "EV/Sales", map1) }}</h1>
+          <h1 v-if="ispro" class="per">{{ return_items1(selected, "EV/Sales", map1) }}</h1>
+         <div v-else class="blur1dfs"> <b-button
+                @click="openstripe()"
+                class="btn btn-success"
+                style="color: black; background-color: #38ea41"
+                >pro <i class="fas fa-lock"></i
+              ></b-button></div>
         </div>
         <div class="infocards">
           <h4>EV/EBITDA</h4>
@@ -334,7 +376,14 @@
         </div>
         <div class="infocards">
           <h4>EV/EBIT</h4>
-          <h1 class="per">{{ return_items1(selected, "EV/EBIT", map1) }}</h1>
+          <h1 v-if="ispro" class="per">{{ return_items1(selected, "EV/EBIT", map1) }}</h1>
+          <div v-else class="blur1dfs"> <b-button
+@click="openstripe()"
+class="btn btn-success"
+style="color: black; background-color: #38ea41"
+>pro <i class="fas fa-lock"></i
+></b-button></div>
+
         </div>
         <div class="infocards">
           <h4>Price/Book</h4>
@@ -342,15 +391,29 @@
         </div>
         <div class="infocards">
           <h4>Trailing PE</h4>
-          <h1 class="per">
+          <h1 v-if="ispro" class="per">
             {{ return_items1(selected, "Trailing PE", map1) }}
           </h1>
+          <div v-else class="blur1dfs"> <b-button
+@click="openstripe()"
+class="btn btn-success"
+style="color: black; background-color: #38ea41"
+>pro <i class="fas fa-lock"></i
+></b-button></div>
+
         </div>
         <div class="infocards">
           <h4>Non-cash WC as % of Revenues</h4>
-          <h1 class="per">
+          <h1 v-if="ispro" class="per">
             {{ return_items1(selected, "Non-cash WC as % of Revenues", map1) }}
           </h1>
+          <div v-else class="blur1dfs"> <b-button
+@click="openstripe()"
+class="btn btn-success"
+style="color: black; background-color: #38ea41"
+>pro <i class="fas fa-lock"></i
+></b-button></div>
+
         </div>
         <div class="infocards">
           <h4>Cap Ex as % of Revenues</h4>
@@ -366,9 +429,17 @@
         </div>
         <div class="infocards">
           <h4>Reinvestment Rate</h4>
-          <h1 class="per">
+          <h1 v-if="ispro" class="per">
             {{ return_items1(selected, "Reinvestment Rate", map1) }}
           </h1>
+          
+<div v-else class="blur1dfs"> <b-button
+@click="openstripe()"
+class="btn btn-success"
+style="color: black; background-color: #38ea41"
+>pro <i class="fas fa-lock"></i
+></b-button></div>
+
         </div>
         <div class="infocards">
           <h4>ROE</h4>
@@ -376,15 +447,30 @@
         </div>
         <div class="infocards">
           <h4>Dividend Payout Ratio</h4>
-          <h1 class="per">
+          <h1 v-if="ispro" class="per">
             {{ return_items1(selected, "Dividend Payout Ratio", map1) }}
           </h1>
+          <div v-else class="blur1dfs"> <b-button
+@click="openstripe()"
+class="btn btn-success"
+style="color: black; background-color: #38ea41"
+>pro <i class="fas fa-lock"></i
+></b-button></div>
+
         </div>
         <div class="infocards">
           <h4>Equity Reinvestment Rate</h4>
-          <h1 class="per">
+          <h1  v-if="ispro" class="per">
             {{ return_items1(selected, "Equity Reinvestment Rate", map1) }}
           </h1>
+          
+<div v-else class="blur1dfs"> <b-button
+@click="openstripe()"
+class="btn btn-success"
+style="color: black; background-color: #38ea41"
+>pro <i class="fas fa-lock"></i
+></b-button></div>
+
         </div>
         <div class="infocards">
           <h4>Pre-tax Operating Margin (Lease & R&D adjusted)</h4>
@@ -412,6 +498,9 @@ export default {
   props: ["ticker"],
   firestore() {
     return {
+      ispro: db.doc("users/katkat@gmail.com").onSnapshot((doc) => {
+        this.ispro = doc.data().pro;
+      }),
       map1: db.doc("industry/data_new").onSnapshot((doc) => {
         this.map1 = doc.data().roic;
       }),
@@ -422,6 +511,7 @@ export default {
   },
   data() {
     return {
+      ispro:[],
       user: null,
       error: null,
       awesome: "ds",
@@ -435,8 +525,9 @@ export default {
 
   methods: {
     openstripe: function () {
-      window.open("https://buy.stripe.com/aEUfZkel41YJ6FW5kk");
-      this.$gtag.event("clicked on pro", { method: "Google" });
+      window.open("https://greenliness.gumroad.com/l/qxwozl", "_blank");
+      // window.open("https://buy.stripe.com/aEUfZkel41YJ6FW5kk");
+      this.$gtag.event("clicked on pro", { method: "Google" }); 
     },
 
     return_items: function (sel, name) {

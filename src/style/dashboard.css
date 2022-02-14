@@ -6,11 +6,23 @@
     --text-color: #707070;
 }
 
+v-if="ispro"
+
+<div v-else class="blur1dfs"> <b-button
+@click="openstripe()"
+class="btn btn-success"
+style="color: black; background-color: #38ea41"
+>pro <i class="fas fa-lock"></i
+></b-button></div>
+
 
 .blur1{
-    width:200px;
+    font-size: 3rem;
+    width:6rem;
     height:100%;
-    background-color: aqua;
+    color:black;
+    background-color: white;
+    filter: blur(1rem);
 }
 
 .dash {
