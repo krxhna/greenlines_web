@@ -239,8 +239,10 @@
           </h1>
         </div>
         <div class="infocards">
+
           <h4>Annual Average Revenue growth - Last 5 years</h4>
-          <h1 class="per">
+          
+           <h1 class="per">
             {{
               return_items1(
                 selected,

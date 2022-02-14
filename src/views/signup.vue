@@ -1,9 +1,12 @@
 .
 <template>
   <div  v-if="user == null" class="signup">
+    <div class="rect_alp"></div>
+    <div class="rect_alp2"></div>
+    <div class="rect_alp3"></div>
           <nav class="nav12">
      
-        <span class="navbar-brand mb-0 h1" style="color: black">
+        <span class="navbar-brand mb-0 h1" style="color: rgb(255, 255, 255)">
            <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -19,11 +22,12 @@
         >
 
         <div class="bb">
-           <a>Already have an account?    </a>
+           <a style="color:white">Already have an account?    </a>
+           
             <b-button
           class="btn btn-primary"
           type="submit"
-          style="background-color: #14e20d; border: none; color:black;"
+          style="background-color: #14e20d; border: none; color:black; margin-left: 1rem;"
           @click="$router.push('signin')"
         >
           LOGIN
@@ -35,7 +39,7 @@
      
     </nav>
 
-    <h3 style="color:white;">.</h3>
+    <h3 style="color:rgb(0, 0, 0);">.</h3>
     <div class="grid">
       <div class="login-page-new__main-form">
         <div class="tit">
@@ -47,9 +51,7 @@
             <label for="exampleInputEmail1" class="form-label"
               >Full name</label
             >
-            <div class="a">
-              {{fullname}}
-            </div>
+           
             <input
               v-model="fullname_e"
               type="email"
@@ -81,6 +83,17 @@
               type="password"
               class="form-control"
               v-model="password"
+            />
+          </div>
+                    <div class="mb-3">
+            
+            <label for="exampleInputPassword1" class="form-label"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              v-model="passworddd"
             />
           </div>
        

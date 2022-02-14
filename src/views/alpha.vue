@@ -1,7 +1,16 @@
 <template>
   <div class="Alpha">
-    
-    <div class="navbar_Alpha" >
+    <button id="show-modal" @click="showModal = true">Show Modal</button>
+
+  <Teleport to="body">
+    <!-- use the modal component, pass in the prop -->
+    <modal :show="showModal" @close="showModal = false">
+      <template #header>
+        <h3>custom header</h3>
+      </template>
+    </modal>
+  </Teleport>
+    <div class="navbar_Alpha">
     
       <div class="a" style="padding-left:4vw">Greenlines</div>
       <div class="navc">
@@ -15,6 +24,15 @@
         >
           Login
         </button>
+      
+      <button
+          @click="$router.push('signup')"
+          class="a"
+          type="submit"
+          style="background-color: transparent; color: rgb(255, 255, 255); border: none"
+        >
+          Signup
+        </button>
       </div>
     </div>
 
@@ -23,13 +41,14 @@
       <div class="slogan_Alpha">
         <div class="alp_text">
           <div class="head_alp">Do Valaution</div>
+          
           <div class="colortext"><span1></span1></div>
           <div class="textalp">
             your complete valuation workspace do everything from checking sec reports, to
             industry averages to macro data all in one place
           </div>
           <div class="buttonsometh">
-            <button class="btn_alp" style="color:white;" @click="Alpha" >Start Your Free Trial</button>
+            <button class="btn_alp" style="color:white;" @click="Alpha" >Signup for free</button>
           </div>
         </div>
       </div>
@@ -79,7 +98,7 @@
               display: flex;
             "
           >
-            Start Your Free Trial
+            Signup for free
             <div class="gap"></div>
 
             <svg
@@ -139,7 +158,7 @@
               display: flex;
             "
           >
-            Start Your Free Trial
+            Signup for free
 
             <div class="gap"></div>
 
@@ -198,7 +217,7 @@
               display: flex;
             "
           >
-            Start Your Free Trial
+            Signup for free
             <div class="gap"></div>
 
             <svg
@@ -255,7 +274,7 @@
               display: flex;
             "
           >
-            Start Your Free Trial
+            Signup for free
             <div class="gap"></div>
 
             <svg
@@ -305,7 +324,7 @@
         <div class="quotes">"saved me so much time"</div>
 
         <button @click="Alpha" type="submit" class="btn_alp" style="background-color: green;">
-          Start Your Free Trial
+          Signup for free
           <div class="gap"></div>
 
           <svg
@@ -340,8 +359,12 @@
 
 <script>
 import { db } from "../firebase";
+
     
 export default {
+
+   
+ 
 
 
 
@@ -359,7 +382,8 @@ export default {
     },
 
     Alpha: function () {
-      window.open("https://greenliness.gumroad.com/l/qxwozl");
+      this.$router.push("/signup");
+      // window.open("https://greenliness.gumroad.com/l/qxwozl");
       this.$gtag.event("clicked Alpha", { method: "Google" });
     },
 
@@ -636,7 +660,7 @@ border: 0px solid rgba(255, 255, 255, 0.3);
 .head_alp {
   text-align: start;
   font-size: 5rem;
-  font-weight: 900;
+  font-weight: 500;
   font-family: poppins;
 }
 
@@ -659,6 +683,14 @@ span1:before{
   }
 }
 
+.modal_1{
+  color: white;
+  background-color: green;
+  width: 100vw;
+  position: absolu;
+  height: 100vh;
+  z-index:98;
+}
 
 .colortext {
   content: 'gh';
@@ -666,7 +698,7 @@ span1:before{
   color: #12e000;
   text-align: start;
   font-size: 5rem;
-  font-weight: 900;
+  font-weight: 600;
   font-family: poppins;
 }
 

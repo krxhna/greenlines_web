@@ -136,6 +136,7 @@
       </ul>
     </div>
     <div class="options">
+      <!-- {{user}} -->
       <h1 style="color: white; margin-top: 4vh">${{ ticker }}</h1>
       <div class="custom-control custom-switch" style="color:gray">
         <input @change="onChangeEventHandler"
@@ -184,6 +185,7 @@
     </div>
 
     <div class="chart">
+      
       <div class="somt" style="background-color: #00f85f">
         <VueTradingView
           :key="$route.fullPath"
@@ -221,6 +223,7 @@ export default {
       international:false,
       username: "",
       user: null,
+      
       error: null,
       awesome: "ds",
       selected: "0",
@@ -370,6 +373,7 @@ export default {
 
   firestore: {
     username: "fda",
+    
   },
 
   created() {

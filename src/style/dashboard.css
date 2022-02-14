@@ -6,6 +6,13 @@
     --text-color: #707070;
 }
 
+
+.blur1{
+    width:200px;
+    height:100%;
+    background-color: aqua;
+}
+
 .dash {
     display: flex;
     background-color: black;

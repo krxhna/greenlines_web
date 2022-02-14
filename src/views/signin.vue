@@ -6,9 +6,10 @@
         <span style="color: rgb(255, 255, 255)">
           greenlines</span
         >
-<!-- 
+
         <div class="bb">
-           <a>Don't have an account?    </a>
+           <a style="color:white;">Don't have an account?     </a>
+           
             <button
           class="btn btn-primary"
           @click="$router.replace('signup')"
@@ -18,7 +19,7 @@
           SIGN UP
           
         </button>
-        </div> -->
+        </div>
      
     </div>
 
