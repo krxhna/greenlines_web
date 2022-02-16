@@ -37,7 +37,7 @@
             replace
             >Macro view</router-link
           >
-          <h7 class="thing">News( coming soon)</h7>
+          <h6 class="thing">News( coming soon)</h6>
           <!-- <h7 class="thing">Macroview( coming soon)</h7> -->
 
           <h1 v-if="user == null">

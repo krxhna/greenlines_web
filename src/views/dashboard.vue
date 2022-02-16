@@ -108,7 +108,7 @@
                 @click="openstripe()"
                 class="btn btn-success"
                 style="color: black; background-color: #38ea41"
-                >GO pro <i class="fas fa-crown"></i
+                >Start Your Free Trail <i class="fas fa-crown"></i
               ></b-button>
               <b-button
                 @click="logout"
@@ -235,7 +235,8 @@ export default {
           this.international = !this.international;
       },
     openstripe: function () {
-      window.open("https://buy.stripe.com/aEUfZkel41YJ6FW5kk");
+            window.open("https://greenliness.gumroad.com/l/qxwozl", "_blank");
+      // window.open("https://buy.stripe.com/aEUfZkel41YJ6FW5kk");
       this.$gtag.event("clicked on pro", { method: "Google" });
     },
 

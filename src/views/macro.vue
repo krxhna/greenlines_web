@@ -9,12 +9,24 @@
             ←Back</router-link
           >
           <div class="searchbox">
-            <input :key="$route.fullPath" type="text" class="search-bar1" :placeholder="'$'+ticker"  @keyup.enter="the_go(message.toUpperCase())" v-model="message" >
+            <input
+              :key="$route.fullPath"
+              type="text"
+              class="search-bar1"
+              :placeholder="'$' + ticker"
+              @keyup.enter="the_go(message.toUpperCase())"
+              v-model="message"
+            />
           </div>
-          
+
           <div class="buttondiv">
-            <button :key="$route.fullPath" class="gobutton" @click="the_go(message.toUpperCase())">
-            GO</button>
+            <button
+              :key="$route.fullPath"
+              class="gobutton"
+              @click="the_go(message.toUpperCase())"
+            >
+              GO
+            </button>
           </div>
           <div class="rectangle"></div>
           <h5
@@ -57,7 +69,7 @@
                 @click="openstripe()"
                 class="btn btn-success"
                 style="color: black; background-color: #38ea41"
-                >GO pro <i class="fas fa-crown"></i
+                >Start Your Free Trail <i class="fas fa-crown"></i
               ></b-button>
               <b-button
                 @click="logout"
@@ -91,14 +103,36 @@
         <div class="char">
           <h3>Yield Curve</h3>
           <!-- updated weekly -->
-          <lineChart_nofill
-            :newdata="[
-              0.05, 0.06, 0.08, 0.22, 0.4, 0.78, 1.04, 1.37, 1.55, 1.63, 2.05,
-              2.01,
-            ]"
-            :labels="yield_years"
-          ></lineChart_nofill>
+
+          <div class="ddw">
+            <lineChart_nofill
+              :newdata="[
+                0.05, 0.06, 0.08, 0.22, 0.4, 0.78, 1.04, 1.37, 1.55, 1.63, 2.05,
+                2.01,
+              ]"
+              :labels="yield_years"
+            ></lineChart_nofill>
+          </div>
           <h3>Retail sales</h3>
+
+          <div
+            class="blur"
+            style="
+              background: rgba(196, 196, 196, 0.25);
+              backdrop-filter: blur(1rem);
+              height: 52vh;
+              width: 77vw;
+              position: absolute;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <div class="df">
+              <i class="fas fa-lock"></i>
+              <h1>unlock with pro</h1>
+            </div>
+          </div>
           <BarChart
             :newdata="retail_sales_value"
             :labels="retail_sales_dates"
@@ -114,31 +148,100 @@
           <BarChart :newdata="Nonfarm_value" :labels="Nonfarm_dates"></BarChart>
 
           <h3>new orders of durable goods</h3>
+           <div
+            class="blur"
+            style="
+              background: rgba(196, 196, 196, 0.25);
+              backdrop-filter: blur(1rem);
+              height: 52vh;
+              width: 77vw;
+              position: absolute;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <div class="df">
+              <i class="fas fa-lock"></i>
+              <h1>unlock with pro</h1>
+            </div>
+          </div>
           <BarChart :newdata="durable_value" :labels="durable_dates"></BarChart>
 
           <h3>Consumer Sentiment</h3>
+          <div
+            class="blur"
+            style="
+              background: rgba(196, 196, 196, 0.25);
+              backdrop-filter: blur(1rem);
+              height: 52vh;
+              width: 77vw;
+              position: absolute;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <div class="df">
+              <i class="fas fa-lock"></i>
+              <h1>unlock with pro</h1>
+            </div>
+          </div>
 
-          <lineChart_nofill 
+          <lineChart_nofill
             :newdata="Sentiment_value"
             :labels="Sentiment_dates"
           ></lineChart_nofill>
 
           <h3>consumer price index (CPI)</h3>
+           <div
+            class="blur"
+            style="
+              background: rgba(196, 196, 196, 0.25);
+              backdrop-filter: blur(1rem);
+              height: 52vh;
+              width: 77vw;
+              position: absolute;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <div class="df">
+              <i class="fas fa-lock"></i>
+              <h1>unlock with pro</h1>
+            </div>
+          </div>
 
-          <lineChart_nofill :newdata="cpi_value" :labels="cpi_dates"></lineChart_nofill>
+          <lineChart_nofill
+            :newdata="cpi_value"
+            :labels="cpi_dates"
+          ></lineChart_nofill>
 
           <h3>Intrest Rates</h3>
+           <div
+            class="blur"
+            style="
+              background: rgba(196, 196, 196, 0.25);
+              backdrop-filter: blur(1rem);
+              height: 52vh;
+              width: 77vw;
+              position: absolute;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+          >
+            <div class="df">
+              <i class="fas fa-lock"></i>
+              <h1>unlock with pro</h1>
+            </div>
+          </div>
 
-          <lineChart_nofill :newdata="fed_funds_rate_value" :labels="fed_funds_rate_dates"></lineChart_nofill>
-
-          
-
-
-
-
-         
-
-
+          <lineChart_nofill
+            :newdata="fed_funds_rate_value"
+            :labels="fed_funds_rate_dates"
+          ></lineChart_nofill>
 
           <h1></h1>
         </div>
@@ -164,7 +267,8 @@ export default {
 
   methods: {
     openstripe: function () {
-      window.open("https://buy.stripe.com/aEUfZkel41YJ6FW5kk");
+            window.open("https://greenliness.gumroad.com/l/qxwozl", "_blank");
+      // window.open("https://buy.stripe.com/aEUfZkel41YJ6FW5kk");
       this.$gtag.event("clicked on pro", { method: "Google" });
     },
 
@@ -241,15 +345,14 @@ export default {
           this.error = error;
         });
     },
-     the_go:function(ticker){
+    the_go: function (ticker) {
       this.$router.push({
-        path: '/dashboard/'+ ticker,
+        path: "/dashboard/" + ticker,
       });
       this.$forceUpdate();
       // location.reload();
       // this.$router.go(this.$router.currentRoute);
     },
-
 
     googlesigin: function () {
       const provider = new firebase.auth.GoogleAuthProvider();
@@ -666,69 +769,70 @@ export default {
         "2021-12-01",
       ],
 
-      fed_funds_rate_dates:['2019-07-01',
- '2019-08-01',
- '2019-09-01',
- '2019-10-01',
- '2019-11-01',
- '2019-12-01',
- '2020-01-01',
- '2020-02-01',
- '2020-03-01',
- '2020-04-01',
- '2020-05-01',
- '2020-06-01',
- '2020-07-01',
- '2020-08-01',
- '2020-09-01',
- '2020-10-01',
- '2020-11-01',
- '2020-12-01',
- '2021-01-01',
- '2021-02-01',
- '2021-03-01',
- '2021-04-01',
- '2021-05-01',
- '2021-06-01',
- '2021-07-01',
- '2021-08-01',
- '2021-09-01',
- '2021-10-01',
- '2021-11-01',
- '2021-12-01'],
- fed_funds_rate_value:['2.40',
- '2.13',
- '2.04',
- '1.83',
- '1.55',
- '1.55',
- '1.55',
- '1.58',
- '0.65',
- '0.05',
- '0.05',
- '0.08',
- '0.09',
- '0.10',
- '0.09',
- '0.09',
- '0.09',
- '0.09',
- '0.09',
- '0.08',
- '0.07',
- '0.07',
- '0.06',
- '0.08',
- '0.10',
- '0.09',
- '0.08',
- '0.08',
- '0.08',
- '0.08'],
-
-
-
+      fed_funds_rate_dates: [
+        "2019-07-01",
+        "2019-08-01",
+        "2019-09-01",
+        "2019-10-01",
+        "2019-11-01",
+        "2019-12-01",
+        "2020-01-01",
+        "2020-02-01",
+        "2020-03-01",
+        "2020-04-01",
+        "2020-05-01",
+        "2020-06-01",
+        "2020-07-01",
+        "2020-08-01",
+        "2020-09-01",
+        "2020-10-01",
+        "2020-11-01",
+        "2020-12-01",
+        "2021-01-01",
+        "2021-02-01",
+        "2021-03-01",
+        "2021-04-01",
+        "2021-05-01",
+        "2021-06-01",
+        "2021-07-01",
+        "2021-08-01",
+        "2021-09-01",
+        "2021-10-01",
+        "2021-11-01",
+        "2021-12-01",
+      ],
+      fed_funds_rate_value: [
+        "2.40",
+        "2.13",
+        "2.04",
+        "1.83",
+        "1.55",
+        "1.55",
+        "1.55",
+        "1.58",
+        "0.65",
+        "0.05",
+        "0.05",
+        "0.08",
+        "0.09",
+        "0.10",
+        "0.09",
+        "0.09",
+        "0.09",
+        "0.09",
+        "0.09",
+        "0.08",
+        "0.07",
+        "0.07",
+        "0.06",
+        "0.08",
+        "0.10",
+        "0.09",
+        "0.08",
+        "0.08",
+        "0.08",
+        "0.08",
+      ],
 
       dates: this.retail_sales_dates,
       newdata: [40, 2, 12, 39, 10, 40, 2, 40, 40, 20, 12, 11],
