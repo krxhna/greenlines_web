@@ -12,6 +12,7 @@
           </div>
           
           <div class="buttondiv">
+            <div class="a" style="color: white"></div>
             <button :key="$route.fullPath" class="gobutton" @click="the_go(message.toUpperCase())">
             GO</button>
           </div>
@@ -66,16 +67,16 @@
               >
             </div>
           </h1>
-          <div class="footernotes">
+          <div class="footernotes" style="display:flex; ">
             <a
               style="color: white"
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=krishhkrishhk@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=krish@greenlines.club"
               target="_blank"
-              >📧Contact</a
+              >📧contact</a
             >
             <a
               style="color: white"
-              href="https://forms.clickup.com/f/13jcut-124/CWBEI7U7144EZ8WNHP"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=krish@greenlines.club"
               target="_blank"
               >🐞Report a bug</a
             >

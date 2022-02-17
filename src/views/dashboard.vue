@@ -1,35 +1,7 @@
 .
 <template>
   <div class="dash">
-   <div v-if="popup" class="poppartent">
-      <div class="popup">
-  popup
-  <div class="searchbox">
-            <input
-              :key="$route.fullPath"
-              type="text"
-              class="search-bar1"
-              :placeholder="'$' + ticker"
-              style="text-transform: uppercase"
-              @keyup.enter="the_go(message.toUpperCase())"
-              v-model="message"
-            />
-          </div>
 
-          <div class="buttondiv">
-            <button
-              :key="$route.fullPath"
-              class="gobutton"
-              @click="the_go(message.toUpperCase())"
-            >
-              GO
-            </button>
-
-           
-          
-          </div>
-</div>
-   </div>
     <div class="navbar">
       <ul>
         <li class="navbarnav">
@@ -49,9 +21,7 @@
           </div>
 
           <div class="buttondiv">
-           <div class="a" style="color:white">
-
-           </div>
+            <div class="a" style="color: white"></div>
             <button
               :key="$route.fullPath"
               class="gobutton"
@@ -59,15 +29,13 @@
             >
               GO
             </button>
-             <!-- <button
+            <!-- <button
               :key="$route.fullPath"
               class="gobutton"
               @click="setpopup"
             >
               test
             </button> -->
-
-            
           </div>
 
           <div class="rectangle"></div>
@@ -118,16 +86,16 @@
               >
             </div>
           </h1>
-          <div class="footernotes">
+          <div class="footernotes" style="display: flex">
             <a
               style="color: white"
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=krishhkrishhk@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=krish@greenlines.club"
               target="_blank"
-              >📧Contact</a
+              >📧contact</a
             >
             <a
               style="color: white"
-              href="https://forms.clickup.com/f/13jcut-124/CWBEI7U7144EZ8WNHP"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=krish@greenlines.club"
               target="_blank"
               >🐞Report a bug</a
             >
@@ -138,30 +106,42 @@
     <div class="options">
       <!-- {{user}} -->
       <h1 style="color: white; margin-top: 4vh">${{ ticker }}</h1>
-      <div class="custom-control custom-switch" style="color:gray">
-        <input @change="onChangeEventHandler"
-         :key="$route.fullPath"
- 
+      <div class="custom-control custom-switch" style="color: gray">
+        <input
+          @change="onChangeEventHandler"
+          :key="$route.fullPath"
           type="checkbox"
           class="custom-control-input"
           id="customSwitches"
         />
-        <label style="color:rgb(24, 209, 24); font-weight: 500;" v-if="international" class="custom-control-label" for="customSwitches"
-          >International Company<i class="fas fa-globe-asia"></i></label
-        >
+        <label
+          style="color: rgb(24, 209, 24); font-weight: 500"
+          v-if="international"
+          class="custom-control-label"
+          for="customSwitches"
+          >International Company<i class="fas fa-globe-asia"></i
+        ></label>
         <label v-else class="custom-control-label" for="customSwitches"
-          >International Company<i class="fas fa-globe-asia"></i></label
-        >
+          >International Company<i class="fas fa-globe-asia"></i
+        ></label>
       </div>
-     
+
       <div style="display: grid; margin-top: 5vh" class="three">
-        <button v-if="international" class="r_button" @click="annual_int(ticker)">
+        <button
+          v-if="international"
+          class="r_button"
+          @click="annual_int(ticker)"
+        >
           Annual Statement international
         </button>
         <button v-else class="r_button" @click="annual(ticker)">
           Annual Statement
         </button>
-        <button v-if="!international" class="r_button" @click="quaterly(ticker)">
+        <button
+          v-if="!international"
+          class="r_button"
+          @click="quaterly(ticker)"
+        >
           Quarterly Statement
         </button>
         <!-- <button v-else class="r_button" @click="quaterly(ticker)">
@@ -185,7 +165,6 @@
     </div>
 
     <div class="chart">
-      
       <div class="somt" style="background-color: #00f85f">
         <VueTradingView
           :key="$route.fullPath"
@@ -219,11 +198,11 @@ export default {
   props: ["ticker"],
   data() {
     return {
-      popup:false,
-      international:false,
+      popup: false,
+      international: false,
       username: "",
       user: null,
-      
+
       error: null,
       awesome: "ds",
       selected: "0",
@@ -231,11 +210,11 @@ export default {
   },
 
   methods: {
-     onChangeEventHandler(){
-          this.international = !this.international;
-      },
+    onChangeEventHandler() {
+      this.international = !this.international;
+    },
     openstripe: function () {
-            window.open("https://greenliness.gumroad.com/l/qxwozl", "_blank");
+      window.open("https://greenliness.gumroad.com/l/qxwozl", "_blank");
       // window.open("https://buy.stripe.com/aEUfZkel41YJ6FW5kk");
       this.$gtag.event("clicked on pro", { method: "Google" });
     },
@@ -244,16 +223,13 @@ export default {
       return id;
     },
 
-    
     setpopup: function () {
       alert("popup");
       this.popup = !this.popup;
     },
 
-
-    meowalert:function(){
-      alert("meow")
-    
+    meowalert: function () {
+      alert("meow");
     },
     annual: function (ticker) {
       window.open(
@@ -335,7 +311,7 @@ export default {
       this.$router.push({
         path: "/dashboard/" + ticker,
       });
-      
+
       this.$forceUpdate();
       // location.reload();
       // this.$router.go(this.$router.currentRoute);
@@ -359,7 +335,7 @@ export default {
       firebase
         .auth()
         .signInWithPopup(provider)
-                .then(() => {
+        .then(() => {
           // alert("signin");
           // this.$router.push({
           //   path: "results/" + this.user.uid,
@@ -374,7 +350,6 @@ export default {
 
   firestore: {
     username: "fda",
-    
   },
 
   created() {
