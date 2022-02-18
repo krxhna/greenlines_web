@@ -100,8 +100,10 @@
     
           <div class="card3" style="width: 18rem; margin:2rem; ">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <a href="#" class="btn btn-primary" style="background-color: #38ea41; color: #0f0f0f; font-weight: 600; border: none;">Go somewhere</a>
+          <h5 class="card-title">{{item.fund}}</h5>
+          <a 
+          @click="open_links(item.link)"
+          class="btn btn-primary" style="background-color: #38ea41; color: #0f0f0f; font-weight: 600; border: none;">Go somewhere</a>
         </div>
       </div>
   </li>
@@ -136,12 +138,9 @@ export default {
   data() {
     return {
         items1: [
-      { message: 'Foo' },
-      { message: 'Bar' },
-       { message: 'Foo' },
-      { message: 'Bar' },
-       { message: 'Foo' },
-      { message: 'Bar' }
+      { fund: 'Foo', link: 'www.google.com' },
+      { fund: 'Bar', link: 2 },
+    
     ],
         fundnames:['oaktree','bob','katkat'],
       ispro: [],
@@ -157,6 +156,16 @@ export default {
   },
 
   methods: {
+
+open_links: function(link){
+    console.log(link);
+
+    window.open(`https://${link}`, "_blank");
+
+},
+
+
+
     openstripe: function () {
       window.open("https://greenliness.gumroad.com/l/qxwozl", "_blank");
       // window.open("https://buy.stripe.com/aEUfZkel41YJ6FW5kk");
