@@ -176,6 +176,9 @@
             symbol: ticker,
             interval: 'D',
             showdetails: true,
+            style: '1',
+            
+           
             range: '60M',
             width: '100%',
             height: '100%',
