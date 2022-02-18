@@ -25,6 +25,34 @@ style="color: black; background-color: #38ea41"
     filter: blur(1rem);
 }
 
+.card3{
+    background: rgba(255, 255, 255, 0.2);
+border-radius: 0.2rem;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.fundsview {
+    height:150vh;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". . ."
+      ". . ."
+      ". . ."; 
+  }
+
+.funds_grid{
+    width: 100vw;
+    background-color: aliceblue;
+    height: 100vh;
+    display: inline-grid;
+}
+
 .dash {
     display: flex;
     background-color: black;

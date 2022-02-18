@@ -44,9 +44,11 @@ const routes = [
     
   },
   {
-    path: '/funds',
+    path: '/funds/:ticker',
     name: 'funds',
-    component: funds
+    component: funds,
+    props: true,
+    
 
   },
 
