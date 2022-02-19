@@ -34,35 +34,30 @@ backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.fundsview{
+   
+
+}
+
 
 
 .funds_grid{
-    flex-direction: row;
-    display: flex;
-    width: 100vw;
-    background-color: aliceblue;
-    height: 100vh;
+  
 
-    
+    break-inside: avoid-column;
+    column-count: 3;
     
 }
 
-fundsview{
-    width: 100%;
-    height: 100vh;
-    
-    display: flex;
-    flex-direction: column;
-}
+
 
 .list_view{
+
+   width: 60vw;
+    column-count: 3;
+    background-color: red;
+   
     
-    color: aliceblue;
-    background-color: #121212;
-    list-style: none;
-    grid-template-columns: 1fr 1fr 1fr;
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 
