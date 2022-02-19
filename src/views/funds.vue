@@ -43,10 +43,13 @@
             replace
             >Dashboard</router-link
           >
-          <h4 class="current">industry</h4>
+          <router-link :to="{ path: '/industry/' + ticker }" class="thing" replace
+            >Industry</router-link
+          >
           <router-link :to="{ path: '/macro/' + ticker }" class="thing" replace
             >Macro view</router-link
           >
+          <h4 class="current">Funds</h4>
           <h6 class="thing">News( coming soon)</h6>
           <!-- <h7 class="thing">Macroview( coming soon)</h7> -->
 
@@ -95,7 +98,7 @@
     </div>
 
     <div class="fundsview">
-      <h1 style="color: white;">Q4 </h1>
+      <h1 style="color: white; margin:1rem;">Q4 Investor Letters & Reports</h1>
       <ul id="funds_grid">
         <li
           v-for="item in items1"
@@ -103,19 +106,17 @@
           style="color: aliceblue; list-style: none; column-count: 2;"
         >
          
-              <h5 class="card-title">{{ item.fund }}</h5>
+             <div class="fdsfd">
+               <div class="divfsd" style=" border: 1px solid rgba(0, 97, 48, 0.233);">
+                <h5 class="card-title" style="margin-top: 10px; text-align: center;">{{ item.fund }}</h5>
               <div
                 @click="open_links(item.link)"
-                class="btn btn-primary"
-                style="
-                  background-color: #38ea41;
-                  color: #0f0f0f;
-                  margin-top: 10px;
-                  font-weight: 600;
-                  border: none;
-                "
+                class="view_btn"
+                
                 >View</div
               >
+             </div>
+             </div>
            
         </li>
       </ul>

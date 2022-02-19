@@ -51,6 +51,12 @@
             >Industry</router-link
           >
           <h4 class="current">Macro view</h4>
+          <router-link
+            :to="{ path: '/funds/' + ticker }"
+            class="thing"
+            replace
+            >Funds</router-link
+          >
           <h7 class="thing">News( coming soon)</h7>
           <!-- <h7 class="thing">Macroview( coming soon)</h7> -->
 

@@ -31,12 +31,18 @@
             replace
             >Dashboard</router-link
           >
-          <h4 class="current">industry</h4>
+          <h4 class="current">Industry</h4>
           <router-link
             :to="{ path: '/macro/' + ticker }"
             class="thing"
             replace
             >Macro view</router-link
+          >
+          <router-link
+            :to="{ path: '/funds/' + ticker }"
+            class="thing"
+            replace
+            >Funds</router-link
           >
           <h6 class="thing">News( coming soon)</h6>
           <!-- <h7 class="thing">Macroview( coming soon)</h7> -->
