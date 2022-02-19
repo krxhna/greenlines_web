@@ -98,7 +98,7 @@
     </div>
 
     <div class="fundsview">
-      <h1 style="color: white; margin:1rem;">Q4 Investor Letters & Reports</h1>
+      <h1 style="color: white; margin:1rem;">Q4 HedgeFund Letters & Reports</h1>
       <ul id="funds_grid">
         <li
           v-for="item in items1"
