@@ -17,6 +17,8 @@ import macro from '../views/macro.vue'
 import blog from '../views/blog.vue'
 import alpha from '../views/alpha.vue'
 import funds from '../views/funds.vue'
+import profile from '../views/profile.vue'
+
 
 
 
@@ -42,6 +44,12 @@ const routes = [
     name: 'landing',
     component: landing
     
+  },
+
+  {
+    path: '/profile',
+    name: 'profile',
+    component: profile
   },
   {
     path: '/funds/:ticker',

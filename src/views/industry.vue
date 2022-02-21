@@ -98,6 +98,7 @@
         <div class="thentext" style="color: green">
           
             <div class="thentext" style="color: green">
+              <h5 style="font-weight: 800;">Industry Averages</h5>
           Select industry
 
           <!-- {{return_items1(selected,"Unlevered Beta",map1)}} -->
