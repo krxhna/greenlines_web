@@ -109,6 +109,8 @@
     <div class="options">
       <!-- {{user}} -->
       <h1 style="color: white; margin-top: 4vh">${{ ticker }}</h1>
+      <h1 style="color: white; margin-top: 4vh">${{ ticker_list }}</h1>
+      <h1 style="color: white; margin-top: 4vh">${{ dummy_list }}</h1>
       <div class="custom-control custom-switch" style="color: gray">
         <input
           @change="onChangeEventHandler"
@@ -195,7 +197,7 @@
 <script>
 import firebase from "firebase/compat/app";
 import VueTradingView from "vue-trading-view/src/vue-trading-view";
-// import { db } from "../firebase";
+import { db } from "../firebase";
 
 export default {
   components: {
@@ -208,6 +210,10 @@ export default {
       international: false,
       username: "",
       user: null,
+      ispro: 'ispro?',
+      ticker_list: [],
+      ticker_list_length: [],
+      dummy_list: ["dum","gh","dumd"],
 
       error: null,
       awesome: "ds",
@@ -311,7 +317,31 @@ export default {
       return this.items[sel][name];
     },
 
+
+
+
+    collect_tickers: function(ticker){
+      console.log(ticker);
+      //write data to firebase
+      db.collection("users").doc(this.user.email).update({
+        tickers:  this.ticker_list,
+        length: this.ticker_list.length,
+
+       
+       
+       }).then(function() {
+          console.log("tickers added");
+        }
+        
+        
+        );
+
+    },
+
+
     the_go: function (ticker) {
+      this.ticker_list.push(ticker);
+      this.collect_tickers(ticker);
       this.popup = false;
       this.international = false;
       this.$router.push({
@@ -354,8 +384,16 @@ export default {
     },
   },
 
-  firestore: {
+  firestore(){
+    return{
+      ticker_list: db.doc("users/katkat@gmail.com").onSnapshot((doc) => {
+        this.ticker_list = doc.data().tickers;
+      }),
+     ticker_list_length: db.doc("users/"+this.user.email).onSnapshot((doc) => {
+        this.ticker_list_length = doc.data().tickers.length;
+      }),
     username: "fda",
+    }
   },
 
   created() {
