@@ -250,7 +250,8 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     align-items: flex-start;
     background-color: #000000;
     color: #CDCDCD;
-    padding: 10px;
+    padding: 0.4rem;
+    
     font-family: Segoe UI;
 
 
@@ -273,7 +274,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     font-weight: bold;
     font-size: 1.7vw;
     width: 15vw;
-    padding: 10px;
+    padding: 0.4rem;
     text-decoration: underline;
     text-decoration-color: var(--main-color);
 
@@ -285,17 +286,18 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     color: #CDCDCD;
     font-weight: bold;
 
-    padding: 10px;
+    padding: 0.4rem;
     text-decoration: underline;
     text-decoration-color: var(--main-color);
 
 }
 
 .thing:hover {
+    cursor: pointer;
     width: 15vw;
     background-color: #021a00;
     color: var(--main-color);
-    padding: 10px;
+    padding: 0.4rem;
 
 }
 

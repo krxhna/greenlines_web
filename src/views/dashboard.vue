@@ -63,7 +63,10 @@
           <router-link :to="{ path: '/funds/' + ticker }" class="thing" replace
             >Funds</router-link
           >
-          <h7 class="thing">News( coming soon)</h7>
+          <h6 class="thing">News( coming soon)</h6>
+          <a class="thing" @click="openstripe()">Pro  <i  style="padding: 0.3rem;" class="fas fa-crown"></i
+              ></a>
+          <a class="thing"  @click="logout">Logout</a>
 
           <!-- 
           <h1 v-if="user == null">
@@ -72,15 +75,14 @@
             >
           </h1> -->
 
-          <h1>
+          <!-- <h1>
             <a style="color: #0f0f0f">,</a>
             <div class="fg" style="display: flex; flex-direction: column">
               <b-button
                 @click="openstripe()"
                 class="btn btn-success"
                 style="color: black; background-color: #38ea41"
-                >Start Your Free Trail <i class="fas fa-crown"></i
-              ></b-button>
+                >Start Your Free Trail </b-button>
               <b-button
                 @click="logout"
                 class="btn btn-success"
@@ -88,7 +90,22 @@
                 >logout</b-button
               >
             </div>
-          </h1>
+          </h1> -->
+          <div class="dwe" style="color:black">.</div>
+          <a style="color: rgba(245, 245, 220, 0.466); text-align: start; padding: 0.4rem; ">History 
+            <i class="fas fa-history" style="padding: 0.4rem;"></i>
+
+          </a>
+          
+        <!-- <h5>{{ticker_list.slice(-3)}}</h5> -->
+        <ul style="list-style-type: none; text-align: start; background-color: #000000; padding: 0.3rem; cursor: pointer;">
+       <li v-for="n in ticker_list.slice(-4).reverse()" :key="n.id" > 
+           <h5 style="color: #08f06198; padding: 0.1rem;" @click="the_go(n)" :to="{ path: `/dashboard/${n}` }"  replace
+            >${{n}} > </h5>
+       </li>
+    </ul>
+
+          
           <div class="footernotes" style="display: flex">
             <a
               style="color: white"
@@ -325,7 +342,7 @@ export default {
       //write data to firebase
       db.collection("users").doc(this.user.email).update({
         tickers:  this.ticker_list,
-        length: this.ticker_list.length,
+        total_ticker_search: this.ticker_list.length,
 
        
        
