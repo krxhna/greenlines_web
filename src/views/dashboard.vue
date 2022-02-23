@@ -109,8 +109,8 @@
     <div class="options">
       <!-- {{user}} -->
       <h1 style="color: white; margin-top: 4vh">${{ ticker }}</h1>
-      <h1 style="color: white; margin-top: 4vh">${{ ticker_list }}</h1>
-      <h1 style="color: white; margin-top: 4vh">${{ dummy_list }}</h1>
+      <!-- <h1 style="color: white; margin-top: 4vh">${{ ticker_list }}</h1>
+      <h1 style="color: white; margin-top: 4vh">${{ dummy_list }}</h1> -->
       <div class="custom-control custom-switch" style="color: gray">
         <input
           @change="onChangeEventHandler"
