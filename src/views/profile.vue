@@ -1,16 +1,20 @@
 <template>
  <div class="profile" style="display:flex; flex-direction: column; justify-content: center; align-items: center;">
-   <div class="card" >
+   <div class="card" style="display: flex; justify-content: center; align-items: center;" >
+     <img :src="return_id(user.photoURL)" class="rounded-circle z-depth-2" style="width:10rem">
   <div class="card-body">
     <h5 class="card-title">{{user.displayName}}</h5>
-    <h5 class="card-title">{{user.email}}</h5>
+    <h6 class="card-title">{{user.email}}</h6>
 
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+   
+    <a href="#" class="btn btn-primary">
+
+      Edit ✏️
+    </a>
   </div>
 </div>
  
-    <div class="d" style="width: 50vh;">
+    <div class="d" style="width: 70vh; overflow: hidden;">
         {{user}}
     </div>
  </div>
