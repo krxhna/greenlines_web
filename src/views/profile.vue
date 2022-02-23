@@ -1,9 +1,16 @@
 <template>
- <div class="profile" style="flex">
-    {{user.displayName}}
-    {{user.email}}
-    
-    <div class="d">
+ <div class="profile" style="display:flex; flex-direction: column; justify-content: center; align-items: center;">
+   <div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">{{user.displayName}}</h5>
+    <h5 class="card-title">{{user.email}}</h5>
+
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+ 
+    <div class="d" style="width: 50vh;">
         {{user}}
     </div>
  </div>
@@ -120,5 +127,10 @@ export default {
 </script>
 
 <style>
+
+
+.card{
+  width: 18rem;
+}
 
 </style>
