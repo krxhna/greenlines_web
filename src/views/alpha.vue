@@ -66,9 +66,9 @@
     <div class="s" style="color: black;">d</div>
     <div class="s" style="color: black;">d</div>
     <div class="s" style="color: black;">d</div>
-    <div class="e">Exclusive Alpha Acess Pass</div>
+    <div class="e">It's Free Forever</div>
   
-    <div class="e1">@Only $7 a month!</div>
+    <div class="e1">No credit card required</div>
     
     <div class="cards_alp">
         <!-- home -->
