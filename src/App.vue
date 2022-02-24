@@ -15,7 +15,16 @@
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+
+.body{
+   background-color: #42b983;
+}
+
 #app {
+ 
+  
   font-family: poppins;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

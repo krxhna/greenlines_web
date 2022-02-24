@@ -1,6 +1,6 @@
 .
 <template>
-  <div class="dash">
+  <div class="funds">
     <div class="navbar">
       <ul>
         <li class="navbarnav">

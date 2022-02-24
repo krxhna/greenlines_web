@@ -1,6 +1,6 @@
-.
+
 <template>
-  <div class="dash">
+  <div class="industry">
     <div class="navbar">
       <ul>
         <li class="navbarnav">

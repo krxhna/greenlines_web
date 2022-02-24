@@ -6,15 +6,6 @@
     --text-color: #707070;
 }
 
-v-if="ispro"
-
-<div v-else class="blur1dfs"> <b-button
-@click="openstripe()"
-class="btn btn-success"
-style="color: black; background-color: #38ea41"
->pro <i class="fas fa-lock"></i
-></b-button></div>
-
 
 .blur1{
     font-size: 3rem;
@@ -34,10 +25,7 @@ backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.fundsview{
-   
 
-}
 
 
 
@@ -63,12 +51,32 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 
 
 .dash {
+    height: 110vh;
+    display: flex;
+    background-color: black;
+}
+
+.funds {
+    height: 100%;
+    display: flex;
+    background-color: black;
+}
+
+
+.industry{
+    height: 100%;
+    width: 99.75vw;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
     display: flex;
     background-color: black;
 }
 
 .macro {
+    height: 600vh;
     display: flex;
+   
     background-color: black;
 }
 
@@ -96,7 +104,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .view_btn:hover{
-;
+
     background-color: rgba(0, 97, 48, 0.233);
     color: white;
     border: 1px solid #38ea41;
@@ -137,7 +145,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     align-items: center;
 } */
 .buttondiv {
-    ;
+    
 
     padding: 5px;
     display: flex;
@@ -223,6 +231,19 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     width: 20vw;
     height: 100vh;
 }
+
+.navbar_macro {
+
+
+    border-right: 1px solid rgb(58, 58, 58);
+
+
+    background-color: #000000;
+    width: 20vw;
+    height: 100vh   ;
+}
+
+
 
 .navbar1 {
 
@@ -389,7 +410,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 
 
 
-    height: 500vh;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
@@ -477,7 +498,8 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgb(9, 129, 59);
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(9, 121, 18) 35%, rgb(0, 255, 106) 100%);
 }
 
 /* Handle on hover */

@@ -29,7 +29,7 @@
           @click="$router.push('signup')"
           class="a"
           type="submit"
-          style="background-color: transparent; color: rgb(255, 255, 255); border: none"
+          style="background-color: transparent; color: rgb(255, 255, 255); border: none; font-family: poppins;"
         >
           Signup
         </button>
@@ -43,12 +43,12 @@
           <div class="head_alp">Do Valaution</div>
           
           <div class="colortext"><span1></span1></div>
-          <div class="textalp">
+          <div class="textalp" style="font-family: Arial, Helvetica, sans-serif">
             your complete valuation workspace do everything from checking sec reports, to
             industry averages to macro data all in one place
           </div>
           <div class="buttonsometh">
-            <button class="btn_alp" style="color:white;" @click="Alpha" >Signup for free</button>
+            <button class="btn_alp" style="color:white; font-family: Arial, Helvetica, sans-serif;" @click="Alpha" >Signup for free</button>
           </div>
         </div>
       </div>
@@ -434,7 +434,7 @@ export default {
     padding: 0;
   background-color: black;
   width: 99.75vw;
-  height: 470vh;
+  height: 100%;
   text-align: center;
   color: white;
   /* font-size: 7rem;
