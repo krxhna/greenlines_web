@@ -403,7 +403,7 @@ export default {
 
   firestore(){
     return{
-      ticker_list: db.doc("users/katkat@gmail.com").onSnapshot((doc) => {
+      ticker_list: db.doc("users/"+this.user.email).onSnapshot((doc) => {
         this.ticker_list = doc.data().tickers;
       }),
      ticker_list_length: db.doc("users/"+this.user.email).onSnapshot((doc) => {
