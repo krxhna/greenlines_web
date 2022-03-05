@@ -133,7 +133,15 @@
     </div>
   </div>
 
-  <div v-else>logged in</div>
+  <div v-else>logged in
+     <router-link
+            :to="{ path: '/'}"
+            class="thing"
+            replace
+            > click me!</router-link
+          >
+   
+  </div>
 </template>
 
 <script>

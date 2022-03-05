@@ -18,7 +18,7 @@ import blog from '../views/blog.vue'
 import alpha from '../views/alpha.vue'
 import funds from '../views/funds.vue'
 import profile from '../views/profile.vue'
-
+import fundsm from '../views/fundsm.vue'
 
 
 
@@ -45,6 +45,13 @@ const routes = [
     component: landing
     
   },
+  {
+    path: '/fundsm',
+    name: 'fundsm',
+    component: fundsm
+
+  }
+  ,
 
   {
     path: '/profile',

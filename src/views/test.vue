@@ -1,7 +1,10 @@
 .<template>
-  <div class="test">
+  <div class="testdsad">
     blogblog
-    <iframe src="https://www.google.com" frameborder="0" width="50vw" height="50vh"></iframe>
+   <div class="div">
+     <iframe src='https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=MEOW&type=10-K&dateb=&owner=exclude&count=40#contentDiv' width='100%' height='100%'> </iframe>
+   </div>
+
   </div>
 </template>
 
