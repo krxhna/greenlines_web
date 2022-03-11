@@ -69,6 +69,21 @@ export default {
           this.clicked();
       }
     },
+
+
+      the_go: function (ticker) {
+      this.ticker_list.push(ticker);
+      this.collect_tickers(ticker);
+      this.popup = false;
+      this.international = false;
+      // this.$router.push({
+      //   path: "/dashboard/" + ticker,
+      // });
+
+      // this.$forceUpdate();
+      // location.reload();
+      // this.$router.go(this.$router.currentRoute);
+    },
     isMobile() {
       if (screen.width <= 760) {
         return true;
