@@ -437,8 +437,9 @@ export default {
     margin: 0;
     padding: 0;
   background-color: black;
-  width: 99.75vw;
+  width: 100%;
   height: 100%;
+  overflow:hidden;
   text-align: center;
   color: white;
   /* font-size: 7rem;
@@ -737,7 +738,11 @@ span1:before{
     transform: translateZ(20px);
   }
 
-  .
+  .video_size{
+    margin-left:1rem;
+    width: 45vw;
+    height: 60vh;
+  }
 
 
 .morethan{
@@ -821,11 +826,18 @@ span1:before{
 
 
       .Alpha{
-        height: 600vh;
+        height: 100%;
         padding: 0;
         margin: 0;
-          width: 99.9vw;
+          width: 100%;
       }
+/* 
+       .video_size{
+    margin-left:1rem;
+    width: auto;
+    height: auto;
+  } */
+
 
       .head_alp{
         font-size: 4.5rem;
