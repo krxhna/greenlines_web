@@ -19,7 +19,7 @@ import alpha from '../views/alpha.vue'
 import funds from '../views/funds.vue'
 import profile from '../views/profile.vue'
 import fundsm from '../views/fundsm.vue'
-
+import alphanew from '../views/alphanew.vue'
 
 
 
@@ -71,6 +71,11 @@ const routes = [
     path: '/alpha',
     name: 'alpha',
     component: alpha
+  },
+  {
+    path: '/alphanew',
+    name: 'alphanew',
+    component: alphanew
   },
   {
     path: '/blog',
