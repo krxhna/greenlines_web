@@ -1,3 +1,5 @@
+// alpha new is on url alpha and alpha.vue is on url /alphanew
+
 <template>
   <div class="Alpha">
    
@@ -50,10 +52,16 @@
       </div>
     
       <div  class="frcard">
-            <img class="cardfg"  v-tilt="{speed: 500, perspective: 1200}" 
-            style="object-fit: Fit; border-radius: 5px; "
-            src="../assets/card.png"
-          />
+          <iframe
+        
+             class="video_size"
+             
+              src="https://www.youtube.com/embed/8X1e4PnLyR8?rel=0&amp;autoplay=1&mute=1&controls=0&loop=1&modestbranding=1"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
 
       </div>
 
@@ -447,11 +455,13 @@ export default {
 }
 
 .middle_Alpha {
+
     display: flex;
+    
   margin-left: 10vh;
   width: 80vw;
   height: 60vh;
-  background-color: transparent;
+  
 }
 
 re
@@ -484,8 +494,10 @@ re
 
 .frcard{
     margin-top: 2rem;
-width: 50vw;
+width: 60vw;
 height: 80vh;
+
+
 
 }
 
@@ -724,6 +736,8 @@ span1:before{
   .cardfg{
     transform: translateZ(20px);
   }
+
+  .
 
 
 .morethan{

@@ -68,12 +68,12 @@ const routes = [
   },
 
   {
-    path: '/alpha',
+    path: '/alphanew',
     name: 'alpha',
     component: alpha
   },
   {
-    path: '/alphanew',
+    path: '/alpha',
     name: 'alphanew',
     component: alphanew
   },
