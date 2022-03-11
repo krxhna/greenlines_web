@@ -70,9 +70,9 @@
     <div class="s" style="color: black;">d</div>
     <div class="s" style="color: black;">d</div>
     <div class="s" style="color: black;">d</div>
-    <div class="e">It's Free Forever</div>
+    <!-- <div class="e">It's Free Forever</div>
   
-    <div class="e1">No credit card required</div>
+    <div class="e1">No credit card required</div> -->
     
     <div class="cards_alp">
         <!-- home -->
@@ -673,6 +673,8 @@ border: 0px solid rgba(255, 255, 255, 0.3);
   font-family: poppins;
 }
 
+
+
 span1:before{
   animation: animate 3s linear infinite;
  content: "";
@@ -831,12 +833,18 @@ span1:before{
         margin: 0;
           width: 100%;
       }
-/* 
+
+      .s{
+          height: 1px;
+    scale: 0.01;
+    
+}
+
        .video_size{
     margin-left:1rem;
     width: auto;
     height: auto;
-  } */
+  }
 
 
       .head_alp{
