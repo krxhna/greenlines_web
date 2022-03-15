@@ -128,7 +128,8 @@
               background: rgba(196, 196, 196, 0.25);
               backdrop-filter: blur(1rem);
               height: 52vh;
-              
+              display: none;
+visibility: hidden;
               width: 77vw;
               position: absolute;
               display: flex;
@@ -163,6 +164,8 @@
               backdrop-filter: blur(1rem);
               height: 52vh;
               width: 77vw;
+              display: none;
+visibility: hidden;
               position: absolute;
               display: flex;
               justify-content: center;
@@ -180,6 +183,8 @@
           <div
             class="blur"
             style="
+            display: none;
+visibility: hidden;
               background: rgba(196, 196, 196, 0.25);
               backdrop-filter: blur(1rem);
               height: 52vh;
@@ -207,6 +212,8 @@
             style="
               background: rgba(196, 196, 196, 0.25);
               backdrop-filter: blur(1rem);
+              display: none;
+visibility: hidden;
               height: 52vh;
               width: 77vw;
               position: absolute;
@@ -230,6 +237,8 @@
            <div
             class="blur"
             style="
+            display: none;
+visibility: hidden;
               background: rgba(196, 196, 196, 0.25);
               backdrop-filter: blur(1rem);
               height: 52vh;
