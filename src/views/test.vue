@@ -1,9 +1,10 @@
 <template>
 <div class="homesearch">
-  <div class="home_nav">
+  <div class="homewrapper" style="margin:3vw">
+<div class="home_nav" >
 
    <div class="logoholder" style="background-color: transparent;">
-      <img src="../assets/shortlogo.png" style="height: 10vh; margin: 1rem;"/>
+      <img src="../assets/shortlogo.png" style="height: 10vh; margin-right: 1rem;"/>
    </div>
       <div class="search_home">
        
@@ -12,6 +13,17 @@
 
 
 
+  </div>
+
+
+  <div class="popular" style="height: 30vw; width: 20vw;">
+
+    <div class="boxheading">popular</div>
+    <div class="hometicker">$MSFT</div>
+    <div class="hometicker">$BABA</div>
+    <div class="hometicker">$AAPL</div>
+    <div class="hometicker">$AMD</div>
+  </div>v
   </div>
 </div>
 </template>
@@ -103,11 +115,31 @@ export default {
  
   align-items: center;
   justify-items: center;
-  margin: 3vw;
+  margin-bottom: 1rem;
+ 
     display: flex;
   flex-direction: row;
 
 }
+
+
+.popular{
+  align-items: flex-start;
+  justify-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.hometicker{
+  font-family: 'poppins';
+  font-size: 2.5rem;
+font-style: normal;
+color: #FFFFFF;
+font-weight: 700;
+}
+
+
+
 
 .search_home{
  height: 7vh;
