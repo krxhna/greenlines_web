@@ -506,9 +506,7 @@ export default {
   props: ["ticker"],
   firestore() {
     return {
-      ispro: db.doc("users/katkat@gmail.com").onSnapshot((doc) => {
-        this.ispro = doc.data().pro;
-      }),
+      ispro: true,
       map1: db.doc("industry/data_new").onSnapshot((doc) => {
         this.map1 = doc.data().roic;
       }),
