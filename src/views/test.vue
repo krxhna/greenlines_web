@@ -8,7 +8,16 @@
             style="height: 10vh; margin-right: 1rem"
           />
         </div>
-        <div class="search_home"></div>
+        <div class="search_home">
+          <input
+            type="text"
+            class="search_home"
+            style="text-transform: uppercase"
+            placeholder="Enter Ticker (eg., MSFT )"
+            @keyup.enter="handleClick(message.toUpperCase())"
+            v-model="message"
+          />
+        </div>
       </div>
       <div class="middlebox" style="display: flex; margin-top: 2rem">
         <div class="popular" style="height: 30vw; width: 20vw">
@@ -148,6 +157,14 @@
           </div>
         </div>
       </div>
+      <div class="f" style="display:flex; flex-direction: column; justify-content: flex-start; text-align: start ;">
+        <div style="color:lime; font-size:x-large">
+          www.greenlines.club
+        </div>
+        <div style="color:white; font-weight: 700; font-size: xx-large;">
+          Valuation Suite
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -269,6 +286,19 @@ export default {
 
 .search_home {
   height: 7vh;
+  border-radius: 0px 7px;
+  width: 36vw;
+  background: linear-gradient(
+    147.36deg,
+    rgba(255, 255, 255, 0.49) -6.58%,
+    rgba(196, 196, 196, 0.39) 100%
+  );
+}
+
+
+.search_home:hover {
+  height: 7vh;
+  box-shadow: #04c700;
   border-radius: 0px 7px;
   width: 36vw;
   background: linear-gradient(
