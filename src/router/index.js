@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+// import Home from '../views/Home.vue'
 import results from '../views/results.vue'
 import results_new from '../views/indsutrym.vue'
 import checkout from '../views/checkout.vue'
@@ -30,8 +30,8 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home,
+    name: 'test',
+    component: test,
 
     meta: {
       requiresAuth: true
