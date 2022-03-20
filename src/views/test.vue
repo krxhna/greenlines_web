@@ -375,7 +375,8 @@ export default {
   .search_home:hover {
     width: 65vw;
   }
-  .f {
+  .f{
+    display: none;
     position: absolute;
     bottom: 0;
     padding-bottom: 2.1rem;
