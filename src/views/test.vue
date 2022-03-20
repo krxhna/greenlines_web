@@ -157,7 +157,7 @@
           </div>
         </div>
       </div>
-      <div class="f" style="display:flex; flex-direction: column; justify-content: flex-start; text-align: start;">
+      <div class="f" >
         <div style="color:lime; font-size:x-large">
           www.greenlines.club
         </div>
@@ -275,6 +275,8 @@ export default {
 
 .f{
   
+  display:flex; flex-direction: column; justify-content: flex-start; text-align: start; background-color: aqua;
+  
 }
 
 
@@ -337,7 +339,7 @@ export default {
 }   
 
 
-.search_home:focus{
+.search_home:hover{
   width: 80vw;
 }  
 .f{
