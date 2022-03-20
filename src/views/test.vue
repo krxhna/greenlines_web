@@ -89,7 +89,7 @@
        
         </div>
 
-        <div class="popular" style="height: 30vw; width: 20vw">
+        <div class="trending" style="height: 30vw; width: 20vw">
           <div class="boxheading">Trending</div>
             <div class="hometicker" @click="handleClick('aa v')">
             $AA
@@ -157,7 +157,7 @@
           </div>
         </div>
       </div>
-      <div class="f" style="display:flex; flex-direction: column; justify-content: flex-start; text-align: start ;">
+      <div class="f" style="display:flex; flex-direction: column; justify-content: flex-start; text-align: start;">
         <div style="color:lime; font-size:x-large">
           www.greenlines.club
         </div>
@@ -265,6 +265,21 @@ export default {
   flex-direction: column;
 }
 
+.trending {
+  margin: 0rem;
+  align-items: flex-start;
+  justify-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.f{
+  
+}
+
+
+
+
 .hometicker {
   cursor: pointer;
   font-family: "poppins";
@@ -307,4 +322,29 @@ export default {
     rgba(196, 196, 196, 0.39) 100%
   );
 }
+
+
+ @media screen and (max-width:728px) {
+
+
+.trending{
+  width: 100vw;
+   display: none;
+}
+   
+.search_home{
+  width: 80vw;
+}   
+
+
+.search_home:focus{
+  width: 80vw;
+}  
+.f{
+  display: none;
+}   
+
+
+
+ }
 </style>
