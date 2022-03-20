@@ -24,7 +24,9 @@
 </svg></div></div>
       </div>
       <div class="middlebox" style="display: flex; margin-top: 2rem">
+        
         <div class="popular" style="height: 30vw; width: 20vw">
+          <div class="tagy">greenlines.club</div>
           <div class="boxheading">Popular</div>
           <div class="hometicker" @click="handleClick('MSFT')">
             $MSFT
@@ -91,7 +93,7 @@
             </svg>
           </div>
         </div>
-
+          
         <div class="trending" style="height: 30vw; width: 20vw">
           <div class="boxheading">Trending</div>
           <div class="hometicker" @click="handleClick('aa v')">
@@ -342,6 +344,11 @@ export default {
   );
 }
 
+
+.tagy{
+  display: none;
+}
+
 @media screen and (max-width: 728px) {
   .trending {
     width: 100vw;
@@ -381,5 +388,16 @@ export default {
     bottom: 0;
     padding-bottom: 2.1rem;
   }
+
+
+  .tagy{
+    display: block;
+    color: white;
+    font-family: "poppins";
+   
+  }
+
+
+
 }
 </style>
