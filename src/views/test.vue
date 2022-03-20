@@ -18,6 +18,10 @@
             v-model="message"
           />
         </div>
+        <div class="search_icon" @click="handleClick(message.toUpperCase())"> <div >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+</svg></div></div>
       </div>
       <div class="middlebox" style="display: flex; margin-top: 2rem">
         <div class="popular" style="height: 30vw; width: 20vw">
@@ -38,7 +42,7 @@
               />
             </svg>
           </div>
-           <div class="hometicker" @click="handleClick('AAPL')">
+          <div class="hometicker" @click="handleClick('AAPL')">
             $AAPL
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +58,7 @@
               />
             </svg>
           </div>
-           <div class="hometicker" @click="handleClick('BABA')">
+          <div class="hometicker" @click="handleClick('BABA')">
             $BABA
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +74,7 @@
               />
             </svg>
           </div>
-           <div class="hometicker" @click="handleClick('AMD')">
+          <div class="hometicker" @click="handleClick('AMD')">
             $AMD
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -86,12 +90,11 @@
               />
             </svg>
           </div>
-       
         </div>
 
         <div class="trending" style="height: 30vw; width: 20vw">
           <div class="boxheading">Trending</div>
-            <div class="hometicker" @click="handleClick('aa v')">
+          <div class="hometicker" @click="handleClick('aa v')">
             $AA
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +110,7 @@
               />
             </svg>
           </div>
-              <div class="hometicker" @click="handleClick('NIO')">
+          <div class="hometicker" @click="handleClick('NIO')">
             $NIO
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +126,7 @@
               />
             </svg>
           </div>
-              <div class="hometicker" @click="handleClick('SBUX')">
+          <div class="hometicker" @click="handleClick('SBUX')">
             $SBUX
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -139,7 +142,7 @@
               />
             </svg>
           </div>
-              <div class="hometicker" @click="handleClick('KO')">
+          <div class="hometicker" @click="handleClick('KO')">
             $KO
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -157,11 +160,9 @@
           </div>
         </div>
       </div>
-      <div class="f" >
-        <div style="color:lime; font-size:x-large">
-          www.greenlines.club
-        </div>
-        <div style="color:white; font-weight: 700; font-size: xx-large;">
+      <div class="f">
+        <div style="color: lime; font-size: x-large">www.greenlines.club</div>
+        <div style="color: white; font-weight: 700; font-size: xx-large">
           Valuation Suite
         </div>
       </div>
@@ -265,6 +266,24 @@ export default {
   flex-direction: column;
 }
 
+.search_icon{
+  padding-left: 2rem ;
+  justify-items: center;
+  align-items: center;
+  display: flex;
+  color: white;
+  height: 7vh;
+  border-radius: 0px 7px 0px 0px;
+  width: 6vw;
+  background: linear-gradient(
+    147.36deg,
+    rgba(255, 255, 255, 0.49) -6.58%,
+    rgba(196, 196, 196, 0.39) 100%
+  );
+
+}
+
+
 .trending {
   margin: 0rem;
   align-items: flex-start;
@@ -273,14 +292,12 @@ export default {
   flex-direction: column;
 }
 
-.f{
-  
-  display:flex; flex-direction: column; justify-content: flex-start; text-align: start; 
-  
+.f {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: start;
 }
-
-
-
 
 .hometicker {
   cursor: pointer;
@@ -303,7 +320,7 @@ export default {
 
 .search_home {
   height: 7vh;
-  border-radius: 0px 7px;
+  border-radius: 0px 0px 0px 7px;
   width: 36vw;
   background: linear-gradient(
     147.36deg,
@@ -316,7 +333,7 @@ export default {
 .search_home:hover {
   height: 7vh;
   box-shadow: #04c700;
-  border-radius: 0px 7px;
+  border-radius: 0px 0px 0px 7px;
   width: 36vw;
   background: linear-gradient(
     147.36deg,
@@ -325,28 +342,43 @@ export default {
   );
 }
 
+@media screen and (max-width: 728px) {
+  .trending {
+    width: 100vw;
+    display: none;
+  }
 
- @media screen and (max-width:728px) {
 
+  
+.search_icon{
+  
+  justify-items: center;
+  align-items: center;
+  display: flex;
+  padding-left: 1rem ;
+  color: white;
+  height: 7vh;
+  border-radius: 0px 7px 0px 0px;
+  width: 15vw;
+  background: linear-gradient(
+    147.36deg,
+    rgba(255, 255, 255, 0.49) -6.58%,
+    rgba(196, 196, 196, 0.39) 100%
+  );
 
-.trending{
-  width: 100vw;
-   display: none;
 }
-   
-.search_home{
-  width: 80vw;
-}   
 
+  .search_home {
+    width: 65vw;
+  }
 
-.search_home:hover{
-  width: 80vw;
-}  
-.f{
-  display: none;
-}   
-
-
-
- }
+  .search_home:hover {
+    width: 65vw;
+  }
+  .f {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 2.1rem;
+  }
+}
 </style>
