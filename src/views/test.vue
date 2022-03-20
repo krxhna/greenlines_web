@@ -246,7 +246,7 @@ export default {
   flex-direction: column;
   background-color: #000000;
   height: 100vh;
-  background: linear-gradient(180deg, #000000 50.01%, #022508 86.37%);
+  background: linear-gradient(180deg, #000000 50.01%, #001303 86.37%);
 }
 
 .home_nav {
