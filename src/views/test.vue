@@ -275,7 +275,7 @@ export default {
 
 .f{
   
-  display:flex; flex-direction: column; justify-content: flex-start; text-align: start; background-color: aqua;
+  display:flex; flex-direction: column; justify-content: flex-start; text-align: start; 
   
 }
 
