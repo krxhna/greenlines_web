@@ -1,4 +1,4 @@
-.
+
 <template>
   <div  v-if="user == null" class="signup">
           <div class="nav12">
@@ -106,6 +106,7 @@
 import firebase from "firebase/compat/app";
 import names from "./data.js";
 import { db } from "../firebase";
+
 
 
 export default {
