@@ -76,7 +76,7 @@
                 @click="openstripe()"
                 class="btn btn-success"
                 style="color: black; background-color: #38ea41"
-                >Start Your Free Trail <i class="fas fa-crown"></i
+                >GO pro <i class="fas fa-crown"></i
               ></b-button>
               <b-button
                 @click="logout"
