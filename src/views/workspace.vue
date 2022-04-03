@@ -131,11 +131,12 @@
             group="tasks"
           >
             <div
-              class="list-group-item"
+              class="list-group-item m-1 rounded shadow-sm"
               v-for="element in arrBackLog"
               :key="element.name"
             >
-              {{ element }}
+              <div class="text-3xl">{{ element.toUpperCase() }}</div>
+              <button class="btn-success text-sm p-1 rounded" >dashboard</button>
             </div>
           </draggable>
         </div>
@@ -155,7 +156,7 @@
               v-for="element in arrInProgress"
               :key="element.name"
             >
-              {{ element.name }}
+              {{ element}}
             </div>
           </draggable>
         </div>
@@ -177,7 +178,7 @@
               v-for="element in arrDone"
               :key="element.name"
             >
-              {{ element.name }}
+              {{ element }}
             </div>
           </draggable>
         </div>
@@ -208,6 +209,7 @@ export default {
 this.email = this.user;
 
 
+
   },
 
   watch:{
@@ -218,8 +220,14 @@ this.email = this.user;
       },
 
       arrInProgress(){
+        this.writetodo();
             console.log(this.arrInProgress);
         },
+
+        arrDone(){
+          this.writetodo();
+              console.log(this.arrDone);
+          },
 
 
 
