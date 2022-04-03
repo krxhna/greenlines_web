@@ -23,6 +23,7 @@
     "vue-router": "^3.2.0",
     "vue-tilt.js": "^1.1.1",
     "vue-trading-view": "^1.0.1",
+    "vuedraggable": "^2.24.3",
     "vuefire": "^2.2.5"
   },
   "devDependencies": {

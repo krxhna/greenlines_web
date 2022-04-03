@@ -20,6 +20,7 @@ import funds from '../views/funds.vue'
 import profile from '../views/profile.vue'
 import fundsm from '../views/fundsm.vue'
 import alphanew from '../views/alphanew.vue'
+import workspace from '../views/workspace.vue'
 
 
 
@@ -43,6 +44,12 @@ const routes = [
     path: '/landing',
     name: 'landing',
     component: landing
+    
+  },
+  {
+    path: '/workspace',
+    name: 'workspace',
+    component: workspace
     
   },
   {
