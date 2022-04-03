@@ -60,6 +60,9 @@
           <router-link :to="{ path: '/macro/' + ticker }" class="thing" replace
             >Macro view</router-link
           >
+          <router-link :to="{ path: '/workspace/' + ticker }" class="thing" replace
+            >Workspace</router-link
+          >
           <router-link :to="{ path: '/funds/' + ticker }" class="thing" replace
             >Funds</router-link
           >

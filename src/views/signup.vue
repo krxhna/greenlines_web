@@ -272,7 +272,7 @@ export default {
           }).then(() => {
              db.collection("users").doc(this.user.email).get().then(doc => {
               if (!doc.exists) {
-                setTimeout(()=> this.writedata1(name), 5000);
+                setTimeout(()=> this.writedata1(name), 9000);
               } else {
                 this.writedata1(name);
            

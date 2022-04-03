@@ -61,16 +61,11 @@
             replace
             >Funds</router-link
           >
-          <h7 class="thing">News( coming soon)</h7>
-          <!-- <h7 class="thing">Macroview( coming soon)</h7> -->
+          <h6 class="thing">News( coming soon)</h6>
+          <!-- <h6 class="thing">Macroview( coming soon)</h6> -->
 
           <h1 v-if="user == null">
-            <b-button
-              @click="googlesigin"
-              class="btn btn-success"
-              style="color: black"
-              >Login/signinup</b-button
-            >
+            
           </h1>
 
           <h1>
@@ -109,7 +104,7 @@
     </div>
 
     <div class="container mt-5">
-      {{user.email}}
+      <!-- {{user.email}} -->
       {{email}}
       {{collectiondata}}
     
@@ -122,7 +117,7 @@
           placeholder="Enter Task"
           @keyup.enter="add"
         ></b-form-input>
-        <b-button @click="writetodo" variant="primary" class="ml-3">Add</b-button>
+        <b-button @click="add" variant="primary" class="ml-3">Add</b-button>
       </div>
     </div>
     <div class="row mt-5">
@@ -166,25 +161,7 @@
         </div>
       </div>
 
-      <div class="col-3">
-        <div class="p-2 alert alert-warning">
-          <h3>Testing</h3>
-          <!-- Testing draggable component. Pass arrTested to list prop -->
-          <draggable
-            class="list-group kanban-column"
-            :list="arrTested"
-            group="tasks"
-          >
-            <div
-              class="list-group-item"
-              v-for="element in arrTested"
-              :key="element.name"
-            >
-              {{ element.name }}
-            </div>
-          </draggable>
-        </div>
-      </div>
+
 
       <div class="col-3">
         <div class="p-2 alert alert-success">
@@ -215,9 +192,11 @@
 import firebase from "firebase/compat";
 import { db } from "../firebase";
 
+
 import draggable from "vuedraggable";
 export default {
   name: "kanban-board",
+  props: ["ticker"],
   components: {
     //import draggable as a component
     draggable
@@ -225,7 +204,8 @@ export default {
 
   mounted(){
       console.log(this.arrBackLog);
-      this.email = firebase.auth().currentUser.email;
+      this.user = firebase.auth().currentUser;
+this.email = this.user;
 
 
   },
@@ -233,6 +213,7 @@ export default {
   watch:{
 
       arrBackLog(){
+        this.writetodo();
           console.log(this.arrBackLog);
       },
 
@@ -271,25 +252,44 @@ created() {
       user:"dfs",
       name:"dsf",
       email:"",
+      message:"",
       collectiondata:"",
       // 4 arrays to keep track of our 4 statuses
       arrBackLog: [
-        { name: "Code Sign Up Page" },
-        { name: "Test Dashboard" },
-        { name: "Style Registration" },
-        { name: "Help with Designs" }
+        "msft",
+        "apple",
       ],
       arrInProgress: [],
-      arrTested: [],
+
       arrDone: []
     };
   },
   methods: {
+        logout: function () {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.push("/signin");
+          // alert("logout");
+        })
+        .catch((error) => {
+          this.error = error;
+        });
+    },
+    the_go: function (ticker) {
+      this.$router.push({
+        path: "/dashboard/" + ticker,
+      });
+      this.$forceUpdate();
+      // location.reload();
+      // this.$router.go(this.$router.currentRoute);
+    },
 
     
        writedata1: function(fullname){
       //write data to firebase
-      db.collection("users").doc(this.user.email).set({
+      db.collection("users").doc(this.email).set({
         displayName: fullname,
         uid: String(this.user.uid),
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
@@ -306,7 +306,6 @@ created() {
 
     //add new tasks method
     add: function() {
-      this.writedata1("Fsdfds");
       if (this.newTask) {
         this.arrBackLog.push(this.newTask );
         this.newTask = "";
@@ -318,11 +317,15 @@ created() {
     writetodo: function () {
       //write data to firebase
       db.collection("users")
-        .doc(this.email)
+        .doc(this.user.email)
         .update(
             {
                 
-                done:["FDS"]
+                todo:this.arrBackLog,
+                inprogress:this.arrInProgress,
+          
+
+                done:this.arrDone
 
             },
             

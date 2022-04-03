@@ -47,9 +47,10 @@ const routes = [
     
   },
   {
-    path: '/workspace',
+    path: '/workspace/:ticker',
     name: 'workspace',
-    component: workspace
+    component: workspace,
+    props: true,
     
   },
   {
