@@ -163,6 +163,8 @@ export default {
   data() {
     return {
       fullname: "gfdsgff",
+      fullname_e: "",
+      passworddd: "",
       email: "",
       password: "",
       user: null,
@@ -233,6 +235,8 @@ export default {
       // This gives you a Google Access Token. You can use it to access the Google API.
     },
 
+    
+
        writedata1: function(fullname){
       //write data to firebase
       db.collection("users").doc(this.user.email).update({
@@ -249,11 +253,15 @@ export default {
 
     },
 
+    //signup with aemail and update username
+    
+
 
 
 
 
     emailsignup: function (name) {
+      console.log(name);
       //signup with email and password
       firebase
         .auth()
@@ -261,14 +269,23 @@ export default {
         .then(() => {
           firebase.auth().currentUser.updateProfile({
             displayName: name,
-          });
-          console.log(name);
-          this.writedata1(name);
+          }).then(() => {
+             db.collection("users").doc(this.user.email).get().then(doc => {
+              if (!doc.exists) {
+                setTimeout(()=> this.writedata1(name), 5000);
+              } else {
+                this.writedata1(name);
+                console.log("Document data:", doc.data());
+              }});
+            
+            this.$router.push({
+                path: "/workspace",
+              });
+            
 
-          this.$router.push({
-            path: "/",
           });
-          // alert("signup");
+          
+                    // alert("signup");
           // this.$router.push({
           //   path: "results/" + this.user.uid,
           // });
