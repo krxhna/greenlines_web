@@ -275,11 +275,11 @@ export default {
                 setTimeout(()=> this.writedata1(name), 5000);
               } else {
                 this.writedata1(name);
-                console.log("Document data:", doc.data());
+           
               }});
             
             this.$router.push({
-                path: "/workspace",
+                path: "/",
               });
             
 
