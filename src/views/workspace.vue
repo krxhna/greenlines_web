@@ -104,15 +104,18 @@
       </ul>
     </div>
     <div class="container-fluid bg-light row p-3 m-0 justify-content-center ">
-        <div class="m-3 w-25 shadow-lg rounded p-2 w-40  text-info bg-dark">to do
+        <draggable class="m-3 w-25 shadow-lg rounded p-2 w-40  text-info bg-dark" v-model="myArray">
+    to sdo
+    <transition-group>
 
-            <draggable class="bg-light p-4 text-dark shadow-lg"> make soemthing</draggable>
-            <div class="d"> make soemthing</div>
-            <div class="d"> make soemthing</div>
-
-
-
+    
+        <div class="bg-light my-2 p-4 text-dark shadow-lg" v-for="element in myArray" :key="element.id">
+            {{element.name}}
         </div>
+    </transition-group>
+</draggable>
+
+
         <div class="m-3 w-25 shadow-lg rounded p-2 bg-danger">doing</div>
         <div class="m-3 w-25 shadow-lg rounded p-2 bg-info">done</div>
     </div>
@@ -136,6 +139,7 @@ export default {
 
     data(){
         return{
+            myArray:[{id:1, name:'one'}, {id:2, name:'two'}, {id:3, name:'three'}],
             user: "sdf",
         }
     }
