@@ -1,6 +1,6 @@
 <template>
   <div class="homesearch">
-    <div class="boxheading">Desktop requires signup to work <b-button @click="push2signup">signup</b-button></div>
+    <div class="boxheading" v-if="!mobile">Desktop requires signup to work <b-button @click="push2signup">signup</b-button></div>
     <div class="homewrapper" style="margin: 3vw">
       <div class="home_nav">
         <div class="logoholder" style="background-color: transparent">
