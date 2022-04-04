@@ -1,6 +1,6 @@
 <template>
   <div class="flex"> 
-    <div class="navbar">
+    <div class="navbar">   
       <ul>
         <li class="navbarnav">
           <router-link :to="{ path: '/' }" class="thing" replace>
@@ -103,27 +103,29 @@
       </ul>
     </div>
 
-    <div class="container mt-5">
+    <div class="container pt-5 text-danger" style="background-color: #212121;">
       <!-- {{user.email}} -->
-      {{email}}
-      {{collectiondata}}
-    
+      
+    {{test}}
+    doing
+    {{arrInProgress}}
     <div class="row">
       <div class="col form-inline">
         <b-form-input
-          id="input-2"
+        
+          id="input-2 rounded shadow-sm"
           v-model="newTask"
           required
-          placeholder="Enter Task"
+          placeholder="Enter Ticker"
           @keyup.enter="add"
         ></b-form-input>
-        <b-button @click="add" variant="primary" class="ml-3">Add</b-button>
+        <b-button @click="add" variant="dark rounded" class="ml-3 bg-dark">Add </b-button>
       </div>
     </div>
     <div class="row mt-5">
-      <div class="col-3">
-        <div class="p-2 alert alert-secondary">
-          <h3>Back Log</h3>
+      <div class="col-3 h-100">
+        <div class="p-2 rounded shadow-lg" style="background-color: #383838;">
+          <h3 class="text-light text-sm m-2">To do</h3>
           <!-- Backlog draggable component. Pass arrBackLog to list prop -->
           <draggable
             class="list-group kanban-column"
@@ -131,12 +133,14 @@
             group="tasks"
           >
             <div
-              class="list-group-item m-1 rounded shadow-sm"
+              class="list-group-item m-1 rounded shadow-sm" style="background-color: #212121"
               v-for="element in arrBackLog"
-              :key="element.name"
+              :key="element"
             >
-              <div class="text-3xl">{{ element.toUpperCase() }}</div>
-              <button class="btn-success text-sm p-1 rounded" >dashboard</button>
+              <div class="text-3xl text-light">{{ element.toUpperCase() }}</div>
+              <button class=" text-sm p-1 rounded" style="color:gray" >dashboard <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right-square" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.854 8.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096z"/>
+</svg></button>
             </div>
           </draggable>
         </div>
@@ -154,7 +158,7 @@
             <div
               class="list-group-item"
               v-for="element in arrInProgress"
-              :key="element.name"
+              :key="element"
             >
               {{ element}}
             </div>
@@ -195,6 +199,7 @@ import { db } from "../firebase";
 
 
 import draggable from "vuedraggable";
+
 export default {
   name: "kanban-board",
   props: ["ticker"],
@@ -206,7 +211,45 @@ export default {
   mounted(){
       console.log(this.arrBackLog);
       this.user = firebase.auth().currentUser;
-this.email = this.user;
+this.email = this.user.email;
+
+
+
+
+
+  },
+
+  updated:async  function(){
+    console.log("updates");
+
+    
+    // let test = await db.collection("users").doc(firebase.auth().currentUser.email).get();
+
+    // if(!test){
+    //   test = [];
+    // } else{
+    //   this.arrBackLog = test.data().todo;
+    // }
+
+  },
+
+
+  created: async function(){
+    firebase.auth().onAuthStateChanged((user) => {
+      this.user = user;
+
+    });
+
+    
+
+    let test = await db.collection("users").doc(firebase.auth().currentUser.email).get();
+
+    if(!test){
+      test = [];
+    } else{
+      this.arrBackLog = test.data().todo;
+    }
+
 
 
 
@@ -236,26 +279,39 @@ this.email = this.user;
     firestore() {
     return {
       
-      collectiondata: db.doc("users/"+this.email).onSnapshot((doc) => {
-        this.collectiondata = doc.data();
-      }),
-  
+      // collectiondata: db.doc("users/"+this.email).onSnapshot((doc) => {
+      //   this.collectiondata = doc.data();
+      // }),
+
+      // arrBackLog: db.collection("users/"+this.email+"/todo").onSnapshot((snapshot) => {
+      // arrBackLog: db.collection("users/"+this.email+"/todo").onSnapshot((snapshot) => {
+      //   this.arrBackLog = snapshot.docs.map(doc => doc.data().name);
+      // }),
+
+    //  arrBackLog: db.doc("users/"+firebase.auth().currentUser.email).onSnapshot((doc) => {
+    //     this.arrBackLog = doc.data().todo;
+    //   }),
+
+    //  arrInProgress: db.doc("users/"+firebase.auth().currentUser.email).onSnapshot((doc) => {
+    //     this.arrInProgress = doc.data().inprogress;
+    //   }),
+
+    //   arrDone: db.doc("users/"+firebase.auth().currentUser.email).onSnapshot((doc) => {
+    //     this.arrDone = doc.data().done;
+    //   }),
 
       
     };
   },
 
 
-created() {
-    firebase.auth().onAuthStateChanged((user) => {
-      this.user = user;
 
-    });
-  },
 
   data() {
     return {
       // for new tasks
+      allusers: [],
+      test:["Dfas"],
       newTask: "",
       user:"dfs",
       name:"dsf",
@@ -264,8 +320,7 @@ created() {
       collectiondata:"",
       // 4 arrays to keep track of our 4 statuses
       arrBackLog: [
-        "msft",
-        "apple",
+
       ],
       arrInProgress: [],
 
@@ -279,7 +334,7 @@ created() {
         .signOut()
         .then(() => {
           this.$router.push("/signin");
-          // alert("logout");
+          // alert ("logout");
         })
         .catch((error) => {
           this.error = error;
@@ -331,8 +386,6 @@ created() {
                 
                 todo:this.arrBackLog,
                 inprogress:this.arrInProgress,
-          
-
                 done:this.arrDone
 
             },
@@ -340,6 +393,7 @@ created() {
             
         )
         .then(function () {
+          this.test = 1;
           console.log("Document successfully written!");
         });
     },

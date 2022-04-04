@@ -404,23 +404,35 @@ export default {
     },
   },
 
+
+  created:async function(){
+    firebase.auth().onAuthStateChanged((user) => {
+    this.user = user;
+    });
+
+    let test = await db.collection("users").doc(firebase.auth().currentUser.email).get();
+
+    if(!test){
+      test = [];
+    } else{
+      this.ticker_list = test.data().tickers;
+    }
+
+
+  },
+
   firestore(){
     return{
-      ticker_list: db.doc("users/"+this.user.email).onSnapshot((doc) => {
-        this.ticker_list = doc.data().tickers;
-      }),
-     ticker_list_length: db.doc("users/"+this.user.email).onSnapshot((doc) => {
-        this.ticker_list_length = doc.data().tickers.length;
-      }),
+    //   ticker_list: db.doc("users/"+this.user.email).onSnapshot((doc) => {
+    //     this.ticker_list = doc.data().tickers;
+    //   }),
+    //  ticker_list_length: db.doc("users/"+this.user.email).onSnapshot((doc) => {
+    //     this.ticker_list_length = doc.data().tickers.length;
+    //   }),
     username: "fda",
     }
   },
 
-  created() {
-    firebase.auth().onAuthStateChanged((user) => {
-      this.user = user;
-    });
-  },
 };
 </script>
 
