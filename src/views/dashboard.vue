@@ -229,6 +229,7 @@ export default {
       popup: false,
       international: false,
       username: "",
+      search:"",
       user: null,
       ispro: 'ispro?',
       ticker_list: ["msft"],

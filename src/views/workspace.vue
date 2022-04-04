@@ -106,9 +106,7 @@
     <div class="container pt-5 text-danger" style="background-color: #212121;">
       <!-- {{user.email}} -->
       
-    {{test}}
-    doing
-    {{arrInProgress}}
+
     <div class="row">
       <div class="col form-inline">
         <b-form-input
