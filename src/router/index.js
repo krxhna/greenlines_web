@@ -34,9 +34,9 @@ const routes = [
     name: 'test',
     component: test,
 
-    meta: {
-      requiresAuth: true
-    }
+    // meta: {
+    //   requiresAuth: true
+    // }
     
 
   },
@@ -95,9 +95,9 @@ const routes = [
     name: 'macro',
     component: macro,
     props: true,
-    meta: {
-      requiresAuth: true
-    },
+    // meta: {
+    //   requiresAuth: true
+    // },
 
   },
 
@@ -127,9 +127,9 @@ const routes = [
     props: true,
 
     
-    meta: {
-      requiresAuth: true
-    }
+    // meta: {
+    //   requiresAuth: true
+    // }
   
   },
   {
@@ -166,9 +166,9 @@ const routes = [
     path: '/dashboard/:ticker',
     name: 'dashboard',
     component: dashboard,
-    meta: {
-      requiresAuth: true
-    },
+    // meta: {
+    //   requiresAuth: true
+    // },
   
     props: true,
   
