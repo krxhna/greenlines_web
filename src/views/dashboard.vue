@@ -15,8 +15,8 @@
               class="search-bar1"
               :placeholder="'$' + ticker"
               style="text-transform: uppercase"
-              @keyup.enter="the_go(message.toUpperCase())"
-              v-model="message"
+              @keyup.enter="the_go(search.toUpperCase())"
+              v-model="search"
             />
           </div>
 
@@ -25,7 +25,7 @@
             <button
               :key="$route.fullPath"
               class="gobutton"
-              @click="the_go(message.toUpperCase())"
+              @click="the_go(search.toUpperCase())"
             >
               GO
             </button>
@@ -101,12 +101,12 @@
           </a>
           
         <!-- <h5>{{ticker_list.slice(-3)}}</h5> -->
-        <ul style="list-style-type: none; text-align: start; background-color: #000000; padding: 0.3rem; cursor: pointer;">
+        <!-- <ul style="list-style-type: none; text-align: start; background-color: red;  padding: 0.3rem; cursor: pointer;">
        <li v-for="n in ticker_list.slice(-4).reverse()" :key="n.id" > 
            <h5 style="color: #08f06198; padding: 0.1rem;" @click="the_go(n)" :to="{ path: `/dashboard/${n}` }"  replace
             >${{n}} > </h5>
        </li>
-    </ul>
+    </ul> -->
 
           
           <div class="footernotes" style="display: flex">
@@ -231,7 +231,7 @@ export default {
       username: "",
       user: null,
       ispro: 'ispro?',
-      ticker_list: [],
+      ticker_list: ["msft"],
       ticker_list_length: [],
       dummy_list: ["dum","gh","dumd"],
 
@@ -359,11 +359,14 @@ export default {
     },
 
 
-    the_go: function (ticker) {
-      this.ticker_list.push(ticker);
-      this.collect_tickers(ticker);
-      this.popup = false;
-      this.international = false;
+    
+
+
+    the_go: function(ticker){
+      // this.ticker_list.push(ticker);
+      // this.collect_tickers(ticker);
+      // this.popup = false;
+      // this.international = false;
       this.$router.push({
         path: "/dashboard/" + ticker,
       });
@@ -405,7 +408,7 @@ export default {
   },
 
 
-  created:async function(){
+  created:async function() {
     firebase.auth().onAuthStateChanged((user) => {
     this.user = user;
     });
@@ -415,6 +418,8 @@ export default {
     if(!test){
       test = [];
     } else{
+      
+      console.log(test.data().tickers);
       this.ticker_list = test.data().tickers;
     }
 

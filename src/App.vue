@@ -30,6 +30,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+
 }
 @font-face {
     font-family: 'sackers'; /*a name to be used later*/
