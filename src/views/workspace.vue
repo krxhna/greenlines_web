@@ -118,12 +118,13 @@
           @keyup.enter="add"
         ></b-form-input>
         <b-button @click="add" variant="dark rounded" class="ml-3 bg-dark">Add </b-button>
+        <b-button @click="deletefield(1)" variant="danger rounded" class="ml-3 bg-danger">delete</b-button>
       </div>
     </div>
     <div class="row mt-5">
       <div class="col-3 h-100">
         <div class="p-2 rounded shadow-lg" style="background-color: #383838;">
-          <h3 class="text-light text-sm m-2">To do</h3>
+          <h3 class="text-light text-sm m-2" style="heig">To do</h3>
           <!-- Backlog draggable component. Pass arrBackLog to list prop -->
           <draggable
             class="list-group kanban-column"
@@ -379,6 +380,19 @@ this.email = this.user.email;
       }
     },
 
+
+    deletefield: () => {
+
+         db.collection("users")
+        .doc(this.user.email).update({
+          "todo": firebase.firestore.FieldValue.arrayRemove("meow")
+
+
+
+
+    },
+        )}
+,    
 
     writetodo: function () {
       //write data to firebase
