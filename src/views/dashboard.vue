@@ -409,23 +409,23 @@ export default {
   },
 
 
-  // created:async function() {
-  //   firebase.auth().onAuthStateChanged((user) => {
-  //   this.user = user;
-  //   });
+  created:async function() {
+    firebase.auth().onAuthStateChanged((user) => {
+    this.user = user;
+    });
 
-  //   let test = await db.collection("users").doc(firebase.auth().currentUser.email).get();
+    let test = await db.collection("users").doc(firebase.auth().currentUser.email).get();
 
-  //   if(!test){
-  //     test = [];
-  //   } else{
+    if(!test){
+      test = [];
+    } else{
       
-  //     console.log(test.data().tickers);
-  //     this.ticker_list = test.data().tickers;
-  //   }
+      console.log(test.data().tickers);
+      this.ticker_list = test.data().tickers;
+    }
 
 
-  // },
+  },
 
   firestore(){
     return{

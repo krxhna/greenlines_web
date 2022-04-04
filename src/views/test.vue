@@ -1,5 +1,6 @@
 <template>
   <div class="homesearch">
+    <div class="boxheading">Desktop requires signup to work <b-button @click="push2signup">signup</b-button></div>
     <div class="homewrapper" style="margin: 3vw">
       <div class="home_nav">
         <div class="logoholder" style="background-color: transparent">
@@ -27,6 +28,7 @@
         
         <div class="popular" style="height: 30vw; width: 20vw">
           <div class="tagy">greenlines.club</div>
+          
           <div class="boxheading">Popular</div>
           <div class="hometicker" @click="handleClick('MSFT')">
             $MSFT
@@ -182,6 +184,9 @@ export default {
     // HelloWorld
   },
 
+
+  
+
   methods: {
     new() {
       this.$router.push("/new");
@@ -221,6 +226,16 @@ export default {
         return false;
       }
     },
+
+    push2signup(){
+      this.$router.push("/signup");
+  
+    
+
+    }
+,
+
+
     login() {
       this.$gtag.event("login", { method: "Google" });
     },
